@@ -6,12 +6,13 @@ import HeaderMobile from '@components/HeaderMobile.astro'
   <!-- Desktop menu -->
   <nav class="bg-gray bg-opacity-75 backdrop-blur w-fit px-12 py-6 rounded-full m-auto mt-8 hidden md:flex">
     <ul class="flex text-white gap-8">
-      <li><a class="hover:text-primary" href="">Home</a></li>
-      <li><a class="hover:text-primary" href="experience">Experience</a></li>
-      <li><a class="hover:text-primary" href="portfolio">Portfolio</a></li>
-      <li><a class="hover:text-primary" href="aboutme">About</a></li>
-      <li><a class="hover:text-primary" href="contact">Contact</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="home">Home</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="experience">Experience</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="portfolio">Portfolio</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="about">About</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="contact">Contact</a></li>
     </ul>
+    
   </nav>
 
   <!-- Header mobile -->
@@ -25,11 +26,11 @@ import HeaderMobile from '@components/HeaderMobile.astro'
     </button>
 
     <ul class="flex flex-col items-center justify-center h-full space-y-6 text-2xl text-white uppercase">
-      <li><a class="hover:text-primary" href="">Home</a></li>
-      <li><a class="hover:text-primary" href="experience">Experience</a></li>
-      <li><a class="hover:text-primary" href="portfolio">Portfolio</a></li>
-      <li><a class="hover:text-primary" href="aboutme">About</a></li>
-      <li><a class="hover:text-primary" href="contact">Contact</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="home">Home</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="experience">Experience</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="portfolio">Portfolio</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="about">About</a></li>
+      <li><a class="hover:text-primary cursor-pointer" data-target="contact">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -42,7 +43,7 @@ import HeaderMobile from '@components/HeaderMobile.astro'
     const menuBtn = document.getElementById('menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
     const menuIcon = document.getElementById('menu-icon');
-    const menuLinks = document.querySelectorAll("#mobile-menu a");
+    const menuLinks = document.querySelectorAll("a");
 
     // Styles
     header.style.top = '0';
@@ -98,9 +99,20 @@ import HeaderMobile from '@components/HeaderMobile.astro'
     // Hide mobile menu when clicking close button
     closeMenuBtn.addEventListener('click', hideMobileMenu);
 
-    // Hide mobile menu when clicking a menu link
+    // Scroll to section smoothly when clicking a menu link
     menuLinks.forEach(link => {
-      link.addEventListener('click', hideMobileMenu);
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = link.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        // Modify URL without reloading the page
+      const url = new URL(window.location.href);
+      url.pathname = targetId; // Set pathname to the section id
+      window.history.pushState({}, '', url); // Push new state to history
+
+      hideMobileMenu(); // Hide mobile menu after scrolling
+      });
     });
-  });
+});
 </script>
