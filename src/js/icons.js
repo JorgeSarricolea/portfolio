@@ -30,6 +30,7 @@ const icons = [
   { url: "bubbleio-icon.png", state: false },
 ];
 
+// Add the baseUrl for all icons
 icons.forEach((icon) => {
   icon.url = baseUrl + icon.url;
 });
