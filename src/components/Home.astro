@@ -1,0 +1,71 @@
+<main class="text-white bg-gray rounded-3xl p-20 pb-0 flex">
+  <div class="w-9/12">
+    <h1 class="text-6xl h-40 min-w-5/6">I'm <span id="multiText" class="text-primary font-bold"></span></h1>
+    <p class="text-3xl">
+      “To achieve a real change, order, discipline, and perseverance are
+      required”.
+    </p>
+    <a href="#porfolio" class="flex w-2/4 bg-primary text-gray justify-center px-8 py-4 rounded-2xl uppercase mt-16 hover:bg-secondary hover:text-white transition-colors duration-500">portfolio</a>
+  </div>
+  <div class="flex">
+    <img id="hero" src="" alt="" class="w-full"/>
+    <div class="absolute w-36">
+      <img id="upper-icon" class="bubble" src="" alt="" />
+      <img id="middle-icon" class="bubble" src="" alt="" />
+      <img id="bottom-icon" class="bubble" src="" alt="" />
+    </div>
+  </div>
+</main>
+
+<script src="@js/BubbleIcons.js"></script>
+
+<style>
+  .bubble {
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+}
+
+#upper-icon, #middle-icon, #bottom-icon {
+  position: absolute;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transform: translate(-40%, -50%);
+  border-radius: 50%;
+}
+
+#upper-icon {
+  width: 80px;
+  top: 180px;
+  left: 420px;
+  animation: bounce 2.4s ease-in-out infinite;
+}
+
+#middle-icon {
+  width: 100px;
+  top: 100px;
+  left: 60px;
+  animation: bounce 2.1s ease-in-out infinite;
+}
+
+#bottom-icon {
+  width: 250px;
+  top: 250px;
+  left: 0px;
+  animation: bounce 2.3s ease-in-out infinite;
+}
+
+/* Cicle Icons Animations */
+@keyframes bounce {
+  0% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>
