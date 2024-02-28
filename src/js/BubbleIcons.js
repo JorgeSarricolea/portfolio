@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       const currentIcon = icons[currentIndex];
       bubble.src = currentIcon.url;
+      bubble.alt = currentIcon.alt || "";
       currentIcon.state = true; // Mark the image as used
       bubble.style.opacity = 1;
 
