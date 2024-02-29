@@ -10,5 +10,8 @@
       "name": "User-Agent",
       "value": "Thunder Client (https://www.thunderclient.com)"
     }
+  ],
+  "json.schemas": [
+    
   ]
 }

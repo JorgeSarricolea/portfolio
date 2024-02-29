@@ -1,16 +1,36 @@
 ---
-import HeaderMobile from '@components/HeaderMobile.astro'
+import HeaderMobile from "@components/HeaderMobile.astro";
 ---
 
 <header class="">
   <!-- Desktop menu -->
-  <nav class="bg-gray bg-opacity-75 backdrop-blur w-fit px-12 py-6 rounded-full m-auto mt-8 hidden md:flex">
+  <nav
+    class="bg-gray bg-opacity-75 backdrop-blur w-fit px-12 py-6 rounded-full m-auto mt-8 hidden md:flex"
+  >
     <ul class="flex text-white gap-8">
-      <li><a class="hover:text-primary cursor-pointer" data-target="home">Home</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="experience">Experience</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="portfolio">Portfolio</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="about">About</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="contact">Contact</a></li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="home">Home</a>
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="experience"
+          >Experience</a
+        >
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="portfolio"
+          >Portfolio</a
+        >
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="about"
+          >About</a
+        >
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="contact"
+          >Contact</a
+        >
+      </li>
     </ul>
   </nav>
 
@@ -18,99 +38,131 @@ import HeaderMobile from '@components/HeaderMobile.astro'
   <HeaderMobile />
 
   <!-- Menu mobile -->
-  <nav id="mobile-menu" class="absolute top-0 left-0 z-50 hidden w-full h-screen bg-black bg-opacity-75 backdrop-blur lg:relative lg:h-auto ">
+  <nav
+    id="mobile-menu"
+    class="absolute top-0 left-0 z-50 hidden w-full h-screen bg-black bg-opacity-75 backdrop-blur lg:relative lg:h-auto"
+  >
     <!-- Close btn -->
-    <button id="close-menu-btn" class="absolute right-0 lg:hidden block h-16 w-16 focus:outline-none mt-4 mr-8">
+    <button
+      id="close-menu-btn"
+      class="absolute right-0 lg:hidden block h-16 w-16 focus:outline-none mt-4 mr-8"
+    >
       <span class="text-primary text-5xl" id="menu-icon">✕</span>
     </button>
 
-    <ul class="flex flex-col items-center justify-center h-full space-y-6 text-2xl text-white uppercase">
-      <li><a class="hover:text-primary cursor-pointer" data-target="home">Home</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="experience">Experience</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="portfolio">Portfolio</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="about">About</a></li>
-      <li><a class="hover:text-primary cursor-pointer" data-target="contact">Contact</a></li>
+    <ul
+      class="flex flex-col items-center justify-center h-full space-y-6 text-2xl text-white uppercase"
+    >
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="home">Home</a>
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="experience"
+          >Experience</a
+        >
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="portfolio"
+          >Portfolio</a
+        >
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="about"
+          >About</a
+        >
+      </li>
+      <li>
+        <a class="hover:text-primary cursor-pointer" data-target="contact"
+          >Contact</a
+        >
+      </li>
     </ul>
   </nav>
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     let lastScrollTop = 0;
     const header = document.querySelector("header");
     const menu = document.getElementById("mobile-menu");
-    const menuBtn = document.getElementById('menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-    const menuIcon = document.getElementById('menu-icon');
-    const menuLinks = document.querySelectorAll("a");
+    const menuBtn = document.getElementById("menu-btn");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
+    const menuIcon = document.getElementById("menu-icon");
+    const desktopMenuLinks = document.querySelectorAll("header nav ul li a");
+    const mobileMenuLinks = document.querySelectorAll("#mobile-menu ul li a");
+
+    const menuLinks = [...desktopMenuLinks, ...mobileMenuLinks];
 
     // Styles
-    header.style.top = '0';
-    header.style.zIndex = '1000';
-    header.style.transition = 'transform 0.3s, opacity 0.3s';
-    header.style.position = 'fixed';
+    header.style.top = "0";
+    header.style.zIndex = "1000";
+    header.style.transition = "transform 0.3s, opacity 0.3s";
+    header.style.position = "fixed";
 
     // Function to update header width
     function updateHeaderWidth() {
-      if (window.innerWidth <= 768) { // Mobile
-        header.style.width = '100%';
-      } else { // Desktop
-        header.style.width = '66.66%';
+      if (window.innerWidth <= 768) {
+        // Mobile
+        header.style.width = "100%";
+      } else {
+        // Desktop
+        header.style.width = "66.66%";
       }
     }
 
     // Resize the header when it is mobile when loading the page
     updateHeaderWidth();
-    window.addEventListener('resize', updateHeaderWidth);
+    window.addEventListener("resize", updateHeaderWidth);
 
-    window.addEventListener("scroll", function() {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener(
+      "scroll",
+      function () {
+        const currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
 
         if (currentScroll > lastScrollTop) {
-            // If user scroll down, it hides the header
-            header.style.transform = 'translateY(-100%)';
-            header.style.opacity = '0';
+          // If user scroll down, it hides the header
+          header.style.transform = "translateY(-100%)";
+          header.style.opacity = "0";
         } else {
-            // If user scroll up or are at the top, it shows the header
-            header.style.transform = 'translateY(0)';
-            header.style.opacity = '1';
+          // If user scroll up or are at the top, it shows the header
+          header.style.transform = "translateY(0)";
+          header.style.opacity = "1";
         }
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         // Update last scroll position for next time
         lastScrollTop = currentScroll;
-    }, false);
+      },
+      false
+    );
 
     // Function to hide mobile menu and restore body scroll state
     function hideMobileMenu() {
-      menu.classList.add('hidden');
-      menuIcon.textContent = '☰';
-      document.body.classList.remove('no-scroll');
+      menu.classList.add("hidden");
+      menuIcon.textContent = "☰";
+      document.body.classList.remove("no-scroll");
     }
 
     // Show/hide mobile menu when clicking menu button
-    menuBtn.addEventListener('click', function() {
-      menu.classList.toggle('hidden');
-      const isMenuHidden = menu.classList.contains('hidden');
-      menuIcon.textContent = isMenuHidden ? '☰' : '';
-      document.body.classList.toggle('no-scroll', !isMenuHidden);
+    menuBtn.addEventListener("click", function () {
+      menu.classList.toggle("hidden");
+      const isMenuHidden = menu.classList.contains("hidden");
+      menuIcon.textContent = isMenuHidden ? "☰" : "";
+      document.body.classList.toggle("no-scroll", !isMenuHidden);
     });
 
     // Hide mobile menu when clicking close button
-    closeMenuBtn.addEventListener('click', hideMobileMenu);
+    closeMenuBtn.addEventListener("click", hideMobileMenu);
 
     // Scroll to section smoothly when clicking a menu link
-    menuLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", function (event) {
         event.preventDefault();
-        const targetId = link.getAttribute('data-target');
+        const targetId = link.getAttribute("data-target");
         const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        // Modify URL without reloading the page
-      const url = new URL(window.location.href);
-      url.pathname = targetId; // Set pathname to the section id
-      window.history.pushState({}, '', url); // Push new state to history
+        targetSection.scrollIntoView({ behavior: "smooth" });
 
-      hideMobileMenu(); // Hide mobile menu after scrolling
+        hideMobileMenu(); // Hide mobile menu after scrolling
       });
     });
   });

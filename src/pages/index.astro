@@ -1,6 +1,7 @@
 ---
 import Header from '@components/Header.astro'
 import Home from '@components/Home.astro'
+import Experience from '@components/Experience.astro'
 ---
 
 <html lang="en">
@@ -11,6 +12,11 @@ import Home from '@components/Home.astro'
 		<!-- Typed.js files -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"></script>
 		<script src="@js/Typed.js"></script>
+		<!-- CDN Font Awesome -->
+		<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 		<!-- Relative Img -->
 		<script src="@js/images.js"></script>
 		<title>Jorge Sarricolea</title>
@@ -22,7 +28,9 @@ import Home from '@components/Home.astro'
 			<section id="home">
 				<Home />
 			</section>
-			<section id="experience"></section>
+			<section id="experience">
+				<Experience />
+			</section>
 			<section id="portfolio"></section>
 			<section id="about"></section>
 			<section id="contact"></section>
