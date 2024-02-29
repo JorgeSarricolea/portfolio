@@ -1,14 +1,14 @@
-<main class="text-white bg-gray rounded-3xl p-20 pb-0 flex">
-  <div class="w-9/12">
-    <h1 class="text-6xl h-40 min-w-5/6">I'm <span id="multiText" class="text-primary font-bold"></span></h1>
-    <p class="text-3xl">
+<main class="text-white md:bg-gray rounded-3xl md:p-20 pb-0 md:flex">
+  <div class="md:w-9/12 px-8">
+    <h1 id="mainTitle" class="md:text-6xl text-5xl md:h-40 h-32 min-w-5/6">I'm <span id="multiText" class="text-primary font-bold"></span></h1>
+    <p class="md:text-3xl text-2xl">
       “To achieve a real change, order, discipline, and perseverance are
       required”.
     </p>
-    <a href="#porfolio" class="flex w-2/4 bg-primary text-gray justify-center px-8 py-4 rounded-2xl uppercase mt-16 hover:bg-secondary hover:text-white transition-colors duration-500">portfolio</a>
+    <a href="#porfolio" class="flex md:w-2/4 bg-primary text-gray justify-center px-8 py-4 rounded-2xl uppercase mt-16 hover:bg-secondary hover:text-white transition-colors duration-500">portfolio</a>
   </div>
-  <div class="flex">
-    <img id="hero" src="" alt="" class="min-w-full"/>
+  <div class="flex ">
+    <img id="hero" src="" alt="" class="min-w-full md:relative md:bg-transparent absolute md:top-0 top-24 left-0 bg-primary backdrop-blur bg-opacity-10"/>
     <div class="absolute w-36">
       <img id="upper-icon" class="bubble" src="" alt="" />
       <img id="middle-icon" class="bubble" src="" alt="" />
@@ -67,5 +67,32 @@
   100% {
     transform: translateY(0);
   }
+}
+
+@media (max-width: 800px) {
+  #upper-icon {
+      width: 80px;
+      height: 80px;
+      top: -640px;
+      left: 30px;
+    }
+
+    #middle-icon {
+      width: 60px;
+      height: 60px;
+      top: -720px;
+      left: 100px;
+    }
+
+    #bottom-icon {
+      width: 100px;
+      height: 100px;
+      top: -530px;
+      left: 80px;
+    }
+
+    #mainTitle {
+      margin-top: 530px;
+    }
 }
 </style>
