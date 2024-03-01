@@ -1,20 +1,30 @@
 const projects = [
   {
     id: 1,
-    title: "Datamatic Software",
+    title: "The Movies App",
     description:
-      "I worked on different projects, designing the user interface from scratch, adding new features and reusable components for various projects.",
-    image: "../../public/img/DatamaticSoftware.jpg",
-    url: "https://www.datamaticsoftware.com",
-    tagIds: ["reactjs", "javascript", "astro"],
+      "The Movies APP is a platform designed to view information about the most popular, highest-rated, and upcoming movies. The information is obtained from TheMovieDB API.",
+    image: "../../public/img/the-movies-app.png",
+    url: "https://the-movies-app-mocha.vercel.app",
+    githubUrl: "https://github.com/JorgeSarricolea/The-Movies-APP",
+    tagIds: [
+      "reactjs",
+      "javascript",
+      "typescript",
+      "nodejs",
+      "nextjs",
+      "tailwindcss",
+    ],
   },
   {
     id: 2,
     title: "Jumwork",
     description:
       "I designed the whole brand, UX/UI design from scratch on Bubble. Integration with Stripe API and others in backend process. Worked with different plugins, like Sendgrid and upgraded old pages to the new responsive engine.",
-    image: "../../public/img/JumworkTareas.png",
+    image: "../../public/img/jumwork.png",
     url: "https://www.jumwork.com",
+    githubUrl: "",
+    tagIds: ["bubble"],
   },
 ];
 
