@@ -1,14 +1,25 @@
 <main class="text-white md:bg-gray rounded-3xl md:p-20 md:pb-0 md:flex">
   <div class="md:w-9/12 md:px-0 px-8">
-    <h1 id="mainTitle" class="md:text-6xl text-5xl md:h-40 h-32 min-w-5/6">I'm <span id="multiText" class="text-primary font-bold"></span></h1>
+    <h1 id="mainTitle" class="md:text-6xl text-5xl md:h-40 h-32 min-w-5/6">
+      I'm <span id="multiText" class="text-primary font-bold"></span>
+    </h1>
     <p class="md:text-3xl text-2xl">
       “To achieve a real change, order, discipline, and perseverance are
       required”.
     </p>
-    <a href="#porfolio" class="flex md:w-2/4 bg-primary text-gray justify-center px-8 py-4 rounded-2xl uppercase md:mt-16 mt-12 hover:bg-secondary hover:text-white transition-colors duration-500">portfolio</a>
+    <a
+      href="#porfolio"
+      class="flex md:w-2/4 bg-primary text-gray justify-center px-8 py-4 rounded-2xl uppercase md:mt-16 mt-12 hover:bg-secondary hover:text-white transition-colors duration-500"
+      >portfolio</a
+    >
   </div>
-  <div class="flex ">
-    <img id="hero" src="" alt="" class="min-w-full md:relative md:bg-transparent absolute md:top-0 top-24 left-0 bg-primary backdrop-blur bg-opacity-20"/>
+  <div class="flex">
+    <img
+      id="hero"
+      src=""
+      alt=""
+      class="min-w-full md:relative md:bg-transparent absolute md:top-0 top-24 left-0 bg-primary backdrop-blur bg-opacity-20"
+    />
     <div class="absolute w-36">
       <img id="upper-icon" class="bubble" src="" alt="" />
       <img id="middle-icon" class="bubble" src="" alt="" />
@@ -21,56 +32,58 @@
 
 <style>
   .bubble {
-  transition: opacity 0.3s ease-in-out;
-  z-index: 999;
-}
-
-#upper-icon, #middle-icon, #bottom-icon {
-  position: absolute;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transform: translate(-40%, -50%);
-  border-radius: 50%;
-}
-
-#upper-icon {
-  width: 80px;
-  top: 180px;
-  left: 420px;
-  animation: bounce 2.4s ease-in-out infinite;
-}
-
-#middle-icon {
-  width: 100px;
-  top: 100px;
-  left: 60px;
-  animation: bounce 2.1s ease-in-out infinite;
-}
-
-#bottom-icon {
-  width: 250px;
-  top: 250px;
-  left: 0px;
-  animation: bounce 2.3s ease-in-out infinite;
-}
-
-/* Cicle Icons Animations */
-@keyframes bounce {
-  0% {
-    transform: translateY(0)
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
   }
 
-  50% {
-    transform: translateY(10px);
+  #upper-icon,
+  #middle-icon,
+  #bottom-icon {
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: translate(-40%, -50%);
+    border-radius: 50%;
   }
 
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 800px) {
   #upper-icon {
+    width: 80px;
+    top: 180px;
+    left: 420px;
+    animation: bounce 2.4s ease-in-out infinite;
+  }
+
+  #middle-icon {
+    width: 100px;
+    top: 100px;
+    left: 60px;
+    animation: bounce 2.1s ease-in-out infinite;
+  }
+
+  #bottom-icon {
+    width: 250px;
+    top: 250px;
+    left: 0px;
+    animation: bounce 2.3s ease-in-out infinite;
+  }
+
+  /* Cicle Icons Animations */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(10px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 800px) {
+    #upper-icon {
       width: 80px;
       height: 80px;
       top: -640px;
@@ -94,5 +107,9 @@
     #mainTitle {
       margin-top: 530px;
     }
-}
+
+    .card-container {
+      margin-top: -60px;
+    }
+  }
 </style>
