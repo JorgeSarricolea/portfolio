@@ -1,8 +1,9 @@
 ---
-import Header from "@components/Header.astro";
-import Home from "@components/Home.astro";
-import Experience from "@components/Experience.astro";
-import Portfolio from "@components/Portfolio.astro";
+import Header from "@/components/Header.astro";
+import Home from "@/components/Home.astro";
+import Experience from "@/components/Experience.astro";
+import Portfolio from "@/components/Portfolio.astro";
+import About from "@/components/About.astro";
 ---
 
 <html lang="en">
@@ -14,19 +15,18 @@ import Portfolio from "@components/Portfolio.astro";
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"
     ></script>
-    <script src="@js/Typed.js"></script>
+    <script src="@/js/Typed.js"></script>
     <!-- CDN Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <!-- Relative Img -->
-    <script src="@js/images.js"></script>
+    <script src="@/js/images.js"></script>
     <title>Jorge Sarricolea</title>
   </head>
   <body class="bg-black lg:w-4/6 m-auto mt-36">
     <Header />
-    <main class="text-white"></main>
     <section id="home">
       <Home />
     </section>
@@ -36,7 +36,9 @@ import Portfolio from "@components/Portfolio.astro";
     <section id="portfolio">
       <Portfolio />
     </section>
-    <section id="about"></section>
+    <section id="about">
+      <About />
+    </section>
     <section id="contact"></section>
   </body>
 </html>

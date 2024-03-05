@@ -1,0 +1,32 @@
+---
+import cv from "@/js/cv.js";
+---
+
+<section class="flex justify-between gap-36">
+  <div>
+    <h1 class="text-xl font-bold uppercase">{cv["basics"].name}</h1>
+    <h2 class="mt-2">{cv["basics"].label}</h2>
+    <div class="flex gap-4 mt-2">
+      <a href=`mailto:${cv["basics"].email}`
+        ><i class="fa-solid fa-envelope hover:text-secondary text-lg"></i></a
+      >
+      <a href={cv["social"].portfolio}
+        ><i class="fa-solid fa-briefcase hover:text-secondary text-lg"></i></a
+      >
+      <a href={cv["social"].github}
+        ><i class="fa-brands fa-github hover:text-secondary text-lg"></i></a
+      >
+      <a href={cv["social"].linkedin}
+        ><i class="fa-brands fa-linkedin hover:text-secondary text-lg"></i></a
+      >
+    </div>
+  </div>
+  <img
+    id="cv-picture"
+    src=""
+    alt=""
+    class="bg-secondary backdrop-blur rounded-2xl w-32 h-32 object-cover"
+  />
+</section>
+
+<script></script>

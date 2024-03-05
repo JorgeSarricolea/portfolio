@@ -7,6 +7,11 @@ const images = [
     url: "photo_plantsNoBG.png",
     alt: "Picture of Jorge Sarricolea",
   },
+  {
+    id: "cv-picture",
+    url: "photo_plantsNoBG.png",
+    alt: "Picture of Jorge Sarricolea",
+  },
 ];
 
 // Function to apply full URL to each image

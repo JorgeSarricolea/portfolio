@@ -1,0 +1,75 @@
+---
+import Hero from "@/components/sections/Hero.astro";
+---
+
+<div class="w-full md:max-w-full">
+  <h1
+    class="text-primary md:text-5xl text-3xl font-bold text-center md:my-28 my-8 uppercase"
+  >
+    About
+  </h1>
+  <section
+    id="cv-container"
+    class="w-4/6 m-auto bg-white rounded-xl p-8 text-black"
+  >
+    <Hero />
+  </section>
+</div>
+<button
+  id="print-button"
+  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >Imprimir</button
+>
+
+<style>
+  @media print {
+    #home,
+    #experience,
+    #portfolio {
+      display: none;
+    }
+    #cv-container,
+    #cv-container * {
+      visibility: visible;
+      display: block;
+    }
+    #cv-container {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    @page {
+      size: A4 portrait;
+      margin: 0.5cm;
+    }
+  }
+</style>
+
+<script>
+  // Function to handle "Print" button click event
+  document
+    .getElementById("print-button")
+    .addEventListener("click", function () {
+      // Array de IDs de elementos a ocultar y mostrar
+      const elementsToToggle = [
+        "home",
+        "experience",
+        "portfolio",
+        "print-button",
+      ];
+
+      // Oculta los elementos que no serán impresos
+      elementsToToggle.forEach(function (id) {
+        document.getElementById(id).style.display = "none";
+      });
+
+      // Llama a la función de impresión
+      window.print();
+
+      // Restaura la visibilidad después de imprimir
+      elementsToToggle.forEach(function (id) {
+        document.getElementById(id).style.display = "block";
+      });
+    });
+</script>

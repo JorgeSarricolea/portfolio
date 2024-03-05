@@ -3,8 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@js/*": ["./src/js/*"]
+      "@/*": ["src/*"],
+      "@public/*": ["public/*"],
+      "@cv": ["./cv.json"]
     }
   }
 }
