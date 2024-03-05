@@ -1,4 +1,4 @@
-const baseUrl = "../../public/icons/";
+const baseUrl = "../icons/";
 
 const icons = [
   {
