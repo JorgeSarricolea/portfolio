@@ -10,6 +10,9 @@ import cv from "@/js/cv.js";
       <a href=`mailto:${cv["basics"].email}`
         ><i class="fa-solid fa-envelope hover:text-secondary text-lg"></i></a
       >
+      <a href={cv["basics"].phone}
+        ><i class="fa-solid fa-phone hover:text-secondary text-lg"></i></a
+      >
       <a href={cv["social"].portfolio}
         ><i class="fa-solid fa-briefcase hover:text-secondary text-lg"></i></a
       >
@@ -28,5 +31,3 @@ import cv from "@/js/cv.js";
     class="bg-secondary backdrop-blur rounded-2xl w-32 h-32 object-cover"
   />
 </section>
-
-<script></script>
