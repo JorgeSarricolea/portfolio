@@ -1,0 +1,33 @@
+---
+import experiences from "@/js/Experiences.js";
+---
+
+<section class="flex flex-col justify-between gap-2 mt-8">
+  <h1 class="text-xl font-bold">Experience</h1>
+  <div class="flex flex-col gap-4">
+    {
+      experiences.map((experience, index) => (
+        <div>
+          <div class="flex justify-between">
+            <div>
+              <h3 class=" font-bold text-xl capitalize">
+                {experience.company}
+              </h3>
+              <h2 class=" font-bold mb-2">
+                {experience.position} | {experience.date}
+              </h2>
+            </div>
+            <a
+              href={experience.url}
+              target="_blank"
+              class="hover:text-primary h-fit"
+            >
+              <i class="fa-solid fa-up-right-from-square" />
+            </a>
+          </div>
+          <p class="">{experience.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
