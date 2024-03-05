@@ -45,6 +45,7 @@ import Projects from "@/components/sections/Projects.astro";
     #home,
     #experience,
     #portfolio,
+    #contact,
     #about-mobile {
       display: none;
     }
@@ -80,16 +81,12 @@ import Projects from "@/components/sections/Projects.astro";
         "home",
         "experience",
         "portfolio",
+        "contact",
         "about-mobile",
         "print-button",
         "header",
         "header-mobile",
       ];
-
-      if (window.innerWidth <= 768) {
-        elementsToToggle.push("cv-container");
-        elementsToToggle.push("cv-projects");
-      }
 
       // Hide elements that will not be printed
       elementsToToggle.forEach(function (id) {
@@ -99,25 +96,33 @@ import Projects from "@/components/sections/Projects.astro";
         }
       });
 
-      // Call the print function
-      window.print();
+      // Ocultar el botón de impresión durante la espera
+      this.style.display = "none";
 
-      // Determine the header to display based on the screen size
-      const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
+      document.getElementById("cv-container").style.display = "block";
+      document.getElementById("cv-projects").style.display = "block";
 
-      // Add the corresponding header to the list of items to hide
-      elementsToToggle.push(headerId);
+      // Agregar un retraso antes de imprimir
+      setTimeout(function () {
+        // Llama a la función de impresión
+        window.print();
 
-      // Restores proper header visibility after printing
-      const headerToDisplay = document.getElementById(headerId);
-      if (headerToDisplay) {
-        headerToDisplay.style.display = "block";
-      }
+        // Determine the header to display based on the screen size
+        const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
+
+        // Add the corresponding header to the list of items to hide
+        elementsToToggle.push(headerId);
+
+        // Restores proper header visibility after printing
+        const headerToDisplay = document.getElementById(headerId);
+        if (headerToDisplay) {
+          headerToDisplay.style.display = "block";
+        }
+
+        // Recargar la página después de imprimir
+        setTimeout(function () {
+          location.reload();
+        }, 1000); // Espera 1 segundo antes de recargar la página después de imprimir
+      }, 200); // Espera 2 segundos antes de imprimir
     });
-
-  // Function to handle after printing
-  window.addEventListener("afterprint", function () {
-    // Reload the page after printing
-    location.reload();
-  });
 </script>
