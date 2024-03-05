@@ -86,6 +86,11 @@ import Projects from "@/components/sections/Projects.astro";
         "header-mobile",
       ];
 
+      if (window.innerWidth <= 768) {
+        elementsToToggle.push("cv-container");
+        elementsToToggle.push("cv-projects");
+      }
+
       // Hide elements that will not be printed
       elementsToToggle.forEach(function (id) {
         const element = document.getElementById(id);
