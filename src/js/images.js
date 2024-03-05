@@ -1,4 +1,4 @@
-const baseUrl = "../img/";
+const baseUrl = "https://jorgesarricolea.com/img/";
 
 // Array of objects that map image IDs to their relative URLs
 const images = [
