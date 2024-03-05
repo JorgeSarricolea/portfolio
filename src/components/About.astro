@@ -110,12 +110,6 @@ import Projects from "@/components/sections/Projects.astro";
         // Add the corresponding header to the list of items to hide
         elementsToToggle.push(headerId);
 
-        // Restores proper header visibility after printing
-        const headerToDisplay = document.getElementById(headerId);
-        if (headerToDisplay) {
-          headerToDisplay.style.display = "block";
-        }
-
         // Recargar la página después de imprimir
         setTimeout(function () {
           location.reload();
