@@ -104,16 +104,13 @@ import Projects from "@/components/sections/Projects.astro";
         // Llama a la función de impresión
         window.print();
 
-        // Determine the header to display based on the screen size
-        const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
-
-        // Add the corresponding header to the list of items to hide
-        elementsToToggle.push(headerId);
-
-        // Recargar la página después de imprimir
-        setTimeout(function () {
-          location.reload();
-        }, 1000); // Espera 1 segundo antes de recargar la página después de imprimir
-      }, 200); // Espera 2 segundos antes de imprimir
+        // Escuchar el evento afterprint para recargar la página después de imprimir
+        window.addEventListener("afterprint", function () {
+          // Esperar un corto período de tiempo antes de recargar la página
+          setTimeout(function () {
+            location.reload();
+          }, 1000); // Espera 1 segundo antes de recargar la página después de imprimir
+        });
+      }, 200); // Espera 200 milisegundos antes de imprimir
     });
 </script>
