@@ -96,21 +96,42 @@ import Projects from "@/components/sections/Projects.astro";
         }
       });
 
-      // Ocultar el botón de impresión durante la espera
-      this.style.display = "none";
+      // Determine the header to display based on the screen size
+      const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
 
-      // Agregar un retraso antes de imprimir
-      setTimeout(function () {
-        // Llama a la función de impresión
+      // Add the corresponding header to the list of items to hide
+      elementsToToggle.push(headerId);
+
+      // Restores proper header visibility after printing
+      const headerToDisplay = document.getElementById(headerId);
+      if (headerToDisplay) {
+        headerToDisplay.style.display = "block";
+      }
+
+      // Check if the screen size is mobile
+      if (window.innerWidth <= 768) {
+        // Open a new tab and print
+        const newWindow = window.open("", "_blank");
+        if (newWindow) {
+          newWindow.document.body.innerHTML =
+            document.getElementById("cv-container").outerHTML;
+          newWindow.document.body.innerHTML +=
+            document.getElementById("cv-projects").outerHTML;
+          newWindow.print();
+        } else {
+          alert(
+            "Error al abrir la nueva pestaña. Por favor, habilita las ventanas emergentes para esta página."
+          );
+        }
+      } else {
+        // Call the print function
         window.print();
-
-        // Escuchar el evento afterprint para recargar la página después de imprimir
-        window.addEventListener("afterprint", function () {
-          // Esperar un corto período de tiempo antes de recargar la página
-          setTimeout(function () {
-            location.reload();
-          }, 1000); // Espera 1 segundo antes de recargar la página después de imprimir
-        });
-      }, 200); // Espera 200 milisegundos antes de imprimir
+      }
     });
+
+  // Function to handle after printing
+  window.addEventListener("afterprint", function () {
+    // Reload the page after printing
+    location.reload();
+  });
 </script>
