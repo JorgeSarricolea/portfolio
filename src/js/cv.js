@@ -13,6 +13,11 @@ const cv = {
     github: "https://github.com/JorgeSarricolea",
     linkedin: "https://www.linkedin.com/in/jorge-sarricolea",
   },
+  education: {
+    institution: "Instituto Tecnológico de Mérida",
+    date: "2020 - Present",
+    career: "Computer Stystems engineer",
+  },
 };
 
 export default cv;

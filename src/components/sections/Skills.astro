@@ -1,0 +1,28 @@
+---
+import tags from "@/js/tags.js";
+---
+
+<section class="flex flex-col justify-between gap-2 mt-8">
+  <h1 class="text-xl font-bold">Skills</h1>
+  <div class="flex flex-wrap gap-2 mt-2">
+    {
+      Object.values(tags).map((tag, index) => (
+        <div id="tags-cv" class="flex relative">
+          <img
+            src="../../../public/img/Black.png"
+            alt=""
+            class="h-8 w-full absolute rounded"
+          />
+          <img
+            src={tag.image}
+            alt={tag.name}
+            class="h-6 z-10 relative my-1 ml-1"
+          />
+          <h3 class="text-md capitalize mr-2 my-1 text-white z-10 relative">
+            {tag.name}
+          </h3>
+        </div>
+      ))
+    }
+  </div>
+</section>
