@@ -1,0 +1,47 @@
+---
+import projects from "@/js/projects.js";
+---
+
+<h1 class="text-xl font-bold mt-8 mb-4">Projects</h1>
+<section class="flex flex-wrap gap-6 w-full">
+  {
+    projects.map((project, index) => (
+      <div id="main-container" class="flex">
+        <div class="h-fit rounded-2xl z-10">
+          <div class="flex justify-between">
+            <div class="mb-2">
+              <h3 class="text-black font-bold text-xl uppercase">
+                {project.title}
+              </h3>
+            </div>
+            <div>
+              <a
+                href={project.url}
+                target="_blank"
+                class="text-black hover:text-secondary h-fit"
+              >
+                <i class="fa-solid fa-up-right-from-square" />
+              </a>
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  class="text-black hover:text-secondary h-fit ml-2"
+                >
+                  <i class="fa-brands fa-github" />
+                </a>
+              )}
+            </div>
+          </div>
+          <p class="text-black">{project.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  #main-container {
+    width: 48%;
+  }
+</style>

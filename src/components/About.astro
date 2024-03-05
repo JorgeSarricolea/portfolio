@@ -4,6 +4,7 @@ import Summary from "@/components/sections/Summary.astro";
 import Experience from "@/components/sections/Experience.astro";
 import Education from "@/components/sections/Education.astro";
 import Skills from "@/components/sections/Skills.astro";
+import Projects from "@/components/sections/Projects.astro";
 ---
 
 <div class="w-full md:max-w-full">
@@ -17,6 +18,7 @@ import Skills from "@/components/sections/Skills.astro";
     <Summary />
     <Experience />
     <Education />
+    <Projects />
     <Skills />
   </section>
 </div>
@@ -50,7 +52,7 @@ import Skills from "@/components/sections/Skills.astro";
 
     @page {
       size: A4 portrait;
-      margin: 0.5cm;
+      margin: 1cm;
     }
   }
 </style>
@@ -66,19 +68,31 @@ import Skills from "@/components/sections/Skills.astro";
         "experience",
         "portfolio",
         "print-button",
+        "header",
+        "header-mobile",
       ];
 
-      // Oculta los elementos que no serán impresos
+      // Hide elements that will not be printed
       elementsToToggle.forEach(function (id) {
-        document.getElementById(id).style.display = "none";
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.display = "none";
+        }
       });
 
-      // Llama a la función de impresión
+      // Call the print function
       window.print();
 
-      // Restaura la visibilidad después de imprimir
-      elementsToToggle.forEach(function (id) {
-        document.getElementById(id).style.display = "block";
-      });
+      // Determine the header to display based on the screen size
+      const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
+
+      // Add the corresponding header to the list of items to hide
+      elementsToToggle.push(headerId);
+
+      // Restores proper header visibility after printing
+      const headerToDisplay = document.getElementById(headerId);
+      if (headerToDisplay) {
+        headerToDisplay.style.display = "block";
+      }
     });
 </script>

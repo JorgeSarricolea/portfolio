@@ -1,6 +1,6 @@
 const projects = [
   {
-    id: 1,
+    id: "movies-app",
     title: "The Movies App",
     description:
       "The Movies APP is a platform designed to view information about the most popular, highest-rated, and upcoming movies. The information is obtained from TheMovieDB API.",
@@ -17,7 +17,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: "jumwork",
     title: "Jumwork",
     description:
       "I designed the whole brand, UX/UI design from scratch on Bubble. Integration with Stripe API and others in backend process. Worked with different plugins, like Sendgrid and upgraded old pages to the new responsive engine.",
@@ -27,7 +27,7 @@ const projects = [
     tagIds: ["bubble"],
   },
   {
-    id: 3,
+    id: "spotify-clone",
     title: "Spotify UI Clone",
     description:
       "The Spotify clone, non-functional, is just the user interface of the desktop application's home page. It is not responsive. The idea behind this project is to showcase my pixel-perfect skills.",
@@ -37,7 +37,7 @@ const projects = [
     tagIds: ["html", "css", "javascript"],
   },
   {
-    id: 4,
+    id: "joorge-search",
     title: "Joorge Search",
     description:
       "This is a small search engine with simulated Google-like recommendations, the intention is to demonstrate my UI skills.",
@@ -47,7 +47,7 @@ const projects = [
     tagIds: ["html", "css", "javascript"],
   },
   {
-    id: 5,
+    id: "weather-app",
     title: "Weather App",
     description:
       "When working with REST APIs, the ideal project to practice is to make a weather app. I have used the free OpenWeatherMap API. The design is minimalist, and I have used the icons that this API contains.",
@@ -57,7 +57,7 @@ const projects = [
     tagIds: ["html", "css", "javascript"],
   },
   {
-    id: 6,
+    id: "rps-game",
     title: "Rock, Paper or Scissors",
     description:
       "The famous Rock, Paper, Scissors game, play against the computer and win?... Designed to be responsive and simple.",
@@ -67,7 +67,7 @@ const projects = [
     tagIds: ["html", "css", "javascript"],
   },
   {
-    id: 7,
+    id: "recipies",
     title: "Recipies Net",
     description:
       "This is a recipe search engine obtained through the MealDB API. It features an attractive and responsive user interface that allows users to search for a wide variety of culinary recipes.",
@@ -77,7 +77,7 @@ const projects = [
     tagIds: ["html", "css", "javascript"],
   },
   {
-    id: 8,
+    id: "calorie-calc",
     title: "Calorie Calculator",
     description:
       "This is a calorie intake calculator designed to help users determine their daily caloric needs based on their level of physical activity. It features a user-friendly and responsive design that makes it easy for individuals to calculate their ideal caloric intake.",
