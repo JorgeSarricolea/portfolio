@@ -72,60 +72,53 @@ import Projects from "@/components/sections/Projects.astro";
 </style>
 
 <script>
-  // Function to handle "Print" button click event
+  // Function to handle "Download CV" button click event
   document
     .getElementById("print-button")
     .addEventListener("click", function () {
-      // Array de IDs de elementos a ocultar y mostrar
-      const elementsToToggle = [
-        "home",
-        "experience",
-        "portfolio",
-        "contact",
-        "about-mobile",
-        "print-button",
-        "header",
-        "header-mobile",
-      ];
-
-      // Hide elements that will not be printed
-      elementsToToggle.forEach(function (id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
-        }
-      });
-
-      // Determine the header to display based on the screen size
-      const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
-
-      // Add the corresponding header to the list of items to hide
-      elementsToToggle.push(headerId);
-
-      // Restores proper header visibility after printing
-      const headerToDisplay = document.getElementById(headerId);
-      if (headerToDisplay) {
-        headerToDisplay.style.display = "block";
-      }
-
       // Check if the screen size is mobile
       if (window.innerWidth <= 768) {
-        // Open a new tab and print
-        const newWindow = window.open("", "_blank");
-        if (newWindow) {
-          newWindow.document.body.innerHTML =
-            document.getElementById("cv-container").outerHTML;
-          newWindow.document.body.innerHTML +=
-            document.getElementById("cv-projects").outerHTML;
-          newWindow.print();
-        } else {
-          alert(
-            "Error al abrir la nueva pestaña. Por favor, habilita las ventanas emergentes para esta página."
-          );
-        }
+        // For mobile, simply download the PDF file
+        const link = document.createElement("a");
+        link.href = "/FullstackCV.pdf"; // Replace with your PDF file path
+        link.download = "FullstackCV_JorgeSarricolea.pdf";
+        link.click();
       } else {
+        // For desktop, call the print function
+        // Array de IDs de elementos a ocultar y mostrar
+        const elementsToToggle = [
+          "home",
+          "experience",
+          "portfolio",
+          "contact",
+          "about-mobile",
+          "print-button",
+          "header",
+          "header-mobile",
+        ];
+
+        // Hide elements that will not be printed
+        elementsToToggle.forEach(function (id) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.style.display = "none";
+          }
+        });
+
         // Call the print function
         window.print();
+
+        // Determine the header to display based on the screen size
+        const headerId = window.innerWidth <= 768 ? "header-mobile" : "header";
+
+        // Add the corresponding header to the list of items to hide
+        elementsToToggle.push(headerId);
+
+        // Restores proper header visibility after printing
+        const headerToDisplay = document.getElementById(headerId);
+        if (headerToDisplay) {
+          headerToDisplay.style.display = "flex";
+        }
       }
     });
 
