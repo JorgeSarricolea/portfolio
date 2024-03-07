@@ -1,4 +1,4 @@
-import icons from "@/js/icons.js";
+import icons from "@/js/objects/icons.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const bubbles = document.querySelectorAll(".bubble");
