@@ -10,7 +10,7 @@ const workshopContent = {
     },
     "topic-2": {
       title: "Demonstration of the final project",
-      url: "",
+      url: "github.com/JorgeSarricolea/Fullstack-Form",
       check: "fa-solid fa-square-check",
       notCheck: "fa-regular fa-square",
       isCheck: false,
@@ -115,15 +115,15 @@ const workshopContent = {
       isCheck: false,
     },
     "topic-5": {
-      title: "Creation of the database",
-      url: "https://app.diagrams.net",
+      title: "Workbench installation",
+      url: "https://dev.mysql.com/downloads/workbench/",
       check: "fa-solid fa-square-check",
       notCheck: "fa-regular fa-square",
       isCheck: false,
     },
     "topic-6": {
-      title: "Deployment of the database in PlanetScale",
-      url: "https://auth.planetscale.com/sign-in",
+      title: "Creation and management of the database",
+      url: "https://app.diagrams.net",
       check: "fa-solid fa-square-check",
       notCheck: "fa-regular fa-square",
       isCheck: false,
@@ -156,22 +156,15 @@ const workshopContent = {
   },
 
   "session-5": {
-    title: "Session 5. Testing and Deployment",
+    title: "Session 5. Testing and Features",
     "topic-1": {
-      title: "Front-End deployment to prod",
-      url: "https://www.netlify.com",
+      title: "Check full CRUD functionality",
+      url: "https://readme.so",
       check: "fa-solid fa-square-check",
       notCheck: "fa-regular fa-square",
       isCheck: false,
     },
     "topic-2": {
-      title: "Back-End deployment to prod",
-      url: "https://render.com",
-      check: "fa-solid fa-square-check",
-      notCheck: "fa-regular fa-square",
-      isCheck: false,
-    },
-    "topic-3": {
       title: "Documentation, creation of README.md",
       url: "https://readme.so",
       check: "fa-solid fa-square-check",
