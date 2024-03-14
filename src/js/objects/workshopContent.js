@@ -144,7 +144,7 @@ const workshopContent = {
       url: "",
       check: "fa-solid fa-square-check",
       notCheck: "fa-regular fa-square",
-      isCheck: false,
+      isCheck: true,
     },
     "topic-3": {
       title: "Back-End development",
