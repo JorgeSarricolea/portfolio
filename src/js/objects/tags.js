@@ -1,93 +1,105 @@
 const tags = {
-  reactjs: {
-    id: 1,
-    name: "ReactJS",
-    image: "../icons/reactjs-icon.png",
-  },
+  // Main
   javascript: {
-    id: 2,
     name: "JavaScript",
     image: "../icons/javascript-icon.png",
+    priority: "main",
   },
-  typescript: {
-    id: 6,
-    name: "TypeScript",
-    image: "../icons/typescript-icon.png",
+  reactjs: {
+    name: "ReactJS",
+    image: "../icons/reactjs-icon.png",
+    priority: "main",
   },
   astro: {
-    id: 3,
     name: "Astro",
     image: "../icons/astro-icon.png",
-  },
-  html: {
-    id: 4,
-    name: "HTML",
-    image: "../icons/html-icon.png",
-  },
-  css: {
-    id: 5,
-    name: "CSS",
-    image: "../icons/css-icon.png",
-  },
-  nodejs: {
-    id: 9,
-    name: "NodeJS",
-    image: "../icons/nodejs-icon.png",
-  },
-  expressjs: {
-    id: 8,
-    name: "ExpressJS",
-    image: "../icons/express-icon.png",
-  },
-  mysql: {
-    id: 9,
-    name: "MySQL",
-    image: "../icons/mysql-icon.png",
-  },
-  nextjs: {
-    id: 8,
-    name: "NextJS",
-    image: "../icons/nextjs-icon.png",
+    priority: "main",
   },
   tailwindcss: {
-    id: 7,
     name: "TailwindCSS",
     image: "../icons/tailwindcss-icon.png",
+    priority: "main",
+  },
+  nodejs: {
+    name: "NodeJS",
+    image: "../icons/nodejs-icon.png",
+    priority: "main",
+  },
+  expressjs: {
+    name: "ExpressJS",
+    image: "../icons/express-icon.png",
+    priority: "main",
+  },
+  mysql: {
+    name: "MySQL",
+    image: "../icons/mysql-icon.png",
+    priority: "main",
+  },
+  aws: {
+    name: "AWS",
+    image: "../icons/aws-icon.png",
+    priority: "main",
+  },
+  // Default
+  typescript: {
+    name: "TypeScript",
+    image: "../icons/typescript-icon.png",
+    priority: "default",
+  },
+  postgresql: {
+    name: "PostgreSQL",
+    image: "../icons/postgresql-icon.png",
+    priority: "default",
+  },
+  html: {
+    name: "HTML",
+    image: "../icons/html-icon.png",
+    priority: "default",
+  },
+  css: {
+    name: "CSS",
+    image: "../icons/css-icon.png",
+    priority: "default",
+  },
+  nextjs: {
+    name: "NextJS",
+    image: "../icons/nextjs-icon.png",
+    priority: "default",
   },
   boostrap: {
-    id: 7,
     name: "Boostrap",
     image: "../icons/boostrap-icon.png",
+    priority: "default",
   },
   git: {
-    id: 9,
     name: "Git",
     image: "../icons/git-icon.png",
+    priority: "default",
   },
   php: {
-    id: 9,
     name: "PHP",
     image: "../icons/php-icon.png",
+    priority: "default",
   },
   java: {
-    id: 9,
     name: "Java",
     image: "../icons/java-icon.png",
+    priority: "default",
   },
   python: {
-    id: 9,
     name: "Python",
     image: "../icons/python-icon.png",
+    priority: "default",
   },
   jquery: {
-    id: 9,
     name: "jQuery",
     image: "../icons/jquery-icon.png",
+    priority: "default",
   },
   bubble: {
-    id: 9,
     name: "Bubble",
     image: "../icons/bubbleio-icon.png",
+    priority: "default",
   },
 };
 
