@@ -1,153 +1,114 @@
 const baseUrl = "../icons/";
 
 const icons = [
+  // First ones
   {
-    id: "upper-icon",
-    url: "reactjs-icon.png",
-    state: false,
-    alt: "ReactJS Icon",
-  },
-  {
-    id: "middle-icon",
-    url: "astro-icon.png",
-    state: false,
-    alt: "Astro Icon",
-  },
-  {
-    id: "bottom-icon",
     url: "nodejs-icon.png",
     state: false,
     alt: "NodeJS Icon",
+    bubbleSize: "smaller",
   },
-  { id: "upper-icon", url: "html-icon.png", state: false, alt: "HTML Icon" },
-  { id: "middle-icon", url: "css-icon.png", state: false, alt: "CSS Icon" },
   {
-    id: "bottom-icon",
-    url: "javascript-icon.png",
+    url: "aws-icon.png",
     state: false,
-    alt: "JavaScript Icon",
+    alt: "AWS Icon",
+    bubbleSize: "medium",
   },
   {
-    id: "upper-icon",
-    url: "typescript-icon.png",
+    url: "reactjs-icon.png",
     state: false,
-    alt: "TypeScript Icon",
+    alt: "ReactJS Icon",
+    bubbleSize: "bigger",
   },
+
+  // Seconds ones
   {
-    id: "middle-icon",
     url: "mysql-icon.png",
     state: false,
     alt: "MySQL Icon",
+    bubbleSize: "smaller",
   },
   {
-    id: "bottom-icon",
     url: "express-icon.png",
     state: false,
     alt: "ExpressJS Icon",
+    bubbleSize: "medium",
   },
   {
-    id: "upper-icon",
-    url: "nextjs-icon.png",
+    url: "javascript-icon.png",
     state: false,
-    alt: "NextJS Icon",
+    alt: "JavaScript Icon",
+    bubbleSize: "bigger",
   },
+
+  // Third ones
   {
-    id: "middle-icon",
-    url: "jquery-icon.png",
-    state: false,
-    alt: "jQuery Icon",
-  },
-  { id: "bottom-icon", url: "php-icon.png", state: false, alt: "PHP Icon" },
-  {
-    id: "upper-icon",
-    url: "python-icon.png",
-    state: false,
-    alt: "Python Icon",
-  },
-  {
-    id: "middle-icon",
-    url: "java-icon.png",
-    state: false,
-    alt: "Java Icon",
-  },
-  {
-    id: "bottom-icon",
-    url: "jest-icon.png",
-    state: false,
-    alt: "Jest Icon",
-  },
-  {
-    id: "upper-icon",
-    url: "vscode-icon.png",
-    state: false,
-    alt: "VSCode Icon",
-  },
-  {
-    id: "middle-icon",
-    url: "postman-icon.png",
-    state: false,
-    alt: "Postman Icon",
-  },
-  { id: "bottom-icon", url: "git-icon.png", state: false, alt: "Git Icon" },
-  {
-    id: "upper-icon",
     url: "tailwindcss-icon.png",
     state: false,
     alt: "Tailwind Icon",
+    bubbleSize: "smaller",
+  },
+  { url: "git-icon.png", state: false, alt: "Git Icon", bubbleSize: "medium" },
+  {
+    url: "astro-icon.png",
+    state: false,
+    alt: "Astro Icon",
+    bubbleSize: "bigger",
+  },
+
+  // Fourth ones
+  {
+    url: "postgresql-icon.png",
+    state: false,
+    alt: "PostgreSQL Icon",
+    bubbleSize: "smaller",
   },
   {
-    id: "middle-icon",
-    url: "figma-icon.png",
+    url: "nextjs-icon.png",
     state: false,
-    alt: "Figma Icon",
+    alt: "NextJS Icon",
+    bubbleSize: "medium",
   },
   {
-    id: "bottom-icon",
-    url: "boostrap-icon.png",
+    url: "typescript-icon.png",
     state: false,
-    alt: "Boostrap Icon",
+    alt: "TypeScript Icon",
+    bubbleSize: "bigger",
+  },
+
+  // Fifths ones
+  { url: "php-icon.png", state: false, alt: "PHP Icon", bubbleSize: "smaller" },
+  {
+    url: "java-icon.png",
+    state: false,
+    alt: "Java Icon",
+    bubbleSize: "medium",
   },
   {
-    id: "upper-icon",
-    url: "photoshop-icon.png",
+    url: "python-icon.png",
     state: false,
-    alt: "ReactJS Icon",
+    alt: "Python Icon",
+    bubbleSize: "bigger",
+  },
+
+  // Sixths ones
+  {
+    url: "postman-icon.png",
+    state: false,
+    alt: "Postman Icon",
+    bubbleSize: "smaller",
   },
   {
-    id: "middle-icon",
-    url: "premiere-icon.png",
+    url: "vscode-icon.png",
     state: false,
-    alt: "Premiere Icon",
+    alt: "VSCode Icon",
+    bubbleSize: "medium",
   },
   {
-    id: "bottom-icon",
-    url: "illustrator-icon.png",
+    url: "jest-icon.png",
     state: false,
-    alt: "Illustrator Icon",
-  },
-  {
-    id: "upper-icon",
-    url: "notion-icon.png",
-    state: false,
-    alt: "Notion Icon",
-  },
-  {
-    id: "middle-icon",
-    url: "miro-icon.png",
-    state: false,
-    alt: "Miro Icon",
-  },
-  {
-    id: "bottom-icon",
-    url: "trello-icon.png",
-    state: false,
-    alt: "Trello Icon",
-  },
-  {
-    id: "upper-icon",
-    url: "bubbleio-icon.png",
-    state: false,
-    alt: "Bubble Icon",
+    alt: "Jest Icon",
+    bubbleSize: "bigger",
   },
 ];
 
