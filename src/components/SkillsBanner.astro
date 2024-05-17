@@ -1,0 +1,50 @@
+---
+import icons from "@/js/objects/icons.js";
+const duplicatedIcons = [...icons, ...icons];
+---
+
+<div class="overflow-hidden">
+  <div class="flex carousel py-2" id="carousel">
+    {
+      duplicatedIcons.map((icon) => (
+        <img
+          src={icon.url}
+          alt={icon.alt}
+          class="w-16 mx-2 rounded-full shadow-primary"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .carousel {
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  .shadow-primary {
+    box-shadow: 0px 0px 10px #eaa0fd;
+  }
+</style>
+
+<script>
+  const carousel = document.getElementById("carousel");
+  const speed = 2;
+  let position = 0;
+
+  function moveCarousel() {
+    position -= speed;
+    carousel.style.transform = `translateX(${position}px)`;
+
+    if (position <= -carousel.scrollWidth / 2) {
+      position = 0;
+      carousel.style.transform = `translateX(${position}px)`;
+    }
+
+    requestAnimationFrame(moveCarousel);
+  }
+
+  moveCarousel();
+</script>
