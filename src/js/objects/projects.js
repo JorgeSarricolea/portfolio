@@ -17,26 +17,6 @@ const projects = [
     ],
   },
   {
-    id: "jumwork",
-    title: "Jumwork",
-    description:
-      "I designed the whole brand, UX/UI design from scratch on Bubble. Integration with Stripe API and others in backend process. Worked with different plugins, like Sendgrid and upgraded old pages to the new responsive engine.",
-    image: "../img/jumwork.png",
-    url: "https://www.jumwork.com",
-    githubUrl: "",
-    tagIds: ["bubble"],
-  },
-  {
-    id: "spotify-clone",
-    title: "Spotify UI Clone",
-    description:
-      "The Spotify clone, non-functional, is just the user interface of the desktop application's home page. It is not responsive. The idea behind this project is to showcase my pixel-perfect skills.",
-    image: "../img/spotify-ui-clone.png",
-    url: "https://spotifyuicln.netlify.app",
-    githubUrl: "https://github.com/JorgeSarricolea/Spotify-UI-Clone",
-    tagIds: ["html", "css", "javascript"],
-  },
-  {
     id: "joorge-search",
     title: "Joorge Search",
     description:

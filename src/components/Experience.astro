@@ -2,56 +2,43 @@
 import experiences from "@/js/objects/experiences.js";
 ---
 
-<section class="w-full md:max-w-full">
+<section class="w-full md:max-w-full md:px-0 px-8">
   <h1
     class="text-primary md:text-5xl text-3xl font-bold text-center md:my-20 my-8 uppercase"
   >
     Work Experience
   </h1>
-  {
-    experiences.map((experience, index) => (
-      <div
-        class={`md:flex w-full px-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center md:my-12 mt-0 observer-element`}
-        data-animation-direction={`${index % 2 === 0 ? "left" : "right"}`}
-      >
-        <img
-          src={experience.image}
-          alt={experience.title}
-          class="bg-white md:max-h-60 mb-8 object-cover rounded-2xl md:w-1/2 w-full"
-        />
-        <div
-          class={`relative md:w-1/2 h-fit p-6 md:mt-32 md:bottom-4 bottom-0 mb-8 ${index % 2 === 0 ? "md:right-8" : "md:left-8"} bg-gray rounded-2xl z-10 shadow-2xl card-container`}
-        >
-          <div class="flex justify-between">
-            <div>
-              <h3 class="text-primary font-bold text-xl uppercase">
-                {experience.company}
-              </h3>
-              <h2 class="text-white font-bold mb-2">
-                {experience.position} | {experience.date}
-              </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      experiences.map((experience, index) => (
+        <div class="flex flex-col bg-gray rounded-2xl shadow-primary">
+          <img
+            src={experience.image}
+            alt={experience.title}
+            class="bg-white w-full md:h-60 h-40 object-cover rounded-2xl rounded-bl-none rounded-br-none"
+          />
+          <div class="p-8">
+            <div class="flex justify-between">
+              <div>
+                <h3 class="text-primary font-bold text-xl uppercase">
+                  {experience.position}
+                </h3>
+                <h2 class="text-white font-bold mb-2">
+                  {experience.company} | {experience.date}
+                </h2>
+              </div>
+              <a
+                href={experience.url}
+                target="_blank"
+                class="text-white hover:text-primary h-fit"
+              >
+                <i class="fa-solid fa-up-right-from-square" />
+              </a>
             </div>
-            <a
-              href={experience.url}
-              target="_blank"
-              class="text-white hover:text-primary h-fit"
-            >
-              <i class="fa-solid fa-up-right-from-square" />
-            </a>
+            <p class="text-white mt-2">{experience.description}</p>
           </div>
-          <p class="text-white">{experience.description}</p>
         </div>
-      </div>
-    ))
-  }
-</section>
-
-<script src="@/js/CardAnimations.js"></script>
-
-<style>
-  @media (max-width: 800px) {
-    .card-container {
-      margin-top: -60px;
+      ))
     }
-  }
-</style>
+  </div>
+</section>
