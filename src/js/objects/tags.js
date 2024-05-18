@@ -30,9 +30,9 @@ const tags = {
     image: "../icons/express-icon.png",
     priority: "main",
   },
-  mysql: {
-    name: "MySQL",
-    image: "../icons/mysql-icon.png",
+  prisma: {
+    name: "Prisma",
+    image: "../icons/prisma-icon.png",
     priority: "main",
   },
   aws: {
@@ -46,9 +46,19 @@ const tags = {
     image: "../icons/typescript-icon.png",
     priority: "default",
   },
+  django: {
+    name: "Django",
+    image: "../icons/django-icon.png",
+    priority: "default",
+  },
   postgresql: {
     name: "PostgreSQL",
     image: "../icons/postgresql-icon.png",
+    priority: "default",
+  },
+  mysql: {
+    name: "MySQL",
+    image: "../icons/mysql-icon.png",
     priority: "default",
   },
   html: {

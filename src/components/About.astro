@@ -31,13 +31,15 @@ import Projects from "@/components/sections/Projects.astro";
     <Experience />
     <Education />
     <Projects />
-    <Skills desiredPriority={["main"]} />
-    <Skills desiredPriority={["default"]} />
+    <div id="skills-container">
+      <Skills desiredPriority={["main"]} />
+      <Skills desiredPriority={["default"]} />
+    </div>
   </section>
 </section>
 <button
   id="print-button"
-  class="bg-primary text-gray w-fit justify-center py-2 px-6 rounded-2xl uppercase mt-8 flex m-auto hover:bg-secondary hover:text-white transition-colors duration-500"
+  class="w-fit bg-primary text-gray justify-center py-2 px-6 rounded-2xl uppercase mt-8 flex m-auto hover:bg-secondary hover:text-white transition-colors duration-500"
   >Download CV</button
 >
 
@@ -106,6 +108,12 @@ import Projects from "@/components/sections/Projects.astro";
           }
         });
 
+        // This class is so that when generating the print preview the skills section is correctly displayed
+        const skillsContainer = document.getElementById("skills-container");
+        if (skillsContainer) {
+          skillsContainer.classList.add("mt-40");
+        }
+
         // Call the print function
         window.print();
 
@@ -119,6 +127,7 @@ import Projects from "@/components/sections/Projects.astro";
         const headerToDisplay = document.getElementById(headerId);
         if (headerToDisplay) {
           headerToDisplay.style.display = "flex";
+          skillsContainer.classList.remove("mt-40");
         }
       }
     });
