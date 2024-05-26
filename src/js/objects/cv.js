@@ -15,8 +15,8 @@ const cv = {
   },
   education: {
     institution: "Instituto Tecnológico de Mérida",
-    date: "2020 - Present",
-    career: "Computer Stystems engineer",
+    date: "2020 - 2024",
+    career: "Computer Stystems Engineer",
   },
 };
 
