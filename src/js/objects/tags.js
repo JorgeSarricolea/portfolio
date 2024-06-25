@@ -5,6 +5,16 @@ const tags = {
     image: "../icons/javascript-icon.png",
     priority: "main",
   },
+  typescript: {
+    name: "TypeScript",
+    image: "../icons/typescript-icon.png",
+    priority: "main",
+  },
+  nextjs: {
+    name: "NextJS",
+    image: "../icons/nextjs-icon.png",
+    priority: "main",
+  },
   reactjs: {
     name: "ReactJS",
     image: "../icons/reactjs-icon.png",
@@ -41,11 +51,6 @@ const tags = {
     priority: "main",
   },
   // Default
-  typescript: {
-    name: "TypeScript",
-    image: "../icons/typescript-icon.png",
-    priority: "default",
-  },
   django: {
     name: "Django",
     image: "../icons/django-icon.png",
@@ -69,11 +74,6 @@ const tags = {
   css: {
     name: "CSS",
     image: "../icons/css-icon.png",
-    priority: "default",
-  },
-  nextjs: {
-    name: "NextJS",
-    image: "../icons/nextjs-icon.png",
     priority: "default",
   },
   boostrap: {

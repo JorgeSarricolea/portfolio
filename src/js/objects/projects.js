@@ -1,5 +1,24 @@
 const projects = [
   {
+    id: "note-keeper",
+    title: "Note Keeper",
+    description:
+      "This is a note-taking system designed to organize and manage personal notes. It includes user authentication and CRUD operations for notes and categories, along with advanced features like search, filtering, and note archiving.",
+    image: "../img/note-keeper.png",
+    url: "",
+    githubUrl: "https://github.com/JorgeSarricolea/Rock-Paper-Scissors-Game",
+    tagIds: [
+      "javascript",
+      "typescript",
+      "nextjs",
+      "reactjs",
+      "tailwindcss",
+      "nodejs",
+      "prisma",
+      "postgresql",
+    ],
+  },
+  {
     id: "movies-app",
     title: "The Movies App",
     description:
@@ -34,16 +53,6 @@ const projects = [
     image: "../img/weather-app.png",
     url: "https://wtrapp.netlify.app",
     githubUrl: "https://github.com/JorgeSarricolea/Weather-APP",
-    tagIds: ["html", "css", "javascript"],
-  },
-  {
-    id: "rps-game",
-    title: "Rock, Paper or Scissors",
-    description:
-      "The famous Rock, Paper, Scissors game, play against the computer and win?... Designed to be responsive and simple.",
-    image: "../img/rock-paper-scissors.png",
-    url: "https://roc-paper-scissors.netlify.app",
-    githubUrl: "https://github.com/JorgeSarricolea/Rock-Paper-Scissors-Game",
     tagIds: ["html", "css", "javascript"],
   },
   {

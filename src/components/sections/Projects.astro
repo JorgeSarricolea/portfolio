@@ -15,13 +15,15 @@ import projects from "@/js/objects/projects.js";
               </h3>
             </div>
             <div>
-              <a
-                href={project.url}
-                target="_blank"
-                class="text-black hover:text-secondary h-fit"
-              >
-                <i class="fa-solid fa-up-right-from-square" />
-              </a>
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  class="text-black hover:text-secondary h-fit"
+                >
+                  <i class="fa-solid fa-up-right-from-square" />
+                </a>
+              )}
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
