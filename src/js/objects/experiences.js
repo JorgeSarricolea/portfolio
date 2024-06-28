@@ -3,7 +3,7 @@ const experiences = [
     id: 1,
     company: "Sweet fit",
     position: "Full-Stack Developer",
-    date: "April 2024 - May 2024",
+    date: "April 2024 - June 2024",
     description:
       "I developed a custom administrative platform from scratch for Sweet Fit restaurant, facilitating coupon management and allocation to attract new customers. I led back-end development in JavaScript and collaborated with a team for the front-end development.",
     image: "../img/SweetFit.png",
@@ -23,7 +23,7 @@ const experiences = [
     id: 3,
     company: "ICCBR 2024",
     position: "Full-Stack Developer",
-    date: "January 2024 - March 2024",
+    date: "July 2023 - March 2024",
     description:
       "I collaborated in a team to refactor the entire platform, transitioning from PHP to Astro + JavaScript to remove vulnerabilities. My primary focus included building a robust RESTful API for payment processing and email notifications for ticket purchases. Additionally, I contributed to frontend improvements by refactoring and creating UI components.",
     image: "../img/ICCBR2024.png",
@@ -42,8 +42,8 @@ const experiences = [
   {
     id: 5,
     company: "Jumwork",
-    position: "Bubble Developer",
-    date: "June 2018 - Janurary 2022",
+    position: "Full-Stack Developer",
+    date: "June 2020 - Janurary 2022",
     description:
       "I worked on developing the platform from scratch. This platform is a marketplace with an integrated chat, auction system, email notifications, and a payment gateway via Stripe. My primary goal was to work on all modules to deliver a functional, responsive platform without any development errors.",
     image: "../img/JumworkTareas.png",

@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Una vez que la biblioteca se haya cargado correctamente, puedes crear la instancia de Typed
       let multiText = new Typed.default("#multiText", {
         strings: [
-          "a Fullstack Developer",
-          "a UX/UI Designer",
           "Jorge Sarricolea",
+          "a Full-Stack Developer",
+          "a UX/UI Designer",
         ],
         loop: true,
         typeSpeed: 30,
