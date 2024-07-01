@@ -55,26 +55,6 @@ const projects = [
     githubUrl: "https://github.com/JorgeSarricolea/Joorge-Search",
     tagIds: ["html", "css", "javascript"],
   },
-  {
-    id: "weather-app",
-    title: "Weather App",
-    description:
-      "When working with REST APIs, the ideal project to practice is to make a weather app. I have used the free OpenWeatherMap API. The design is minimalist, and I have used the icons that this API contains.",
-    image: "../img/weather-app.png",
-    url: "https://wtrapp.netlify.app",
-    githubUrl: "https://github.com/JorgeSarricolea/Weather-APP",
-    tagIds: ["html", "css", "javascript"],
-  },
-  {
-    id: "calorie-calc",
-    title: "Calorie Calculator",
-    description:
-      "This is a calorie intake calculator designed to help users determine their daily caloric needs based on their level of physical activity. It features a user-friendly and responsive design that makes it easy for individuals to calculate their ideal caloric intake.",
-    image: "../img/calorie-calculator.png",
-    url: "https://kcal-calc.netlify.app",
-    githubUrl: "https://github.com/JorgeSarricolea/Calorie-Calculator",
-    tagIds: ["html", "css", "javascript"],
-  },
 ];
 
 export default projects;
