@@ -51,6 +51,11 @@ const tags = {
     priority: "main",
   },
   // Default
+  threejs: {
+    name: "ThreeJS",
+    image: "../icons/threejs-icon.png",
+    priority: "default",
+  },
   django: {
     name: "Django",
     image: "../icons/django-icon.png",

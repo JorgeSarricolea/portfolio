@@ -1,5 +1,15 @@
 const projects = [
   {
+    id: "minecraft-clone",
+    title: "Minecraft Clone",
+    description:
+      "This project allows you to add and remove blocks, enhanced with essential textures that capture the essence of the original game. Navigate freely with movement in all directions and jumping. Additionally, enjoy the functionality to save your progress or reset the world as you see fit.",
+    image: "../img/minecraft-clone.png",
+    url: "https://craftclone.netlify.app/",
+    githubUrl: "https://github.com/JorgeSarricolea/Minecraft-Clone",
+    tagIds: ["javascript", "reactjs", "threejs"],
+  },
+  {
     id: "note-keeper",
     title: "Note Keeper",
     description:
@@ -53,16 +63,6 @@ const projects = [
     image: "../img/weather-app.png",
     url: "https://wtrapp.netlify.app",
     githubUrl: "https://github.com/JorgeSarricolea/Weather-APP",
-    tagIds: ["html", "css", "javascript"],
-  },
-  {
-    id: "recipies",
-    title: "Recipies Net",
-    description:
-      "This is a recipe search engine obtained through the MealDB API. It features an attractive and responsive user interface that allows users to search for a wide variety of culinary recipes.",
-    image: "../img/recipies-net.png",
-    url: "https://recipies-net.netlify.app",
-    githubUrl: "https://github.com/JorgeSarricolea/Recipies-NET",
     tagIds: ["html", "css", "javascript"],
   },
   {
