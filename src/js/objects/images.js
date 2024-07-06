@@ -1,12 +1,12 @@
 const images = [
   {
     id: "hero",
-    url: "photo_plantsNoBG.png",
+    url: "main_photo.png",
     alt: "Picture of Jorge Sarricolea",
   },
   {
     id: "cv-picture",
-    url: "photo_plantsNoBG.png",
+    url: "main_photo.png",
     alt: "Picture of Jorge Sarricolea",
   },
   {
