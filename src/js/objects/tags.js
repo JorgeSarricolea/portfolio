@@ -11,12 +11,12 @@ const tags = {
     priority: "main",
   },
   nextjs: {
-    name: "NextJS",
+    name: "Next.js",
     image: "../icons/nextjs-icon.png",
     priority: "main",
   },
   reactjs: {
-    name: "ReactJS",
+    name: "React.js",
     image: "../icons/reactjs-icon.png",
     priority: "main",
   },
@@ -31,12 +31,12 @@ const tags = {
     priority: "main",
   },
   nodejs: {
-    name: "NodeJS",
+    name: "Node.js",
     image: "../icons/nodejs-icon.png",
     priority: "main",
   },
   expressjs: {
-    name: "ExpressJS",
+    name: "Express",
     image: "../icons/express-icon.png",
     priority: "main",
   },
@@ -51,8 +51,33 @@ const tags = {
     priority: "main",
   },
   // Default
+  angular: {
+    name: "Angular",
+    image: "../icons/angular-icon.png",
+    priority: "default",
+  },
+  springboot: {
+    name: "SpringBoot",
+    image: "../icons/springboot-icon.png",
+    priority: "default",
+  },
+  maven: {
+    name: "Maven",
+    image: "../icons/maven-icon.png",
+    priority: "default",
+  },
+  scaffold: {
+    name: "Scaffold",
+    image: "../icons/scaffold-icon.png",
+    priority: "default",
+  },
+  wagmi: {
+    name: "Wagmi",
+    image: "../icons/wagmi-icon.png",
+    priority: "default",
+  },
   threejs: {
-    name: "ThreeJS",
+    name: "Three.js",
     image: "../icons/threejs-icon.png",
     priority: "default",
   },
@@ -81,9 +106,9 @@ const tags = {
     image: "../icons/css-icon.png",
     priority: "default",
   },
-  boostrap: {
-    name: "Boostrap",
-    image: "../icons/boostrap-icon.png",
+  bootstrap: {
+    name: "Bootstrap",
+    image: "../icons/bootstrap-icon.png",
     priority: "default",
   },
   git: {
