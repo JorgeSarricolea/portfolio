@@ -1,51 +1,7 @@
 ---
 import experiences from "@/js/objects/experiences.js";
 import tags from "@/js/objects/tags.js";
-
-/**
- * Formats a date to a human-readable string.
- * @param {string} date - The date to format.
- * @returns {string} - The formatted date string.
- */
-const formatDate = (date) => {
-  return date
-    ? new Date(date).toLocaleDateString("en-US", {
-        month: "long",
-        year: "numeric",
-      })
-    : "Present";
-};
-
-/**
- * Calculates the number of months between two dates and formats the result into years and months.
- * @param {string} startDate - The start date.
- * @param {string} endDate - The end date.
- * @returns {string} - The formatted duration string.
- */
-const calculateDuration = (startDate, endDate) => {
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : new Date();
-  const totalMonths =
-    (end.getFullYear() - start.getFullYear()) * 12 +
-    (end.getMonth() - start.getMonth());
-
-  // Ensure at least one month is counted
-  const months = totalMonths === 0 ? 1 : totalMonths;
-
-  const years = Math.floor(months / 12);
-  const remainingMonths = months % 12;
-
-  let duration = "";
-  if (years > 0) {
-    duration += `${years} year${years > 1 ? "s" : ""}`;
-  }
-  if (remainingMonths > 0) {
-    if (years > 0) duration += " ";
-    duration += `${remainingMonths} month${remainingMonths > 1 ? "s" : ""}`;
-  }
-
-  return duration;
-};
+import { formatDate, calculateDuration } from "@/js/DateFormat.js";
 ---
 
 <section class="w-full md:max-w-full md:px-0 px-8">
@@ -56,62 +12,70 @@ const calculateDuration = (startDate, endDate) => {
   </h1>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     {
-      experiences.map((experience) => (
-        <div class="flex flex-col text-white bg-gray rounded-2xl shadow-primary">
-          <div class="p-8">
-            <div class="flex justify-between">
-              <div class="flex flex-col md:flex-row gap-4 md:items-center">
-                <img
-                  src={experience.image}
-                  alt={experience.position}
-                  class="bg-white w-20 h-20 object-cover rounded-xl"
-                />
-                <div>
-                  <h3 class="text-primary font-bold text-xl uppercase">
-                    {experience.position}
-                  </h3>
-                  <h2 class="font-bold">
-                    {experience.company} | {experience.type}
-                  </h2>
-                  <div class="flex gap-2 text-sm">
-                    <span>
-                      {formatDate(experience.startDate)} -{" "}
-                      {formatDate(experience.endDate)} •{" "}
-                      {calculateDuration(
-                        experience.startDate,
-                        experience.endDate
-                      )}
-                    </span>
-                  </div>
-                  <span class="text-sm">{experience.location}</span>
-                </div>
-              </div>
-              <a
-                href={experience.url}
-                target="_blank"
-                class="text-white hover:text-primary h-fit"
-              >
-                <i class="fa-solid fa-up-right-from-square" />
-              </a>
-            </div>
-            <p class="text-white mt-2">{experience.description}</p>
+      experiences.map((experience) => {
+        // Ensure dates are in string format for formatDate and calculateDuration functions
+        const startDateStr = experience.startDate.toISOString().split("T")[0];
+        const endDateStr = experience.endDate
+          ? experience.endDate.toISOString().split("T")[0]
+          : null;
 
-            <div class="flex flex-wrap gap-2 mt-4">
-              {experience.tagIds &&
-                experience.tagIds.map((tagId) => (
-                  <div class="flex w-fit h-fit center text-primary bg-secondary rounded-lg p-1 pr-2 items-center">
-                    <img
-                      src={tags[tagId]?.image}
-                      alt={tags[tagId]?.name}
-                      class="h-6 bg-black rounded"
-                    />
-                    <p class="h-fit w-fit ml-2 text-xs">{tags[tagId]?.name}</p>
+        return (
+          <div class="flex flex-col text-white bg-gray rounded-2xl shadow-primary">
+            <div class="p-8">
+              <div class="flex justify-between">
+                <div class="flex flex-col md:flex-row gap-4 md:items-center">
+                  <img
+                    src={experience.image}
+                    alt={experience.position}
+                    class="bg-white w-20 h-20 object-cover rounded-xl"
+                  />
+                  <div>
+                    <h3 class="text-primary font-bold text-xl uppercase">
+                      {experience.position}
+                    </h3>
+                    <h2 class="font-bold">
+                      {experience.company} | {experience.type}
+                    </h2>
+                    <div class="flex gap-2 text-sm">
+                      <span>
+                        {formatDate(startDateStr)} -{" "}
+                        {endDateStr ? formatDate(endDateStr) : "Present"}
+                        {endDateStr &&
+                          ` • ${calculateDuration(startDateStr, endDateStr)}`}
+                      </span>
+                    </div>
+                    <span class="text-sm">{experience.location}</span>
                   </div>
-                ))}
+                </div>
+                <a
+                  href={experience.url}
+                  target="_blank"
+                  class="text-white hover:text-primary h-fit"
+                >
+                  <i class="fa-solid fa-up-right-from-square" />
+                </a>
+              </div>
+              <p class="text-white mt-2">{experience.description}</p>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                {experience.tagIds &&
+                  experience.tagIds.map((tagId) => (
+                    <div class="flex w-fit h-fit center text-primary bg-secondary rounded-lg p-1 pr-2 items-center">
+                      <img
+                        src={tags[tagId]?.image}
+                        alt={tags[tagId]?.name}
+                        class="h-6 bg-black rounded"
+                      />
+                      <p class="h-fit w-fit ml-2 text-xs">
+                        {tags[tagId]?.name}
+                      </p>
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))
+        );
+      })
     }
   </div>
 </section>
