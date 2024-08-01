@@ -30,7 +30,7 @@ import Projects from "@/components/sections/Projects.astro";
     <Summary />
     <Experience />
     <Education />
-    <Projects />
+    <!-- <Projects /> -->
     <div id="skills-container">
       <Skills desiredPriority={["main"]} />
       <Skills desiredPriority={["default"]} />
@@ -83,7 +83,7 @@ import Projects from "@/components/sections/Projects.astro";
       if (window.innerWidth <= 768) {
         // For mobile, simply download the PDF file
         const link = document.createElement("a");
-        link.href = "/FullstackCV.pdf"; // Replace with your PDF file path
+        link.href = "/FullstackCV.pdf";
         link.download = "FullstackCV_JorgeSarricolea.pdf";
         link.click();
       } else {
@@ -111,7 +111,7 @@ import Projects from "@/components/sections/Projects.astro";
         // This class is so that when generating the print preview the skills section is correctly displayed
         const skillsContainer = document.getElementById("skills-container");
         if (skillsContainer) {
-          skillsContainer.classList.add("mt-40");
+          skillsContainer.classList.add("mt-0");
         }
 
         // Call the print function
@@ -127,7 +127,7 @@ import Projects from "@/components/sections/Projects.astro";
         const headerToDisplay = document.getElementById(headerId);
         if (headerToDisplay) {
           headerToDisplay.style.display = "flex";
-          skillsContainer.classList.remove("mt-40");
+          skillsContainer.classList.remove("mt-0");
         }
       }
     });

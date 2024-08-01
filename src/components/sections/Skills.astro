@@ -10,23 +10,11 @@ const title = desiredPriority.includes("main") ? "Main Stack" : "Skills";
 
 <section class="flex flex-col justify-between gap-2 mt-8">
   <h1 class="text-xl font-bold">{title}</h1>
-  <div class="flex flex-wrap gap-2 mt-2">
+  <div class="flex flex-wrap gap-2">
     {
       filteredTags.map((tag) => (
-        <div id="tags-cv" class="flex relative">
-          <img
-            src="../img/Black.png"
-            alt=""
-            class="h-8 w-full absolute rounded-lg"
-          />
-          <img
-            src={tag.image}
-            alt={tag.name}
-            class="h-6 z-10 relative my-1 ml-1"
-          />
-          <h3 class="text-md capitalize mr-2 my-1 text-white z-10 relative">
-            {tag.name}
-          </h3>
+        <div id="tags-cv" class="flex relative text-black">
+          <h3 class="text-md capitalize">{tag.name},</h3>
         </div>
       ))
     }
