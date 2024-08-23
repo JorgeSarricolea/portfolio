@@ -11,14 +11,14 @@ const experiences = [
       "My main role as a Full-Stack Developer with a primary focus on front-end development using Angular and React (JavaScript) and back-end development with Java SpringBoot and Maven. I am responsible for developing tickets according to the project I am assigned to, as the company rotates projects based on tagIds.",
     image: "../img/rocket-code-logo.jpeg",
     url: "https://www.linkedin.com/company/the-rocket-code",
-    tagIds: ["reactjs", "angular", "javascript", "java", "maven", "springboot"],
+    tagIds: ["angular", "javascript", "java", "maven", "springboot"],
   },
   {
     id: 2,
     company: "La DAO",
     position: "Front-End Developer",
     startDate: new Date("2024-05-08"),
-    endDate: null,
+    endDate: new Date("2024-08-08"),
     type: "Freelance",
     location: "Remote",
     description:
