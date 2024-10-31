@@ -93,6 +93,11 @@ const icons = [
     state: false,
     alt: "Java Icon",
   },
+  {
+    url: "swagger-icon.png",
+    state: false,
+    alt: "Swagger Icon",
+  },
 ];
 
 // Add the baseUrl for all icons
