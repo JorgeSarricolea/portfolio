@@ -50,6 +50,11 @@ const tags = {
     image: "../icons/aws-icon.png",
     priority: "main",
   },
+  swagger: {
+    name: "Swagger",
+    image: "../icons/swagger-icon.png",
+    priority: "main",
+  },
   // Default
   angular: {
     name: "Angular",
