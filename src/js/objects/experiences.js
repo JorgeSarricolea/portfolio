@@ -2,9 +2,23 @@ const experiences = [
   {
     id: 1,
     company: "Rocket Code",
+    position: "Tech Lead",
+    startDate: new Date("2024-10-09"),
+    endDate: null,
+    type: "Full Time",
+    location: "Remote",
+    description:
+      "As a Tech Lead, I manage a team of 8+ developers in both front-end and back-end areas. My responsibilities include resource allocation using Jira, guiding the team through Scrum processes, and providing technical support to resolve key issues. I ensure smooth collaboration and project delivery while mentoring the team.",
+    image: "../img/rocket-code-logo.jpeg",
+    url: "https://www.linkedin.com/company/the-rocket-code",
+    tagIds: ["angular", "javascript", "java", "maven", "springboot"],
+  },
+  {
+    id: 2,
+    company: "Rocket Code",
     position: "Full-Stack Developer",
     startDate: new Date("2024-07-09"),
-    endDate: null,
+    endDate: new Date("2024-10-09"),
     type: "Full Time",
     location: "Remote",
     description:
@@ -14,7 +28,7 @@ const experiences = [
     tagIds: ["angular", "javascript", "java", "maven", "springboot"],
   },
   {
-    id: 2,
+    id: 3,
     company: "La DAO",
     position: "Front-End Developer",
     startDate: new Date("2024-05-08"),
@@ -28,7 +42,7 @@ const experiences = [
     tagIds: ["nextjs", "reactjs", "tailwindcss", "wagmi", "scaffold"],
   },
   {
-    id: 3,
+    id: 4,
     company: "Seguros Gutierrez y Arredondo",
     position: "Django Developer",
     startDate: new Date("2024-03-07"),
@@ -42,7 +56,7 @@ const experiences = [
     tagIds: ["django", "postgresql", "bootstrap"],
   },
   {
-    id: 4,
+    id: 5,
     company: "ICCBR 2024",
     position: "Full-Stack Developer",
     startDate: new Date("2023-07-23"),
@@ -54,20 +68,6 @@ const experiences = [
     image: "../img/iccbr-2024-logo.png",
     url: "https://iccbr2024.org/",
     tagIds: ["astro", "tailwindcss", "javascript", "nodejs", "prisma"],
-  },
-  {
-    id: 5,
-    company: "Datamatic Software",
-    position: "Bubble Developer",
-    startDate: new Date("2022-06-01"),
-    endDate: new Date("2022-07-01"),
-    type: "Full Time",
-    location: "On-site",
-    description:
-      "I was tasked with specific responsibilities across various projects. This included bug fixing, enhancing user interfaces, improving back-end workflows, and updating APIs consumed by each project.",
-    image: "../img/datamatic-software-logo.png",
-    url: "https://www.datamaticsoftware.com",
-    tagIds: ["bubble"],
   },
   {
     id: 6,
