@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   import("typed.js")
-    .then((Typed) => {
-      // Una vez que la biblioteca se haya cargado correctamente, puedes crear la instancia de Typed
-      let multiText = new Typed.default("#multiText", {
+    .then((module) => {
+      const Typed = module.default;
+      new Typed("#multiText", {
         strings: [
           "Jorge Sarricolea",
-          "a Full-Stack Developer",
-          "a UX/UI Designer",
+          "a Software Engineer",
+          "a Front-End Developer",
+          "a Back-End Developer",
         ],
         loop: true,
         typeSpeed: 30,
