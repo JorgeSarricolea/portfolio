@@ -16,7 +16,7 @@ import { formatDate, calculateDuration } from "@/js/DateFormat.js";
         // Ensure dates are in string format for formatDate and calculateDuration functions
         const startDateStr = experience.startDate.toISOString().split("T")[0];
         const endDateStr = experience.endDate
-          ? experience.endDate.toISOString().split("T")[0]
+          ? new Date(experience.endDate).toISOString().split("T")[0]
           : null;
 
         return (
@@ -55,7 +55,7 @@ import { formatDate, calculateDuration } from "@/js/DateFormat.js";
                   <i class="fa-solid fa-up-right-from-square" />
                 </a>
               </div>
-              <p class="text-white mt-2">{experience.description}</p>
+              <p class="text-white mt-2">{experience.shortDescription}</p>
 
               <div class="flex flex-wrap gap-2 mt-4">
                 {experience.tagIds &&
