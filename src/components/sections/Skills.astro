@@ -1,20 +1,14 @@
 ---
 import tags from "@/js/objects/tags.js";
-const { desiredPriority } = Astro.props;
-// Funtion to filter by priority
-const filteredTags = Object.values(tags).filter((tag) =>
-  desiredPriority.includes(tag.priority)
-);
-const title = desiredPriority.includes("main") ? "Main Stack" : "Skills";
 ---
 
-<section class="flex flex-col justify-between gap-2 mt-8">
-  <h1 class="text-xl font-bold">{title}</h1>
-  <div class="flex flex-wrap gap-2">
+<section class="flex flex-col justify-between gap-2 mt-2">
+  <h1 class="text-xl font-bold">Skills</h1>
+  <div class="flex flex-wrap gap-1">
     {
-      filteredTags.map((tag) => (
+      Object.values(tags).map((tag) => (
         <div id="tags-cv" class="flex relative text-black">
-          <h3 class="text-md capitalize">{tag.name},</h3>
+          <h3 class="text-md capitalize">{tag.name} |</h3>
         </div>
       ))
     }
