@@ -3,8 +3,8 @@ import Header from "@/components/Header.astro";
 import Home from "@/components/Home.astro";
 import Experience from "@/components/Experience.astro";
 import Portfolio from "@/components/Portfolio.astro";
-import About from "@/components/About.astro";
-import Contact from "@/components/Contact.astro";
+// import About from "@/components/About.astro";
+// import Contact from "@/components/Contact.astro";
 ---
 
 <html lang="en">
@@ -50,12 +50,23 @@ import Contact from "@/components/Contact.astro";
     <section id="portfolio">
       <Portfolio />
     </section>
-    <section id="about">
+    <!-- <section id="about">
       <About />
-    </section>
-    <section id="contact">
+    </section> -->
+    <!-- <section id="contact">
       <Contact />
-    </section>
+    </section> -->
+
+    <div class="my-8">
+      <a
+        href="https://github.com/JorgeSarricolea"
+        target="_blank"
+        class="text-white hover:text-primary flex gap-2 items-center justify-center"
+      >
+        <i class="fa-brands fa-github"></i>
+        Check out my GitHub!</a
+      >
+    </div>
   </body>
 </html>
 
