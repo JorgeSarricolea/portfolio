@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         strings: [
           "Jorge Sarricolea",
           "a Software Engineer",
-          "a Front-End Developer",
           "a Back-End Developer",
+          "a Front-End Developer",
         ],
         loop: true,
         typeSpeed: 30,
