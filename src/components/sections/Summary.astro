@@ -2,10 +2,7 @@
 import cv from "@/js/objects/cv.js";
 ---
 
-<section
-  id="summary"
-  class="flex flex-col justify-between gap-2 mt-8 rounded-2xl"
->
+<section id="summary" class="flex flex-col justify-between gap-2 rounded-2xl">
   <h1 class="text-xl font-bold">About me</h1>
-  <p>{cv["basics"].summary}</p>
+  {cv.basics.summary.split("\n").map((line) => <p>{line}</p>)}
 </section>
