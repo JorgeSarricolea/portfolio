@@ -3,7 +3,7 @@ import experiences from "@/js/objects/experiences.js";
 import { formatDate, calculateDuration } from "@/js/DateFormat.js";
 ---
 
-<section class="flex flex-col justify-between gap-2 mt-8">
+<section class="flex flex-col justify-between gap-2">
   <h1 class="text-xl font-bold">Experience</h1>
   <div class="flex flex-col gap-4">
     {
@@ -11,7 +11,9 @@ import { formatDate, calculateDuration } from "@/js/DateFormat.js";
         // Ensure dates are in string format for formatDate and calculateDuration functions
         const startDateStr = experience.startDate.toISOString().split("T")[0];
         const endDateStr = experience.endDate
-          ? experience.endDate.toISOString().split("T")[0]
+          ? typeof experience.endDate === "string"
+            ? experience.endDate
+            : experience.endDate.toISOString().split("T")[0]
           : null;
 
         return (
@@ -42,7 +44,16 @@ import { formatDate, calculateDuration } from "@/js/DateFormat.js";
                 <i class="fa-solid fa-up-right-from-square" />
               </a>
             </div>
-            <p class="mt-2">{experience.description}</p>
+            <div class="mt-2 flex flex-col gap-1">
+              {experience.description.split("\n").map((line) => (
+                <p set:html={line} />
+              ))}
+            </div>
+            <img
+              src="public/img/Black.png"
+              class="h-[1px] w-full mt-4"
+              alt=""
+            />
           </div>
         );
       })
