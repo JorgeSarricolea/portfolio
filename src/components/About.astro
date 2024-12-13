@@ -23,16 +23,18 @@ import Skills from "@/components/sections/Skills.astro";
   </section>
   <section
     id="cv-container"
-    class="w-4/6 m-auto bg-white p-8 text-black hidden md:block"
+    class="w-4/6 m-auto bg-white p-8 text-black hidden md:block text-[12px]"
   >
     <Hero />
+    <img src="public/img/Black.png" class="h-[1px] w-full my-6" alt="" />
     <Summary />
+    <img src="public/img/Black.png" class="h-[1px] w-full my-6" alt="" />
     <Experience />
     <Education />
+    <img src="public/img/Black.png" class="h-[1px] w-full my-4" alt="" />
     <!-- <Projects /> -->
     <div id="skills-container">
-      <Skills desiredPriority={["main"]} />
-      <Skills desiredPriority={["default"]} />
+      <Skills />
     </div>
   </section>
 </section>
