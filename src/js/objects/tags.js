@@ -10,6 +10,36 @@ const tags = {
     image: "../icons/typescript-icon.png",
     priority: "main",
   },
+  nodejs: {
+    name: "Node.js",
+    image: "../icons/nodejs-icon.png",
+    priority: "main",
+  },
+  expressjs: {
+    name: "Express.js",
+    image: "../icons/express-icon.png",
+    priority: "main",
+  },
+  aws: {
+    name: "AWS",
+    image: "../icons/aws-icon.png",
+    priority: "main",
+  },
+  docker: {
+    name: "Docker",
+    image: "../icons/docker-icon.png",
+    priority: "main",
+  },
+  jest: {
+    name: "Jest",
+    image: "../icons/jest-icon.png",
+    priority: "main",
+  },
+  prisma: {
+    name: "Prisma",
+    image: "../icons/prisma-icon.png",
+    priority: "main",
+  },
   nextjs: {
     name: "Next.js",
     image: "../icons/nextjs-icon.png",
@@ -20,6 +50,11 @@ const tags = {
     image: "../icons/reactjs-icon.png",
     priority: "main",
   },
+  swagger: {
+    name: "Swagger",
+    image: "../icons/swagger-icon.png",
+    priority: "main",
+  },
   astro: {
     name: "Astro",
     image: "../icons/astro-icon.png",
@@ -28,31 +63,6 @@ const tags = {
   tailwindcss: {
     name: "TailwindCSS",
     image: "../icons/tailwindcss-icon.png",
-    priority: "main",
-  },
-  nodejs: {
-    name: "Node.js",
-    image: "../icons/nodejs-icon.png",
-    priority: "main",
-  },
-  expressjs: {
-    name: "Express",
-    image: "../icons/express-icon.png",
-    priority: "main",
-  },
-  prisma: {
-    name: "Prisma",
-    image: "../icons/prisma-icon.png",
-    priority: "main",
-  },
-  aws: {
-    name: "AWS",
-    image: "../icons/aws-icon.png",
-    priority: "main",
-  },
-  swagger: {
-    name: "Swagger",
-    image: "../icons/swagger-icon.png",
     priority: "main",
   },
   // Default
