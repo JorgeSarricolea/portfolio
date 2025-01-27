@@ -2,11 +2,11 @@ const cv = {
   basics: {
     name: "Jorge Sarricolea Veyro",
     label:
-      "Innovative Software Engineer | Expert in JavaScript & API Development | React, Node.js, Java Spring Boot & AWS Specialist | 3+ Years of Experience in Scalable Web Applications | Team Mentorship",
+      "Software Engineer | Expert in JavaScript, Node.js, and API Development | 4 Years of Experience in Scalable Backend Systems | Focused on RESTful APIs, Express.js, and Performance Optimization",
     email: "jjorgesarricolea@gmail.com",
     phone: "+52 9381095593",
     summary:
-      "Software Engineer with 3 years of experience specializing in Angular, React, Java Spring Boot, Node.js, and AWS. I develop scalable, high-performance web applications that combine solid back-end architecture with intuitive front-end design.\n\n Passionate about staying up to date with the latest technologies, I focus on optimizing workflows, solving complex problems, and mentoring junior developers to deliver impactful solutions. My goal is to continue expanding my technical expertise while contributing to innovative and value-driven projects.",
+      "Software Engineer with 4 years of experience specializing in JavaScript, Node.js, and API development. I focus on building scalable and high-performance backend systems, with expertise in RESTful APIs, Express.js, and performance optimization.\n\nIn addition to my backend expertise, I also have experience in frontend development, working with frameworks like React and Angular to deliver seamless and intuitive user interfaces. My goal is to leverage my skills to create efficient, scalable solutions that drive impactful results.",
   },
   social: {
     portfolio: "https://jorgesarricolea.com",
@@ -15,7 +15,6 @@ const cv = {
   },
   education: {
     institution: "Instituto Tecnológico de Mérida",
-    date: "2020 - 2025",
     career: "Computer Stystems Engineer",
   },
 };
