@@ -6,22 +6,44 @@ import cv from "@/js/objects/cv.js";
   <div>
     <h1 class="text-xl font-bold uppercase">{cv["basics"].name}</h1>
     <h2 class="mt-2">{cv["basics"].label}</h2>
-    <div class="flex gap-4 mt-2">
-      <a href=`mailto:${cv["basics"].email}`
-        ><i class="fa-solid fa-envelope hover:text-secondary text-lg"></i></a
+    <div class="flex gap-4 mt-2 text-xs">
+      <a
+        href=`mailto:${cv["basics"].email}`
+        class="hover:text-secondary flex items-center gap-2"
       >
-      <a href={cv["basics"].phone}
-        ><i class="fa-solid fa-phone hover:text-secondary text-lg"></i></a
+        <i class="fa-solid fa-envelope"></i>
+        {cv["basics"].email}
+      </a>
+      <a
+        href={cv["basics"].phone}
+        class="hover:text-secondary flex items-center gap-2"
       >
-      <a href={cv["social"].portfolio}
-        ><i class="fa-solid fa-briefcase hover:text-secondary text-lg"></i></a
+        <i class="fa-solid fa-phone"></i>
+        {cv["basics"].phone}
+      </a>
+    </div>
+    <div class="flex gap-4 mt-2 text-xs">
+      <a
+        href={cv["social"].portfolio}
+        class="hover:text-secondary flex items-center gap-2"
       >
-      <a href={cv["social"].github}
-        ><i class="fa-brands fa-github hover:text-secondary text-lg"></i></a
+        <i class="fa-solid fa-briefcase"></i>
+        Portfolio
+      </a>
+      <a
+        href={cv["social"].github}
+        class="hover:text-secondary flex items-center gap-2"
       >
-      <a href={cv["social"].linkedin}
-        ><i class="fa-brands fa-linkedin hover:text-secondary text-lg"></i></a
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+      <a
+        href={cv["social"].linkedin}
+        class="hover:text-secondary flex items-center gap-2"
       >
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn
+      </a>
     </div>
   </div>
   <img
