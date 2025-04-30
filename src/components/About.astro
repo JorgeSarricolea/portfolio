@@ -62,7 +62,10 @@ import Skills from "@/components/sections/Skills.astro";
     }
     #cv-container,
     #cv-projects {
-      width: 100%;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
       position: absolute;
       left: 0;
       top: 0;
@@ -70,7 +73,22 @@ import Skills from "@/components/sections/Skills.astro";
 
     @page {
       size: A4 portrait;
-      margin: 1cm;
+      margin: 1.5cm;
+    }
+
+    /* Force two-column layout for skills section during print */
+    #skills-container .grid,
+    #skills-container div[class*="grid"] {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1.5rem !important;
+    }
+
+    /* Make sure each grid item stays visible and formatted correctly */
+    #skills-container .grid > div {
+      display: flex !important;
+      flex-direction: column !important;
+      break-inside: avoid !important;
     }
   }
 </style>
@@ -113,6 +131,13 @@ import Skills from "@/components/sections/Skills.astro";
         const skillsContainer = document.getElementById("skills-container");
         if (skillsContainer) {
           skillsContainer.classList.add("mt-0");
+
+          // Ensure the skills grid has two columns for printing
+          const skillsGrid = skillsContainer.querySelector(".grid");
+          if (skillsGrid) {
+            (skillsGrid as HTMLElement).style.gridTemplateColumns = "1fr 1fr";
+            (skillsGrid as HTMLElement).style.display = "grid";
+          }
         }
 
         // Call the print function
@@ -129,6 +154,13 @@ import Skills from "@/components/sections/Skills.astro";
         if (headerToDisplay) {
           headerToDisplay.style.display = "flex";
           skillsContainer.classList.remove("mt-0");
+
+          // Reset the skills grid styles
+          const skillsGrid = skillsContainer.querySelector(".grid");
+          if (skillsGrid) {
+            (skillsGrid as HTMLElement).style.gridTemplateColumns = "";
+            (skillsGrid as HTMLElement).style.display = "";
+          }
         }
       }
     });
