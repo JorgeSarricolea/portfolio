@@ -2,13 +2,21 @@
 import tags from "@/js/objects/tags.js";
 ---
 
-<section class="flex flex-col justify-between gap-2 mt-2">
-  <h1 class="text-xl font-bold">Skills</h1>
-  <div class="flex flex-wrap gap-1">
+<section class="flex flex-col gap-4 mt-2">
+  <h1 class="text-xl font-bold">Technical Skills</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {
-      Object.values(tags).map((tag) => (
-        <div id="tags-cv" class="flex relative text-black">
-          <h3 class="text-md capitalize">{tag.name} |</h3>
+      Object.entries(tags).map(([category, skills]) => (
+        <div class="flex flex-col gap-1">
+          <h3 class="text-lg font-semibold capitalize">{category}</h3>
+          <p class="text-gray-300">
+            {Object.values(skills).map((skill, index) => (
+              <span>
+                {skill.name}
+                {index < Object.values(skills).length - 1 ? ", " : ""}
+              </span>
+            ))}
+          </p>
         </div>
       ))
     }
