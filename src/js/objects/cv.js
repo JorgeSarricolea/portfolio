@@ -6,7 +6,7 @@ const cv = {
     email: "jjorgesarricolea18@gmail.com",
     phone: "+52 938 109 5593",
     summary:
-      "Software Engineer with 4 years of experience specializing in JavaScript, Node.js, and API development. I focus on building scalable and high-performance backend systems, with expertise in RESTful APIs, Express.js, and performance optimization.\n\nIn addition to my backend expertise, I also have experience in frontend development, working with frameworks like React and Angular to deliver seamless and intuitive user interfaces. My goal is to leverage my skills to create efficient, scalable solutions that drive impactful results.",
+      "Software Engineer with over 4 years of experience specializing in backend development, scalable system architecture, and high-performance optimization. Skilled in building robust RESTful APIs using Node.js and Spring Boot, with cloud deployments through AWS and Docker. I also bring strong frontend capabilities with React, Angular, and Next.js.\n\nI follow engineering best practices like SOLID and Clean Architecture, applying them across the development lifecycle with CI/CD pipelines and automated testing. I've led technical decisions, mentored teams, and delivered scalable solutions that drive real business impact. I'm passionate about building efficient, resilient systems that solve real-world problems.",
   },
   social: {
     portfolio: "https://jorgesarricolea.com",
