@@ -7,8 +7,8 @@ const experiences = [
     endDate: "",
     type: "Full Time",
     location: "Remote",
-    description: `In my current role as a Software Engineer at UNAM's Patronato Universitario, I specialize in crafting and deploying scalable and service-oriented systems that adhere to the highest standards of quality and performance. My responsibilities include:\n\n- <strong>Backend Implementation:</strong> Building backend services using Node.js and Express, following MVC patterns and clean architecture principles to ensure scalability and maintainability.\n\n- <strong>Frontend Development:</strong> Crafting user-centric interfaces with React and Vite, focusing on performance and responsiveness.\n\n- <strong>API Design:</strong> Creating comprehensive service contracts using OpenAPI Specification, which standardizes communication between services.\n\n- <strong>Code Review:</strong> Ensuring the adherence to best practices and standards through meticulous code reviews.\n\n- <strong>Quality Assurance:</strong> Contributing to testing, debugging, and security practices to maintain the integrity and quality of our software solutions.\n\n- <strong>Team Collaboration:</strong> Supporting and mentoring other developers, fostering a learning environment and encouraging continuous improvement in our processes.`,
-    shortDescription: `As a Software Engineer, I am pivotal in developing and implementing scalable, service-oriented software systems. I apply my expertise in JavaScript to build robust solutions, constantly striving to enhance our practices and share knowledge within our team.`,
+    description: `Led the development of two core platforms: a student-facing purchase portal and an administrative portal for internal management. Faced a key challenge integrating a legacy SOAP service with oversized XML responses. My actions included:\n\n- <strong>Backend Development:</strong> Built Node.js/Express services following SOLID principles, using Swagger for contract-first API design.\n- <strong>Legacy Integration:</strong> Designed a parser to convert complex XML data into JSON, integrating it into our architecture with performance and reuse in mind — this became the standard for future SOAP work.\n- <strong>Testing & QA:</strong> Delivered and tested 10+ endpoints with Supertest, ensuring smooth frontend integration.\n- <strong>Frontend Work:</strong> Developed UI components in React + Vite.\n- <strong>Teamwork:</strong> Participated in code reviews and pair programming, contributing to a culture of shared quality.\n\n<strong>Impact:</strong> Reduced integration times from hours to minutes, delivered without delaying deadlines, and earned internal recognition for my solution's clarity and reusability.`,
+    shortDescription: `Developed and integrated scalable APIs for two mission-critical platforms at UNAM. Tackled a complex SOAP/XML challenge with a custom parser, improving efficiency and setting a reusable internal standard.`,
     image: "../img/unam-logo.png",
     url: "https://www.linkedin.com/school/arvalli-bed-college-vijaynagar/",
     tagIds: [
@@ -26,14 +26,13 @@ const experiences = [
   {
     id: 1,
     company: "Rocket Code",
-    position: "Full-Stack Developer",
+    position: "Full-Stack Developer / Tech Lead",
     startDate: new Date("2024-01-09"),
     endDate: new Date("2024-11-01"),
     type: "Full Time",
     location: "Remote",
-    description: `Contributed to the development of a contract and agreement management platform for an insurance company, taking an active role in both front-end and back-end development. Key contributions include:\n\n- <strong>Team Mentorship:</strong> Acted as a mentor for team members, providing guidance and support in both frontend and backend tasks to ensure high-quality deliverables.\n\n- <strong>Architectural Planning:</strong> Participated in the design and planning of the platform's architecture for both front-end and back-end systems.\n\n- <strong>Frontend Development:</strong> Built responsive and user-friendly interfaces using Angular 18, ensuring compatibility across desktop and mobile devices.\n\n- <strong>Backend Development:</strong> Developed robust endpoints and services using Java, Spring Boot, and MyBatis, optimizing data handling and system performance.\n\n- <strong>System Integration:</strong> Seamlessly integrated backend APIs with frontend components to deliver a cohesive and reliable user experience.`,
-    shortDescription:
-      "I contributed to building a contract and agreement management platform for an insurance company. My key achievements included mentoring team members, designing responsive interfaces with Angular 18, and developing robust backend services using Java and Spring Boot. I also ensured seamless integration between front-end and back-end components.",
+    description: `Joined a greenfield project to build an internal insurance platform from scratch. Started as a fullstack developer, later promoted to Tech Lead within 3 months. Key contributions:\n\n- <strong>Architecture:</strong> Implemented Clean Architecture patterns for backend in Java (Spring Boot, Oracle) to ensure scalability and maintainability.\n- <strong>Frontend:</strong> Built dynamic Angular 18 UIs with PrimeNG, enabling role-based logic across modules.\n- <strong>Strategic Thinking:</strong> Rejected a risky last-minute scope change, proposed a solution via logic/db-level tweaks — preserving delivery without sacrificing quality.\n- <strong>Process Optimization:</strong> Created a GPT-based tool to generate Conventional Commits + structured PRs, later adopted across the company.\n- <strong>Leadership:</strong> Mentored 10 devs, assigned tasks based on strengths, fostered accountability and trust.\n\n<strong>Results:</strong> Cut feature delivery time by 3–7 days, standardized code review workflow, and gained leadership trust in high-pressure settings.`,
+    shortDescription: `Led technical execution of an internal insurance platform. Designed scalable architecture, mentored devs, and introduced process improvements that shaped team workflows.`,
     image: "../img/rocket-code-logo.jpeg",
     url: "https://www.linkedin.com/company/the-rocket-code",
     tagIds: [
@@ -54,10 +53,8 @@ const experiences = [
     endDate: new Date("2024-08-08"),
     type: "Freelance",
     location: "Remote",
-    description:
-      "Developed the user interface for a blockchain-based application supporting transactions with the XOC cryptocurrency. Key contributions include:\n\n- <strong>UI Development:</strong> Designed and implemented key views such as the landing page, dashboard, and transaction interfaces for payments, purchases, and loans using Next.js and React.\n\n- <strong>Wallet Integration:</strong> Integrated multiple cryptocurrency wallets, including MetaMask, enabling secure and seamless user transactions.\n\n- <strong>Blockchain Interaction:</strong> Utilized Scaffold and Wagmi libraries to connect the frontend with smart contracts provided by the backend team.\n\n- <strong>Collaborative Development:</strong> Worked closely with the backend team to integrate smart contract functionalities, ensuring a cohesive and reliable user experience.",
-    shortDescription:
-      "I played a pivotal role in developing the user interface for a blockchain-based application that supports XOC cryptocurrency transactions. My responsibilities included designing key views with Next.js and React, integrating wallets like MetaMask, and connecting the frontend to smart contracts via Wagmi and Scaffold.",
+    description: `Developed the UI for a blockchain-based dApp supporting XOC cryptocurrency. Key contributions:\n\n- <strong>Interface Design:</strong> Built responsive views for dashboard, landing page, and transaction flows using Next.js, React, and Tailwind.\n- <strong>Wallet Integration:</strong> Enabled transactions with MetaMask and other wallets.\n- <strong>Blockchain Connectivity:</strong> Integrated smart contracts via Wagmi and Scaffold with a clean frontend experience.\n- <strong>Collaboration:</strong> Worked closely with backend devs to ensure seamless contract interaction.\n\n<strong>Outcome:</strong> Delivered a cohesive user experience that handled crypto interactions securely and reliably.`,
+    shortDescription: `Developed a seamless blockchain frontend with wallet integration and smart contract connectivity for a dApp based on the XOC cryptocurrency.`,
     image: "../img/la-dao-logo.jpeg",
     url: "https://www.linkedin.com/company/ladao/",
     tagIds: ["nextjs", "reactjs", "tailwindcss", "wagmi", "scaffold"],
@@ -70,10 +67,8 @@ const experiences = [
     endDate: new Date("2024-02-23"),
     type: "Freelance",
     location: "Remote",
-    description:
-      "Refactored and modernized an international event platform, migrating from legacy PHP to Astro and TailwindCSS on the frontend, and Node.js with Prisma on the backend. Key contributions include:\n\n- <strong>System Migration:</strong> Transitioned the platform to modern technologies, enhancing maintainability, security, and performance while preserving the original design.\n\n- <strong>Architecture Overhaul:</strong> Redesigned the system architecture with best practices, implementing design patterns and robust security measures to mitigate SQL injection risks.\n\n- <strong>Payment Integration:</strong> Built and integrated a Stripe payment gateway, enabling seamless checkout and ticket purchase functionality.\n\n- <strong>Scalable Deployment:</strong> Established CI/CD pipelines with AWS for efficient and reliable deployment to the main server.",
-    shortDescription:
-      "I modernized an international event platform by migrating from legacy PHP to Astro and TailwindCSS on the frontend and Node.js with Prisma on the backend. I also integrated Stripe for payment processing and set up CI/CD pipelines in AWS to enable scalable deployments.",
+    description: `Modernized a global academic conference platform. Key actions:\n\n- <strong>Migration:</strong> Refactored from legacy PHP to Astro (frontend) and Node.js with Prisma (backend).\n- <strong>Security:</strong> Redesigned architecture with injection-proof queries and robust design patterns.\n- <strong>Payments:</strong> Integrated Stripe for ticket purchases.\n- <strong>DevOps:</strong> Deployed using AWS and automated CI/CD pipelines.\n\n<strong>Impact:</strong> Improved maintainability, enabled secure payments, and accelerated delivery through modern deployment practices.`,
+    shortDescription: `Led a tech refresh for ICCBR 2024, upgrading its platform stack and implementing payment and deployment systems to production standards.`,
     image: "../img/iccbr-2024-logo.png",
     url: "https://iccbr2024.org/",
     tagIds: ["astro", "tailwindcss", "javascript", "nodejs", "prisma", "aws"],
@@ -81,15 +76,13 @@ const experiences = [
   {
     id: 5,
     company: "Jumwork",
-    position: "Bubble Developer",
+    position: "Bubble Developer / Co-Founder",
     startDate: new Date("2021-06-18"),
     endDate: new Date("2023-01-05"),
     type: "Full Time",
     location: "Remote",
-    description:
-      "Led the development of an academic marketplace platform from the ground up, connecting students with teachers for online task support. Key contributions include:\n\n- <strong>End-to-End Platform Development:</strong> Designed and built a responsive and user-friendly platform accessible on both mobile and desktop.\n\n- <strong>Feature Integration:</strong> Implemented critical functionalities such as WhatsApp and email notifications, a private chat system with file-sharing capabilities, and a robust auction and rating system for teacher selection.\n\n- <strong>Payment Gateway Integration:</strong> Seamlessly integrated Stripe for secure payment processing, ensuring smooth transactions and a 30% reduction in payment errors.\n\n- <strong>Modular Development:</strong> Utilized Bubble plugins for scalable component modularization, optimizing feature integration.\n\n- <strong>Impactful Results:</strong> Enhanced platform usability and reliability, reducing payment errors by 30% and increasing user engagement through a streamlined user experience.",
-    shortDescription:
-      "I led the development of an academic marketplace platform from scratch. I implemented essential features such as private chat with file sharing, notifications via WhatsApp and email, and a robust auction system. Integrating Stripe significantly reduced payment errors, improving the overall user experience.",
+    description: `Co-founded and led development of a tutoring marketplace. Worked in 7-day sprints to ship an MVP with full functionality using Bubble.io. Key initiatives:\n\n- <strong>Core Features:</strong> Implemented tutoring requests, bidding system, private chat with file sharing, Stripe payments, notifications, and reviews.\n- <strong>Analytics:</strong> Built dashboards with real-time KPIs and filtering.\n- <strong>Product-Market Fit:</strong> Validated demand, scaled to 40–60 paying users monthly.\n- <strong>Growth:</strong> Ran Google Ads, pitched to investors, and represented the product at a global event with Jason Calacanis.\n\n<strong>Outcome:</strong> Launched MVP in under a week, achieved breakeven, and laid the foundation for your tech/product career.`,
+    shortDescription: `Built and launched an EdTech platform from scratch. Balanced technical execution with business strategy to validate and scale the product in record time.`,
     image: "../img/jumwork-logo.png",
     url: "https://www.jumwork.com",
     tagIds: ["bubble"],
