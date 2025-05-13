@@ -1,5 +1,15 @@
 const projects = [
   {
+    id: "gitbuddy",
+    title: "GitBuddy",
+    description:
+      "Converts your natural language descriptions into perfectly structured and professional conventional commits. ",
+    image: "../img/gitbuddy.png",
+    url: "https://gitbuddy-ai-qywr.vercel.app/",
+    githubUrl: "https://github.com/JorgeSarricolea/gitbuddy-ai",
+    tagIds: ["typescript", "reactjs", "nextjs"],
+  },
+  {
     id: "minecraft-clone",
     title: "Minecraft Clone",
     description:
@@ -8,33 +18,6 @@ const projects = [
     url: "https://craftclone.netlify.app/",
     githubUrl: "https://github.com/JorgeSarricolea/Minecraft-Clone",
     tagIds: ["javascript", "reactjs", "threejs"],
-  },
-  {
-    id: "acadex",
-    title: "Acadex Management",
-    description:
-      "his project is a frontend web application built to manage academic tasks, categories, and users, integrating with the Acadex API. It features like user authentication, task CRUD operations, and category management. Key functionalities include a draggable task board, modals for task and user management.",
-    image: "../img/acadex-frontend.png",
-    url: "",
-    githubUrl: "https://github.com/JorgeSarricolea/acadex_task_frontend",
-    tagIds: ["javascript", "nextjs", "reactjs", "tailwindcss", "nodejs"],
-  },
-  {
-    id: "acadex-api",
-    title: "Acadex API",
-    description:
-      "This API is built using Clean Architecture principles and provides a set of endpoints for managing categories, homeworks, and users. It is designed to be efficient and scalable, making it easy for developers to integrate with their applications.",
-    image: "../img/acadex-api.png",
-    url: "",
-    githubUrl: "https://github.com/JorgeSarricolea/acadex_task_backend",
-    tagIds: [
-      "javascript",
-      "nodejs",
-      "expressjs",
-      "swagger",
-      "prisma",
-      "postgresql",
-    ],
   },
   {
     id: "joorge-search",
