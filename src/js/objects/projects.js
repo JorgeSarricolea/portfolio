@@ -6,8 +6,18 @@ const projects = [
       "Converts your natural language descriptions into perfectly structured and professional conventional commits. ",
     image: "../img/gitbuddy.png",
     url: "https://gitbuddy-ai-qywr.vercel.app/",
-    githubUrl: "https://github.com/JorgeSarricolea/gitbuddy-ai",
+    githubUrl: "",
     tagIds: ["typescript", "reactjs", "nextjs"],
+  },
+  {
+    id: "redcap-ecommerce",
+    title: "RedCap E-commerce",
+    description:
+      "Contributed to continuous improvements of a subscription-based e-commerce platform. Focused on optimizing product categorization and selection flows to enhance user experience and SEO performance.",
+    image: "../img/redcap.png",
+    url: "https://redcapdev.myshopify.com/products/amanita-muscaria-muhomor",
+    githubUrl: "",
+    tagIds: ["javascript", "reactjs", "nodejs", "seo", "ux"],
   },
   {
     id: "minecraft-clone",
