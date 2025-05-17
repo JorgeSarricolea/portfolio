@@ -1,0 +1,149 @@
+---
+import Header from "@/components/Header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jorgesarricolea.com/profile" />
+    <meta property="og:title" content="Jorge Sarricolea | Links" />
+    <meta
+      property="og:description"
+      content="Connect with Jorge Sarricolea on all platforms and check out his projects and social media links."
+    />
+    <meta property="og:image" content="/img/meta-img.png" />
+    <!-- CDN Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Jorge Sarricolea | Links</title>
+  </head>
+  <body class="bg-black min-h-screen flex flex-col items-center p-4">
+    <div class="max-w-md w-full mx-auto mt-10 mb-8">
+      <div class="flex flex-col items-center mb-8">
+        <img
+          src="/img/profile-pic.jpg"
+          alt="Jorge Sarricolea"
+          class="w-24 h-24 rounded-full object-cover border-2 border-primary mb-4"
+          onerror="this.src='https://github.com/JorgeSarricolea.png'"
+        />
+        <h1 class="text-white text-2xl font-bold">Jorge Sarricolea</h1>
+        <p class="text-gray-400 text-center mt-2">
+          Software Engineer | JavaScript & Node.js Expert
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Main Site -->
+        <a
+          href="https://jorgesarricolea.com"
+          target="_blank"
+          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+        >
+          <div class="flex items-center">
+            <i class="fa-solid fa-globe mr-3 text-primary"></i>
+            <span>Portfolio</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-primary"></i>
+        </a>
+
+        <!-- GitBuddy Project -->
+        <a
+          href="https://gitbuddy-ai-qywr.vercel.app/"
+          target="_blank"
+          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+        >
+          <div class="flex items-center">
+            <i class="fa-solid fa-code-commit mr-3 text-primary"></i>
+            <span>GitBuddy - AI Commit Generator</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-primary"></i>
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/JorgeSarricolea"
+          target="_blank"
+          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+        >
+          <div class="flex items-center">
+            <i class="fa-brands fa-github mr-3 text-primary"></i>
+            <span>GitHub</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-primary"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/jorge-sarricolea/"
+          target="_blank"
+          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+        >
+          <div class="flex items-center">
+            <i class="fa-brands fa-linkedin mr-3 text-primary"></i>
+            <span>LinkedIn</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-primary"></i>
+        </a>
+
+        <!-- Resume/CV -->
+        <a
+          href="/cv_jorge_sarricolea.pdf"
+          target="_blank"
+          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+        >
+          <div class="flex items-center">
+            <i class="fa-solid fa-file-pdf mr-3 text-primary"></i>
+            <span>Download Resume</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-primary"></i>
+        </a>
+
+        <!-- Email Contact -->
+        <a
+          href="mailto:contact@jorgesarricolea.com"
+          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+        >
+          <div class="flex items-center">
+            <i class="fa-solid fa-envelope mr-3 text-primary"></i>
+            <span>Email Me</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-primary"></i>
+        </a>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/" class="text-primary hover:underline">
+          <i class="fa-solid fa-arrow-left mr-2"></i>Back to portfolio
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+
+  .text-primary {
+    color: #eaa0fd;
+  }
+
+  .border-primary {
+    border-color: #eaa0fd;
+  }
+
+  .bg-gray-800 {
+    background-color: #212121;
+  }
+
+  .hover\:bg-gray-700:hover {
+    background-color: #72507a;
+  }
+</style>
