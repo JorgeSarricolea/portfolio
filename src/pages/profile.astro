@@ -33,9 +33,27 @@ import Header from "@/components/Header.astro";
           onerror="this.src='https://github.com/JorgeSarricolea.png'"
         />
         <h1 class="text-white text-2xl font-bold">Jorge Sarricolea</h1>
-        <p class="text-gray-400 text-center mt-2">
-          Software Engineer | JavaScript & Node.js Expert
-        </p>
+        <p class="text-primary text-center mt-2">Software Engineer</p>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center gap-6 mt-4">
+          <a
+            href="https://github.com/JorgeSarricolea"
+            target="_blank"
+            class="social-icon-btn"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github text-2xl"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jorge-sarricolea/"
+            target="_blank"
+            class="social-icon-btn"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin text-2xl"></i>
+          </a>
+        </div>
       </div>
 
       <div class="space-y-4">
@@ -65,31 +83,70 @@ import Header from "@/components/Header.astro";
           <i class="fa-solid fa-arrow-right text-primary"></i>
         </a>
 
-        <!-- GitHub -->
-        <a
-          href="https://github.com/JorgeSarricolea"
-          target="_blank"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-brands fa-github mr-3 text-primary"></i>
-            <span>GitHub</span>
-          </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
+        <!-- Templates de Notion Collapsible Section -->
+        <div class="notion-templates-container">
+          <!-- Clickable header -->
+          <button
+            id="templates-toggle"
+            class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+          >
+            <div class="flex items-center">
+              <i class="fa-solid fa-table-columns mr-3 text-primary"></i>
+              <span>Templates de Notion</span>
+            </div>
+            <i
+              id="templates-icon"
+              class="fa-solid fa-chevron-down text-primary transition-transform"
+            ></i>
+          </button>
 
-        <!-- LinkedIn -->
-        <a
-          href="https://www.linkedin.com/in/jorge-sarricolea/"
-          target="_blank"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-brands fa-linkedin mr-3 text-primary"></i>
-            <span>LinkedIn</span>
+          <!-- Collapsible content -->
+          <div id="templates-content" class="mt-2 hidden">
+            <!-- Organize Me Template -->
+            <a
+              href="https://jorgesarricolea.gumroad.com/l/organize-me-notion-template"
+              target="_blank"
+              class="template-link flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full mb-2"
+            >
+              <div class="flex items-center flex-1 min-w-0">
+                <i
+                  class="fa-solid fa-list-check mr-3 text-primary flex-shrink-0"
+                ></i>
+                <div class="flex-1 min-w-0">
+                  <span class="block font-medium">Organize Me</span>
+                  <span class="text-xs text-gray-400 block truncate">
+                    Sistema completo para organizar tu vida en Notion
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center ml-2 flex-shrink-0">
+                <span class="text-primary font-bold">$5</span>
+                <i class="fa-solid fa-arrow-right text-primary ml-2"></i>
+              </div>
+            </a>
+
+            <!-- Organize Me for Devs Template -->
+            <a
+              href="https://jorgesarricolea.gumroad.com/l/organize-me-for-devs-template"
+              target="_blank"
+              class="template-link flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
+            >
+              <div class="flex items-center flex-1 min-w-0">
+                <i class="fa-solid fa-code mr-3 text-primary flex-shrink-0"></i>
+                <div class="flex-1 min-w-0">
+                  <span class="block font-medium">Organize Me (for devs)</span>
+                  <span class="text-xs text-gray-400 block truncate">
+                    Sistema de productividad para desarrolladores
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center ml-2 flex-shrink-0">
+                <span class="text-primary font-bold">$6</span>
+                <i class="fa-solid fa-arrow-right text-primary ml-2"></i>
+              </div>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
+        </div>
 
         <!-- Resume/CV -->
         <a
@@ -123,6 +180,20 @@ import Header from "@/components/Header.astro";
         </a>
       </div>
     </div>
+
+    <script>
+      // Toggle templates section
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("templates-toggle");
+        const content = document.getElementById("templates-content");
+        const icon = document.getElementById("templates-icon");
+
+        toggleButton.addEventListener("click", () => {
+          content.classList.toggle("hidden");
+          icon.classList.toggle("rotate-180");
+        });
+      });
+    </script>
   </body>
 </html>
 
@@ -145,5 +216,46 @@ import Header from "@/components/Header.astro";
 
   .hover\:bg-gray-700:hover {
     background-color: #72507a;
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .transition-transform {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .social-icon-btn {
+    color: #eaa0fd;
+    background-color: #212121;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .social-icon-btn:hover {
+    background-color: #72507a;
+    transform: scale(1.1);
+  }
+
+  .template-link {
+    display: flex;
+    align-items: center;
+  }
+
+  /* For very small devices */
+  @media (max-width: 360px) {
+    .template-link {
+      padding: 12px 10px;
+    }
+
+    .template-link .fa-arrow-right {
+      display: none;
+    }
   }
 </style>
