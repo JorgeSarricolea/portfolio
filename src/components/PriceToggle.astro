@@ -1,0 +1,80 @@
+---
+interface Props {
+  isAnnual: boolean;
+}
+
+const { isAnnual } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center mb-20">
+  <div class="flex items-center gap-4">
+    <span class={`text-lg ${!isAnnual ? "text-primary" : "text-white"}`}
+      >Mensual</span
+    >
+    <button
+      id="pricing-toggle"
+      class="relative inline-flex h-8 w-16 items-center rounded-full bg-gray transition-colors duration-300 border-2 border-primary"
+      role="switch"
+      aria-checked={isAnnual}
+    >
+      <span
+        class={`inline-block h-6 w-6 transform rounded-full bg-primary transition-transform duration-300 ${
+          isAnnual ? "translate-x-9" : "translate-x-1"
+        }`}></span>
+    </button>
+    <span class={`text-lg ${isAnnual ? "text-primary" : "text-white"}`}
+      >Anual</span
+    >
+  </div>
+  {
+    isAnnual && (
+      <p class="text-primary text-sm mt-2">
+        ¡Ahorra hasta 30% con el plan anual!
+      </p>
+    )
+  }
+</div>
+
+<script>
+  const toggle = document.getElementById("pricing-toggle");
+  const monthlyPrices = document.querySelectorAll("[data-price-monthly]");
+  const yearlyPrices = document.querySelectorAll("[data-price-yearly]");
+  const monthlyText = toggle?.previousElementSibling;
+  const yearlyText = toggle?.nextElementSibling;
+  const savingsText = document.querySelector("[data-savings-text]");
+
+  function updatePriceVisibility(isAnnual: boolean) {
+    monthlyPrices.forEach((el) => {
+      (el as HTMLElement).style.display = isAnnual ? "none" : "block";
+    });
+    yearlyPrices.forEach((el) => {
+      (el as HTMLElement).style.display = isAnnual ? "block" : "none";
+    });
+
+    // Update text colors
+    monthlyText?.classList.toggle("text-primary", !isAnnual);
+    monthlyText?.classList.toggle("text-white", isAnnual);
+    yearlyText?.classList.toggle("text-primary", isAnnual);
+    yearlyText?.classList.toggle("text-white", !isAnnual);
+
+    // Toggle savings text
+    if (savingsText) {
+      savingsText.classList.toggle("hidden", !isAnnual);
+    }
+  }
+
+  toggle?.addEventListener("click", () => {
+    const isAnnual = toggle.getAttribute("aria-checked") === "true";
+    const newValue = !isAnnual;
+    toggle.setAttribute("aria-checked", String(newValue));
+
+    // Animate the toggle button
+    const toggleButton = toggle.querySelector("span");
+    if (toggleButton) {
+      toggleButton.classList.toggle("translate-x-9", newValue);
+      toggleButton.classList.toggle("translate-x-1", !newValue);
+    }
+
+    updatePriceVisibility(newValue);
+  });
+</script>
