@@ -84,7 +84,7 @@ const experiences = [
     description: `Co-founded and led development of a tutoring marketplace. Worked in 7-day sprints to ship an MVP with full functionality using Bubble.io. Key initiatives:\n\n- <strong>Core Features:</strong> Implemented tutoring requests, bidding system, private chat with file sharing, Stripe payments, notifications, and reviews.\n- <strong>Analytics:</strong> Built dashboards with real-time KPIs and filtering.\n- <strong>Product-Market Fit:</strong> Validated demand, scaled to 40–60 paying users monthly.\n- <strong>Growth:</strong> Ran Google Ads, pitched to investors, and represented the product at a global event with Jason Calacanis.\n\n<strong>Outcome:</strong> Launched MVP in under a week, achieved breakeven, and laid the foundation for your tech/product career.`,
     shortDescription: `Built and launched an EdTech platform from scratch. Balanced technical execution with business strategy to validate and scale the product in record time.`,
     image: "../img/jumwork-logo.png",
-    url: "https://www.jumwork.com",
+    url: "",
     tagIds: ["bubble"],
   },
 ];
