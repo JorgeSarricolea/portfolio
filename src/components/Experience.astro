@@ -56,13 +56,15 @@ const findTag = (tagId: string) => {
                     <span class="text-sm">{experience.location}</span>
                   </div>
                 </div>
-                <a
-                  href={experience.url}
-                  target="_blank"
-                  class="text-white hover:text-primary h-fit"
-                >
-                  <i class="fa-solid fa-up-right-from-square" />
-                </a>
+                {experience.url && (
+                  <a
+                    href={experience.url}
+                    target="_blank"
+                    class="text-white hover:text-primary h-fit"
+                  >
+                    <i class="fa-solid fa-up-right-from-square" />
+                  </a>
+                )}
               </div>
               <p class="text-white mt-2">{experience.shortDescription}</p>
 
