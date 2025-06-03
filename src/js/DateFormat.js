@@ -25,8 +25,8 @@ export const calculateDuration = (startDate, endDate) => {
     (end.getFullYear() - start.getFullYear()) * 12 +
     (end.getMonth() - start.getMonth());
 
-  // Ensure at least one month is counted
-  const months = totalMonths === 0 ? 1 : totalMonths;
+  // Ensure at least one month is counted and round up
+  const months = totalMonths === 0 ? 1 : Math.ceil(totalMonths);
 
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
