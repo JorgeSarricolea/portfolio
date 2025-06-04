@@ -10,10 +10,20 @@ const projects = [
     tagIds: ["typescript", "reactjs", "nextjs"],
   },
   {
+    id: "authcore",
+    title: "AuthCore",
+    description:
+      "Authentication microservice with JWT, Google OAuth, and email/password, built with Clean Architecture and Docker.",
+    image: "../img/authcore.png",
+    url: "",
+    githubUrl: "https://github.com/JorgeSarricolea/authcore",
+    tagIds: ["typescript", "docker", "nodejs", "expressjs"],
+  },
+  {
     id: "redcap-ecommerce",
     title: "RedCap E-commerce",
     description:
-      "Contributed to continuous improvements of a subscription-based e-commerce platform. Focused on optimizing product categorization and selection flows to enhance user experience and SEO performance.",
+      "Subscription-based e-commerce platform. Optimizing product categorization and selection flows to enhance user experience.",
     image: "../img/redcap.png",
     url: "https://redcapdev.myshopify.com/products/amanita-muscaria-muhomor",
     githubUrl: "",
@@ -23,21 +33,11 @@ const projects = [
     id: "minecraft-clone",
     title: "Minecraft Clone",
     description:
-      "This project allows you to add and remove blocks, enhanced with essential textures that capture the essence of the original game. Navigate freely with movement in all directions and jumping. Additionally, enjoy the functionality to save your progress or reset the world as you see fit.",
+      "3D voxel-based game with block manipulation, movement controls, and world persistence. Built with Three.js to recreate Minecraft.",
     image: "../img/minecraft-clone.png",
     url: "https://craftclone.netlify.app/",
     githubUrl: "https://github.com/JorgeSarricolea/Minecraft-Clone",
     tagIds: ["javascript", "reactjs", "threejs"],
-  },
-  {
-    id: "joorge-search",
-    title: "Joorge Search",
-    description:
-      "This is a small search engine with simulated Google-like recommendations, the intention is to demonstrate my UI skills.",
-    image: "../img/joorge-search.png",
-    url: "https://joorge-search.netlify.app",
-    githubUrl: "https://github.com/JorgeSarricolea/Joorge-Search",
-    tagIds: ["html", "css", "javascript"],
   },
 ];
 
