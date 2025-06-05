@@ -1,0 +1,104 @@
+.location-button {
+  background: linear-gradient(135deg, #eaa0fd 0%, #8b5cf6 100%);
+  color: #13151a;
+  padding: 16px 36px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(234, 160, 253, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  min-width: 200px;
+}
+
+.location-button:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #eaa0fd 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(234, 160, 253, 0.4);
+  border-color: #eaa0fd;
+}
+
+.location-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(234, 160, 253, 0.3);
+}
+
+.location-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.location-button:hover::before {
+  left: 100%;
+}
+
+.vote-button {
+  background: linear-gradient(135deg, #eaa0fd 0%, #8b5cf6 100%);
+  color: #13151a;
+  padding: 16px 36px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(234, 160, 253, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  min-width: 200px;
+  width: 100%;
+}
+
+.vote-button:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #eaa0fd 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(234, 160, 253, 0.4);
+  border-color: #eaa0fd;
+}
+
+.vote-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(234, 160, 253, 0.3);
+}
+
+.vote-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.vote-button:hover::before {
+  left: 100%;
+}
