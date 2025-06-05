@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/birthday.css";
+import MatrixRain from "../components/MatrixRain.astro";
+---
+
+<Layout title="¡Feliz Cumpleaños!">
+  <MatrixRain />
+  <main class="birthday-container">
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <button class="terminal-button close"></button>
+          <button class="terminal-button minimize"></button>
+          <button class="terminal-button maximize"></button>
+        </div>
+        <div class="terminal-title">Jorge's Birthday Bash</div>
+      </div>
+
+      <div class="terminal-content">
+        <div class="command-line">
+          <span class="command"
+            ><span class="prompt">$</span> Jorge.Birthday()</span
+          >
+          <div class="version-badge">
+            <span class="version-label">v24.0.0</span>
+            <span class="version-tag">LTS</span>
+          </div>
+        </div>
+        <section class="welcome-section">
+          <div class="output">
+            <div class="info-grid">
+              <div class="info-content">
+                <div class="info-card">
+                  <h3>🎉 Evento</h3>
+                  <p>Cumpleaños de Jorge</p>
+                  <p class="sub-text">
+                    ¡Ha llegado el momento de celebrar otro nivel desbloqueado!
+                    🎮
+                  </p>
+                </div>
+
+                <div class="info-card">
+                  <h3>📅 Fecha y Hora</h3>
+                  <p>18 de Junio de 2025</p>
+                  <p class="sub-text">7:00 PM</p>
+                </div>
+
+                <div class="info-card">
+                  <h3>📍 Ubicación</h3>
+                  <p class="coming-soon-text">Por confirmar</p>
+                </div>
+
+                <div class="info-card">
+                  <h3>🎁 Regalos</h3>
+                  <p>Opcionales</p>
+                  <p class="sub-text">
+                    (pero los regalos hechos con cariño siempre serán
+                    bienvenidos)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="countdown-section">
+          <div class="command-line">
+            <span class="command"
+              ><span class="prompt">$</span> countdown --event birthday</span
+            >
+          </div>
+          <div class="output">
+            <div id="countdown" class="countdown-timer">
+              <div class="time-block">
+                <span id="days">00</span>
+                <span class="label">Días</span>
+              </div>
+              <div class="time-block">
+                <span id="hours">00</span>
+                <span class="label">Horas</span>
+              </div>
+              <div class="time-block">
+                <span id="minutes">00</span>
+                <span class="label">Minutos</span>
+              </div>
+              <div class="time-block">
+                <span id="seconds">00</span>
+                <span class="label">Segundos</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="location-section">
+          <div class="command-line">
+            <span class="command"
+              ><span class="prompt">$</span> map --show-location</span
+            >
+          </div>
+          <div class="output">
+            <div class="location-info text-center">
+              <span class="blink">Ubicación por confirmar...</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // Countdown Timer
+  const birthdayDate = new Date("2025-06-18T19:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = birthdayDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(
+      2,
+      "0"
+    );
+    document.getElementById("minutes").textContent = String(minutes).padStart(
+      2,
+      "0"
+    );
+    document.getElementById("seconds").textContent = String(seconds).padStart(
+      2,
+      "0"
+    );
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
