@@ -1,0 +1,85 @@
+<div id="matrix-container" class="matrix-container">
+  <canvas id="matrix-canvas"></canvas>
+</div>
+
+<style>
+  .matrix-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+  }
+
+  .matrix-container.fade-out {
+    opacity: 0;
+  }
+
+  #matrix-canvas {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById("matrix-canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d");
+
+  // Set canvas size
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Matrix characters
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()";
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops: number[] = [];
+
+  // Initialize drops
+  for (let i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#8B5CF6";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  // Start animation
+  const interval = setInterval(draw, 15);
+
+  // Fade out after 3 seconds
+  setTimeout(() => {
+    const container = document.getElementById("matrix-container");
+    if (container) {
+      container.classList.add("fade-out");
+      setTimeout(() => {
+        container.remove();
+        clearInterval(interval);
+      }, 1000);
+    }
+  }, 3000);
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
