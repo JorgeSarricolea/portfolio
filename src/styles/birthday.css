@@ -217,12 +217,24 @@
 
 /* Map Container Styles */
 .map-container {
-  height: 300px;
-  background-color: rgb(var(--accent-dark));
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.location-info {
+  padding: 1rem;
+}
+
+.location-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #00ff00;
+}
+
+.location-info p {
+  margin: 0 0 1rem 0;
+  color: #ccc;
 }
 
 .coming-soon {
@@ -272,4 +284,56 @@
 
 .text-center {
   text-align: center;
+}
+
+.calendar-button {
+  background: linear-gradient(135deg, #eaa0fd 0%, #8b5cf6 100%);
+  color: #13151a;
+  padding: 8px 16px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(234, 160, 253, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.calendar-button:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #eaa0fd 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(234, 160, 253, 0.4);
+  border-color: #eaa0fd;
+}
+
+.calendar-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(234, 160, 253, 0.3);
+}
+
+.calendar-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.calendar-button:hover::before {
+  left: 100%;
 }
