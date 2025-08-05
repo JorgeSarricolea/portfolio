@@ -1,5 +1,22 @@
 const projects = [
   {
+    id: "finamate",
+    title: "Finamate",
+    description:
+      "Intelligent personal finance assistant that helps users manage accounts, cards, income and expenses in one place. Features interactive cash flow visualizations, intelligent recommendations, and secure data protection.",
+    image: "../img/finamate.png",
+    url: "https://www.finamate.com/",
+    githubUrl: "",
+    tagIds: [
+      "typescript",
+      "javascript",
+      "nextjs",
+      "reactjs",
+      "nodejs",
+      "expressjs",
+    ],
+  },
+  {
     id: "gitbuddy",
     title: "GitBuddy",
     description:
@@ -18,16 +35,6 @@ const projects = [
     url: "",
     githubUrl: "https://github.com/JorgeSarricolea/authcore",
     tagIds: ["typescript", "docker", "nodejs", "expressjs"],
-  },
-  {
-    id: "redcap-ecommerce",
-    title: "RedCap E-commerce",
-    description:
-      "Subscription-based e-commerce platform. Optimizing product categorization and selection flows to enhance user experience.",
-    image: "../img/redcap.png",
-    url: "https://redcapdev.myshopify.com/products/amanita-muscaria-muhomor",
-    githubUrl: "",
-    tagIds: ["javascript", "reactjs", "nodejs", "seo", "ux"],
   },
   {
     id: "minecraft-clone",

@@ -42,6 +42,11 @@ const tags = {
       image: "../icons/git-icon.png",
       priority: "default",
     },
+    githubactions: {
+      name: "GitHub Actions",
+      image: "../icons/githubactions-icon.png",
+      priority: "default",
+    },
   },
   backend: {
     nodejs: {
@@ -52,6 +57,11 @@ const tags = {
     expressjs: {
       name: "Express.js",
       image: "../icons/express-icon.png",
+      priority: "main",
+    },
+    nestjs: {
+      name: "NestJS",
+      image: "../icons/nestjs-icon.png",
       priority: "main",
     },
     springboot: {
@@ -84,6 +94,11 @@ const tags = {
     angular: {
       name: "Angular",
       image: "../icons/angular-icon.png",
+      priority: "default",
+    },
+    vuejs: {
+      name: "Vue.js",
+      image: "../icons/vuejs-icon.png",
       priority: "default",
     },
     astro: {
@@ -152,6 +167,11 @@ const tags = {
     bubble: {
       name: "Bubble.io",
       image: "../icons/bubbleio-icon.png",
+      priority: "default",
+    },
+    shopify: {
+      name: "Shopify",
+      image: "../icons/shopify-icon.png",
       priority: "default",
     },
   },
