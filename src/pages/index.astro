@@ -3,7 +3,8 @@ import Header from "@/components/Header.astro";
 import Home from "@/components/Home.astro";
 import Experience from "@/components/Experience.astro";
 import Projects from "@/components/Projects.astro";
-import About from "@/components/About.astro";
+// import About from "@/components/About.astro";
+import cv from "@/js/objects/cv/cv.js";
 // import Contact from "@/components/Contact.astro";
 ---
 
@@ -16,10 +17,7 @@ import About from "@/components/About.astro";
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jorgesarricolea.com/" />
     <meta property="og:title" content="<JorgeSarricolea /> Software Engineer" />
-    <meta
-      property="og:description"
-      content="Software Engineer | Expert in TypeScript/JavaScript, Node.js, NestJS, and API Development | 4 Years of Experience in Scalable Backend Systems | Focused on RESTful APIs, Express.js, and Performance Optimization"
-    />
+    <meta property="og:description" content={cv.basics.label} />
     <meta property="og:image" content="/img/cartoon_jorge.png" />
     <!-- Typed.js files -->
     <script
@@ -47,9 +45,9 @@ import About from "@/components/About.astro";
     <section id="projects">
       <Projects />
     </section>
-    <section id="about">
+    <!-- <section id="about">
       <About />
-    </section>
+    </section> -->
     <!-- <section id="contact">
       <Contact />
     </section> -->

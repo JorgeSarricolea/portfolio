@@ -1,3 +1,7 @@
+---
+import cv from "@/js/objects/cv/cv.js";
+---
+
 <main
   class="text-white md:bg-gray rounded-3xl md:flex md:flex-col md:shadow-primary"
 >
@@ -9,9 +13,7 @@
         I'm <span id="multiText" class="text-primary font-bold"></span>
       </h1>
       <p class="text-xl">
-        Software Engineer | Expert in TypeScript/JavaScript, Node.js, NestJS,
-        and API Development | 4 Years of Experience in Scalable Backend Systems
-        | Focused on RESTful APIs, Express.js, and Performance Optimization.
+        {cv.basics.label}
       </p>
       <a
         href="/cv_jorge_sarricolea.pdf"
