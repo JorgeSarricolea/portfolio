@@ -1,0 +1,113 @@
+---
+// Social Media component with mobile-first design
+---
+
+<section id="social-media" class="py-16 px-4">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Connect With Me
+      </h2>
+      <p class="text-gray-300 text-lg">
+        Let's stay connected across the digital world
+      </p>
+    </div>
+
+    <!-- Social Media Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+      <!-- GitHub -->
+      <a
+        href="https://github.com/JorgeSarricolea"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card group"
+      >
+        <div class="social-icon">
+          <i class="fab fa-github text-3xl"></i>
+        </div>
+        <h3 class="social-title">GitHub</h3>
+        <p class="social-description">Code & Projects</p>
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://linkedin.com/in/jorgesarricolea"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card group"
+      >
+        <div class="social-icon">
+          <i class="fab fa-linkedin text-3xl"></i>
+        </div>
+        <h3 class="social-title">LinkedIn</h3>
+        <p class="social-description">Professional Network</p>
+      </a>
+
+      <!-- Instagram -->
+      <a
+        href="https://instagram.com/jorgesarricolea"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card group"
+      >
+        <div class="social-icon">
+          <i class="fab fa-instagram text-3xl"></i>
+        </div>
+        <h3 class="social-title">Instagram</h3>
+        <p class="social-description">Life & Creativity</p>
+      </a>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="text-center mt-12">
+      <p class="text-gray-300 mb-4">
+        Have a project in mind? Let's collaborate!
+      </p>
+      <a
+        href="mailto:jorge@jorgesarricolea.com"
+        class="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+      >
+        <i class="fas fa-envelope"></i>
+        Get In Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-card {
+    @apply bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-xl p-6 text-center transition-all duration-300 transform hover:scale-105 hover:bg-gray-700 border border-gray-700 hover:border-primary/50;
+  }
+
+  .social-icon {
+    @apply w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300;
+  }
+
+  .social-title {
+    @apply text-white font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-300;
+  }
+
+  .social-description {
+    @apply text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .social-card {
+      @apply p-4;
+    }
+
+    .social-icon {
+      @apply w-12 h-12;
+    }
+
+    .social-title {
+      @apply text-base;
+    }
+
+    .social-description {
+      @apply text-xs;
+    }
+  }
+</style>
