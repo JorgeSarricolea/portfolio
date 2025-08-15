@@ -1,22 +1,5 @@
 const projects = [
   {
-    id: "finamate",
-    title: "Finamate",
-    description:
-      "Intelligent personal finance assistant that helps users manage accounts, cards, income and expenses in one place. Features interactive cash flow visualizations, intelligent recommendations, and secure data protection.",
-    image: "../img/finamate.png",
-    url: "https://www.finamate.com/",
-    githubUrl: "",
-    tagIds: [
-      "typescript",
-      "javascript",
-      "nextjs",
-      "reactjs",
-      "nodejs",
-      "expressjs",
-    ],
-  },
-  {
     id: "gitbuddy",
     title: "GitBuddy",
     description:

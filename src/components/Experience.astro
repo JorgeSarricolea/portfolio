@@ -1,16 +1,6 @@
 ---
-import experiences from "@/js/objects/cv/experiences.js";
-import tags from "@/js/objects/tags.js";
+import experiences from "@/js/objects/experiences.js";
 import { formatDate, calculateDuration } from "@/js/DateFormat.js";
-
-const findTag = (tagId: string) => {
-  for (const category of Object.values(tags)) {
-    if (category[tagId]) {
-      return category[tagId];
-    }
-  }
-  return null;
-};
 ---
 
 <section class="w-full md:max-w-full md:px-0 px-8">
@@ -67,23 +57,6 @@ const findTag = (tagId: string) => {
                 )}
               </div>
               <p class="text-white mt-2">{experience.shortDescription}</p>
-
-              <div class="flex flex-wrap gap-2 mt-4">
-                {experience.tagIds &&
-                  experience.tagIds.map((tagId) => {
-                    const tag = findTag(tagId);
-                    return tag ? (
-                      <div class="flex w-fit h-fit center text-primary bg-secondary rounded-lg p-1 pr-2 items-center">
-                        <img
-                          src={tag.image}
-                          alt={tag.name}
-                          class="h-6 bg-black rounded"
-                        />
-                        <p class="h-fit w-fit ml-2 text-xs">{tag.name}</p>
-                      </div>
-                    ) : null;
-                  })}
-              </div>
             </div>
           </div>
         );

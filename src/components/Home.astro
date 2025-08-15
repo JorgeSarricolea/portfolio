@@ -1,5 +1,5 @@
 ---
-import cv from "@/js/objects/cv/cv.js";
+import personalInfo from "@/js/objects/personal_info.js";
 ---
 
 <main
@@ -13,15 +13,41 @@ import cv from "@/js/objects/cv/cv.js";
         I'm <span id="multiText" class="text-primary font-bold"></span>
       </h1>
       <p class="text-xl">
-        {cv.basics.label}
+        {personalInfo.basics.label}
       </p>
-      <a
-        href="/cv_jorge_sarricolea.pdf"
-        target="_blank"
-        download="cv_jorge_sarricolea.pdf"
-        class="font-bold text-sm uppercase mt-2 hover:text-primary w-fit"
-        >download cv</a
-      >
+
+      <!-- Social Media Icons -->
+      <div class="flex gap-6 mt-6">
+        <!-- GitHub -->
+        <a
+          href="https://github.com/JorgeSarricolea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="https://linkedin.com/in/jorgesarricolea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/jorgesarricolea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
     <div class="flex md:px-0 px-8 mb-0">
       <img

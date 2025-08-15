@@ -2,11 +2,10 @@
 import Header from "@/components/Header.astro";
 import Home from "@/components/Home.astro";
 import Experience from "@/components/Experience.astro";
+import SkillsBanner from "@/components/SkillsBanner.astro";
 import Projects from "@/components/Projects.astro";
-import SocialMedia from "@/components/SocialMedia.astro";
-// import About from "@/components/About.astro";
-import cv from "@/js/objects/cv/cv.js";
-// import Contact from "@/components/Contact.astro";
+
+import personalInfo from "@/js/objects/personal_info.js";
 ---
 
 <html lang="en">
@@ -18,7 +17,7 @@ import cv from "@/js/objects/cv/cv.js";
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jorgesarricolea.com/" />
     <meta property="og:title" content="<JorgeSarricolea /> Software Engineer" />
-    <meta property="og:description" content={cv.basics.label} />
+    <meta property="og:description" content={personalInfo.basics.label} />
     <meta property="og:image" content="/img/cartoon_jorge.png" />
     <!-- Typed.js files -->
     <script
@@ -32,7 +31,6 @@ import cv from "@/js/objects/cv/cv.js";
     />
     <!-- Relative Img -->
     <script src="@/js/ApplyImages.js"></script>
-    <script src="@/js/objects/icons.js"></script>
     <title>Jorge Sarricolea</title>
   </head>
   <body class="bg-black lg:w-4/6 m-auto mt-36">
@@ -43,18 +41,10 @@ import cv from "@/js/objects/cv/cv.js";
     <section id="experience">
       <Experience />
     </section>
+    <SkillsBanner />
     <section id="projects">
       <Projects />
     </section>
-    <section id="social-media">
-      <SocialMedia />
-    </section>
-    <!-- <section id="about">
-      <About />
-    </section> -->
-    <!-- <section id="contact">
-      <Contact />
-    </section> -->
   </body>
 </html>
 
