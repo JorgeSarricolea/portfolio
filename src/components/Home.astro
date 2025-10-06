@@ -5,12 +5,16 @@ import personalInfo from "@/js/objects/personal_info.js";
 <main
   class="text-white md:bg-gray rounded-3xl md:flex md:flex-col md:shadow-primary"
 >
-  <div class="md:flex md:px-20 md:pt-20 gap-20">
+  <div class="md:flex md:px-20 md:pt-20 md:gap-20">
     <div
       class="flex flex-col justify-between md:w-9/12 md:mb-20 mb-8 mx-8 md:mx-0 gap-4"
     >
-      <h1 id="mainTitle" class="md:text-6xl text-5xl min-w-5/6 h-36">
-        I'm <span id="multiText" class="text-primary font-bold"></span>
+      <h1
+        id="mainTitle"
+        class="md:text-5xl text-5xl min-h-[9rem] md:min-h-[8rem] mb-4"
+      >
+        I'm
+        <span id="multiText" class="text-primary font-bold inline"></span>
       </h1>
       <p class="text-xl">
         {personalInfo.basics.label}
@@ -49,19 +53,38 @@ import personalInfo from "@/js/objects/personal_info.js";
         </a>
       </div>
     </div>
-    <div class="flex md:px-0 px-8 mb-0">
+    <div
+      class="flex justify-center md:justify-start md:w-auto mx-8 md:mx-0 mb-0"
+    >
       <img
         id="hero"
         src=""
         alt=""
-        class="w-fit h-fit md:rounded-none rounded-2xl md:bg-transparent bg-primary backdrop-blur bg-opacity-75"
+        width="600"
+        height="600"
+        class="shrink-0 aspect-square w-full md:w-64 lg:w-72 xl:w-80 object-contain md:rounded-none rounded-2xl md:bg-transparent bg-primary backdrop-blur bg-opacity-75"
       />
     </div>
   </div>
 </main>
 
 <style>
-  img {
-    mask-image: linear-gradient(black 50%, transparent);
+  #hero {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 60%,
+      rgba(0, 0, 0, 0) 95%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 60%,
+      rgba(0, 0, 0, 0) 95%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: top;
+    mask-position: top;
   }
 </style>
