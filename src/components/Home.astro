@@ -1,90 +1,49 @@
 ---
-import personalInfo from "@/js/objects/personal_info.js";
 ---
 
-<main
-  class="text-white md:bg-gray rounded-3xl md:flex md:flex-col md:shadow-primary"
->
-  <div class="md:flex md:px-20 md:pt-20 md:gap-20">
-    <div
-      class="flex flex-col justify-between md:w-9/12 md:mb-20 mb-8 mx-8 md:mx-0 gap-4"
-    >
-      <h1
-        id="mainTitle"
-        class="md:text-5xl text-5xl min-h-[9rem] md:min-h-[8rem] mb-4"
-      >
-        I'm
-        <span id="multiText" class="text-primary font-bold inline"></span>
-      </h1>
-      <p class="text-xl">
-        {personalInfo.basics.label}
+<main class="min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-5xl w-full flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
+    <div class="flex-1 text-center md:text-left">
+      <div class="hero-text">
+        <p class="text-primary font-mono text-sm mb-3 tracking-wide">Hi, I'm</p>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
+          Jorge<br />Sarricolea<span class="text-amber">.</span>
+        </h1>
+      </div>
+
+      <p class="hero-subtitle text-xl md:text-2xl text-gray-400 mb-2 min-h-[2rem]">
+        <span id="multiText" class="text-primary font-semibold"></span>
       </p>
 
-      <!-- Social Media Icons -->
-      <div class="flex gap-6 mt-6">
-        <!-- GitHub -->
-        <a
-          href="https://github.com/JorgeSarricolea"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300"
-        >
-          <i class="fab fa-github"></i>
-        </a>
+      <p class="hero-desc text-gray-500 text-base md:text-lg max-w-lg mt-4 leading-relaxed">
+        Software Engineer building scalable applications with a focus on clean architecture and great user experiences.
+      </p>
 
-        <!-- LinkedIn -->
-        <a
-          href="https://linkedin.com/in/jorgesarricolea"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300"
-        >
-          <i class="fab fa-linkedin"></i>
+      <div class="hero-socials flex items-center gap-5 mt-8 justify-center md:justify-start">
+        <a href="https://github.com/JorgeSarricolea" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:text-primary hover:-translate-y-1 transition-all duration-300" aria-label="GitHub">
+          <i class="fab fa-github text-2xl"></i>
         </a>
-
-        <!-- Instagram -->
-        <a
-          href="https://instagram.com/jorgesarricolea"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300"
-        >
-          <i class="fab fa-instagram"></i>
+        <a href="https://linkedin.com/in/jorgesarricolea" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:text-primary hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://instagram.com/jorgesarricolea_" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:text-primary hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+          <i class="fab fa-instagram text-2xl"></i>
         </a>
       </div>
     </div>
-    <div
-      class="flex justify-center md:justify-start md:w-auto mx-8 md:mx-0 mb-0"
-    >
-      <img
-        id="hero"
-        src=""
-        alt=""
-        width="600"
-        height="600"
-        class="shrink-0 aspect-square w-full md:w-64 lg:w-72 xl:w-80 object-contain md:rounded-none rounded-2xl md:bg-transparent bg-primary backdrop-blur bg-opacity-75"
-      />
+
+    <div class="hero-photo relative flex-shrink-0">
+      <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-primary/30 shadow-glow">
+        <img
+          src="/img/main_photo.png"
+          alt="Jorge Sarricolea"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="absolute -inset-3 rounded-full border border-primary/10 -z-10 animate-pulse"></div>
     </div>
   </div>
 </main>
-
-<style>
-  #hero {
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1) 60%,
-      rgba(0, 0, 0, 0) 95%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1) 60%,
-      rgba(0, 0, 0, 0) 95%
-    );
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: top;
-    mask-position: top;
-  }
-</style>

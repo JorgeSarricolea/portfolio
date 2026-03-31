@@ -2,91 +2,66 @@
 import projects from "@/js/objects/projects.js";
 import tags from "@/js/objects/tags.js";
 
-const findTag = (tagId: string) => {
+function findTag(id) {
   for (const category of Object.values(tags)) {
-    if (category[tagId]) {
-      return category[tagId];
-    }
+    if (category[id]) return category[id];
   }
   return null;
-};
+}
 ---
 
-<section id="projects" class="w-full md:max-w-full md:px-0 px-8 pb-20">
-  <h1
-    class="text-primary md:text-5xl text-3xl font-bold text-center md:my-20 my-8 uppercase"
-  >
-    Projects
-  </h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {
-      projects.map((project) => (
-        <div class="flex flex-col bg-gray rounded-2xl shadow-primary overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
-          <div class="relative h-48 overflow-hidden">
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-sm font-mono text-primary mb-3 tracking-wide">Projects</h2>
+    <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">
+      Things I've built<span class="text-amber">.</span>
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <div class="reveal-child group bg-surface rounded-xl border border-white/5 overflow-hidden hover:border-primary/20 transition-all duration-300 hover:-translate-y-1">
+          <div class="relative h-44 overflow-hidden">
             <img
-              src={project.image}
+              src={project.image.replace("../img/", "/img/")}
               alt={project.title}
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
           </div>
-          <div class="p-8">
-            <div class="flex justify-between items-start">
-              <div class="mb-4">
-                <h3 class="text-primary font-bold text-xl uppercase">
-                  {project.title}
-                </h3>
-              </div>
-              <div class="flex gap-3">
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    class="text-white hover:text-primary transition-colors duration-300"
-                  >
-                    <i class="fa-solid fa-up-right-from-square" />
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    class="text-white hover:text-primary transition-colors duration-300"
-                  >
-                    <i class="fa-brands fa-github" />
-                  </a>
-                )}
-              </div>
+
+          <div class="p-5">
+            <h4 class="text-white font-bold text-lg mb-2">{project.title}</h4>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{project.description}</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {project.tagIds.map((tagId) => {
+                const tag = findTag(tagId);
+                return tag ? (
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-primary/10 text-primary/80">{tag.name}</span>
+                ) : null;
+              })}
             </div>
-            <p class="text-white mt-2 line-clamp-3">{project.description}</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              {project.tagIds &&
-                project.tagIds.map((tagId: string) => {
-                  const tag = findTag(tagId);
-                  return tag ? (
-                    <div class="flex w-fit h-fit center text-primary bg-secondary rounded-lg p-1 pr-2 items-center">
-                      <img
-                        src={tag.image}
-                        alt={tag.name}
-                        class="h-6 bg-black rounded"
-                      />
-                      <p class="h-fit w-fit ml-2 text-xs">{tag.name}</p>
-                    </div>
-                  ) : null;
-                })}
+
+            <div class="flex items-center gap-3">
+              {project.url && (
+                <a href={project.url} target="_blank" rel="noopener noreferrer"
+                  class="text-xs text-gray-400 hover:text-primary transition-colors flex items-center gap-1">
+                  <i class="fas fa-external-link-alt text-[10px]"></i>
+                  Live
+                </a>
+              )}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                  class="text-xs text-gray-400 hover:text-primary transition-colors flex items-center gap-1">
+                  <i class="fab fa-github text-sm"></i>
+                  Code
+                </a>
+              )}
             </div>
           </div>
         </div>
-      ))
-    }
+      ))}
+    </div>
   </div>
 </section>
-
-<style>
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>

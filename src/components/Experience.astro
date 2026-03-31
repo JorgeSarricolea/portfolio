@@ -1,66 +1,45 @@
 ---
-import experiences from "@/js/objects/experiences.js";
-import { formatDate, calculateDuration } from "@/js/DateFormat.js";
+import experiencesMain from "@/js/objects/experiences.js";
+import { formatDate } from "@/js/DateFormat.js";
 ---
 
-<section class="w-full md:max-w-full md:px-0 px-8">
-  <h1
-    class="text-primary md:text-5xl text-3xl font-bold text-center md:my-20 my-8 uppercase"
-  >
-    Work Experience
-  </h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {
-      experiences.map((experience) => {
-        // Ensure dates are in string format for formatDate and calculateDuration functions
-        const startDateStr = experience.startDate.toISOString().split("T")[0];
-        const endDateStr = experience.endDate
-          ? new Date(experience.endDate).toISOString().split("T")[0]
-          : null;
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-sm font-mono text-primary mb-3 tracking-wide">Experience</h2>
+    <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">
+      Where I've worked<span class="text-amber">.</span>
+    </h3>
 
-        return (
-          <div class="flex flex-col text-white bg-gray rounded-2xl shadow-primary">
-            <div class="p-8">
-              <div class="flex justify-between">
-                <div class="flex flex-col md:flex-row gap-4 md:items-center">
-                  <img
-                    src={experience.image}
-                    alt={experience.position}
-                    class="bg-white w-20 h-20 object-cover rounded-xl"
-                  />
-                  <div>
-                    <h3 class="text-primary font-bold text-xl uppercase">
-                      {experience.position}
-                    </h3>
-                    <h2 class="font-bold">
-                      {experience.company} | {experience.type}
-                    </h2>
-                    <div class="flex gap-2 text-sm">
-                      <span>
-                        {formatDate(startDateStr)} -{" "}
-                        {endDateStr ? formatDate(endDateStr) : "Present"}
-                        {endDateStr &&
-                          ` • ${calculateDuration(startDateStr, endDateStr)}`}
-                      </span>
-                    </div>
-                    <span class="text-sm">{experience.location}</span>
-                  </div>
-                </div>
-                {experience.url && (
-                  <a
-                    href={experience.url}
-                    target="_blank"
-                    class="text-white hover:text-primary h-fit"
-                  >
-                    <i class="fa-solid fa-up-right-from-square" />
-                  </a>
-                )}
-              </div>
-              <p class="text-white mt-2">{experience.shortDescription}</p>
+    <div class="relative ml-4 md:ml-8">
+      <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent"></div>
+
+      <div class="space-y-8">
+        {experiencesMain.map((exp) => (
+          <div class="reveal-child relative pl-8 group">
+            <div class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px] group-hover:shadow-primary transition-shadow duration-300"></div>
+
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+              <a
+                href={exp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white font-semibold hover:text-primary transition-colors"
+              >
+                {exp.position}
+              </a>
+              <span class="text-primary text-sm">@ {exp.company}</span>
+            </div>
+
+            <div class="flex items-center gap-3 mt-1 text-xs text-gray-500">
+              <span>{formatDate(exp.startDate)} — {formatDate(exp.endDate)}</span>
+              <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+              <span>{exp.type}</span>
+              <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+              <span>{exp.location}</span>
             </div>
           </div>
-        );
-      })
-    }
+        ))}
+      </div>
+    </div>
   </div>
 </section>
