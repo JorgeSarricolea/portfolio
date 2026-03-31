@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const Typed = module.default;
       new Typed("#multiText", {
         strings: [
-          "Jorge Sarricolea",
-          "a Software Engineer",
-          "a Back-End Developer",
-          "a Front-End Developer",
+          "Software Engineer",
+          "Back-End Developer",
+          "Front-End Developer",
+          "Full-Stack Developer",
         ],
         loop: true,
         typeSpeed: 30,
