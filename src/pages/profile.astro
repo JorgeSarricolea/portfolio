@@ -1,273 +1,123 @@
 ---
 import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const links = [
+  { href: "/services", label: "Services", icon: "fa-tag", external: false },
+  { href: "/cv_jorge_sarricolea.pdf", label: "Download Resume", icon: "fa-file-pdf", external: true },
+  { href: "mailto:jjorgesarricolea18@gmail.com", label: "Email Me", icon: "fa-envelope", external: false },
+];
+
+const socials = [
+  { href: "https://github.com/JorgeSarricolea", label: "GitHub", icon: "fa-github" },
+  { href: "https://linkedin.com/in/jorgesarricolea", label: "LinkedIn", icon: "fa-linkedin" },
+  { href: "https://instagram.com/jorgesarricolea_", label: "Instagram", icon: "fa-instagram" },
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jorgesarricolea.com/profile" />
-    <meta property="og:title" content="Jorge Sarricolea | Links" />
+    <meta property="og:title" content="Jorge Sarricolea — Links" />
     <meta
       property="og:description"
-      content="Connect with Jorge Sarricolea on all platforms and check out his projects and social media links."
+      content="Connect with Jorge Sarricolea — portfolio, services, resume, and contact."
     />
     <meta property="og:image" content="/img/cartoon_jorge.png" />
-    <!-- CDN Font Awesome -->
+    <meta
+      name="description"
+      content="Links to Jorge Sarricolea's portfolio, services, resume, and contact."
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <title>Jorge Sarricolea | Links</title>
+    <title>Jorge Sarricolea — Links</title>
   </head>
-  <body class="bg-black min-h-screen flex flex-col items-center p-4">
-    <div class="max-w-md w-full mx-auto mt-10 mb-8">
-      <div class="flex flex-col items-center mb-8">
-        <img
-          src="/img/profile-pic.jpg"
-          alt="Jorge Sarricolea"
-          class="w-24 h-24 rounded-full object-cover border-2 border-primary mb-4"
-          onerror="this.src='https://github.com/JorgeSarricolea.png'"
-        />
-        <h1 class="text-white text-2xl font-bold">Jorge Sarricolea</h1>
-        <p class="text-primary text-center mt-2">Software Engineer</p>
 
-        <!-- Social Icons -->
-        <div class="flex justify-center gap-6 mt-4">
-          <a
-            href="https://github.com/JorgeSarricolea"
-            target="_blank"
-            class="social-icon-btn"
-            aria-label="GitHub"
-          >
-            <i class="fa-brands fa-github text-2xl"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jorge-sarricolea/"
-            target="_blank"
-            class="social-icon-btn"
-            aria-label="LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin text-2xl"></i>
-          </a>
-        </div>
-      </div>
+  <body class="bg-dark text-white antialiased selection:bg-primary/30 selection:text-white min-h-screen flex flex-col">
+    <Header />
 
-      <div class="space-y-4">
-        <!-- Main Site -->
-        <a
-          href="https://jorgesarricolea.com"
-          target="_blank"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-solid fa-globe mr-3 text-primary"></i>
-            <span>Portfolio</span>
-          </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
-
-        <!-- Pricing -->
-        <a
-          href="/pricing"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-solid fa-tag mr-3 text-primary"></i>
-            <span>Services</span>
-          </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
-
-        <!-- GitBuddy Project -->
-        <a
-          href="https://gitbuddy-ai-qywr.vercel.app/"
-          target="_blank"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-solid fa-code-commit mr-3 text-primary"></i>
-            <span>GitBuddy - AI Commit Generator</span>
-          </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
-
-        <!-- Templates de Notion Collapsible Section -->
-        <div class="notion-templates-container">
-          <!-- Clickable header -->
-          <button
-            id="templates-toggle"
-            class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-          >
-            <div class="flex items-center">
-              <i class="fa-solid fa-table-columns mr-3 text-primary"></i>
-              <span>Templates de Notion</span>
+    <main class="flex-1 flex items-center justify-center px-6 pt-24 pb-8">
+      <div class="w-full max-w-md">
+        <div class="flex flex-col items-center text-center mb-10">
+          <div class="relative mb-6 flex-shrink-0">
+            <div
+              class="w-28 h-28 rounded-full overflow-hidden border-2 border-primary/30 shadow-glow"
+            >
+              <img
+                src="/img/main_photo.png"
+                alt="Jorge Sarricolea"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <i
-              id="templates-icon"
-              class="fa-solid fa-chevron-down text-primary transition-transform"
-            ></i>
-          </button>
+            <div class="absolute -inset-3 rounded-full border border-primary/10 -z-10"></div>
+          </div>
 
-          <!-- Collapsible content -->
-          <div id="templates-content" class="mt-2 hidden">
-            <!-- Organize Me Template -->
-            <a
-              href="https://jorgesarricolea.gumroad.com/l/organize-me-notion-template"
-              target="_blank"
-              class="template-link flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full mb-2"
-            >
-              <div class="flex items-center flex-1 min-w-0">
-                <i
-                  class="fa-solid fa-list-check mr-3 text-primary flex-shrink-0"
-                ></i>
-                <div class="flex-1 min-w-0">
-                  <span class="block font-medium">Organize Me</span>
-                  <span class="text-xs text-gray-400 block truncate">
-                    Sistema completo para organizar tu vida en Notion
-                  </span>
-                </div>
-              </div>
-              <div class="flex items-center ml-2 flex-shrink-0">
-                <span class="text-primary font-bold">$5</span>
-                <i class="fa-solid fa-arrow-right text-primary ml-2"></i>
-              </div>
-            </a>
+          <p class="text-primary font-mono text-sm mb-2 tracking-wide">Hi, I'm</p>
+          <h1 class="text-3xl font-extrabold text-white leading-tight">
+            Jorge Sarricolea<span class="text-amber">.</span>
+          </h1>
+          <p class="text-gray-400 mt-2">Software Engineer</p>
 
-            <!-- Organize Me for Devs Template -->
-            <a
-              href="https://jorgesarricolea.gumroad.com/l/organize-me-for-devs-template"
-              target="_blank"
-              class="template-link flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-            >
-              <div class="flex items-center flex-1 min-w-0">
-                <i class="fa-solid fa-code mr-3 text-primary flex-shrink-0"></i>
-                <div class="flex-1 min-w-0">
-                  <span class="block font-medium">Organize Me (for devs)</span>
-                  <span class="text-xs text-gray-400 block truncate">
-                    Sistema de productividad para desarrolladores
-                  </span>
-                </div>
-              </div>
-              <div class="flex items-center ml-2 flex-shrink-0">
-                <span class="text-primary font-bold">$6</span>
-                <i class="fa-solid fa-arrow-right text-primary ml-2"></i>
-              </div>
-            </a>
+          <div class="flex items-center gap-5 mt-6">
+            {
+              socials.map((social) => (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-500 hover:text-primary hover:-translate-y-1 transition-all duration-300"
+                  aria-label={social.label}
+                >
+                  <i class={`fab ${social.icon} text-2xl`}></i>
+                </a>
+              ))
+            }
           </div>
         </div>
 
-        <!-- Resume/CV -->
-        <a
-          href="/cv_jorge_sarricolea.pdf"
-          target="_blank"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-solid fa-file-pdf mr-3 text-primary"></i>
-            <span>Download Resume</span>
-          </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
+        <div class="space-y-3">
+          {
+            links.map((link) => (
+              <a
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                class="group flex items-center justify-between bg-surface rounded-xl border border-white/5 p-4 transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5"
+              >
+                <div class="flex items-center gap-3">
+                  <i class={`fa-solid ${link.icon} text-primary`}></i>
+                  <span class="font-medium text-white">{link.label}</span>
+                </div>
+                <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-primary transition-colors duration-300"></i>
+              </a>
+            ))
+          }
+        </div>
 
-        <!-- Email Contact -->
-        <a
-          href="mailto:contact@jorgesarricolea.com"
-          class="flex items-center justify-between bg-gray-800 text-white p-4 rounded-lg transition-all hover:bg-gray-700 hover:scale-102 w-full"
-        >
-          <div class="flex items-center">
-            <i class="fa-solid fa-envelope mr-3 text-primary"></i>
-            <span>Email Me</span>
-          </div>
-          <i class="fa-solid fa-arrow-right text-primary"></i>
-        </a>
+        <p class="mt-10 text-center">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors duration-300"
+          >
+            <i class="fa-solid fa-arrow-left text-xs"></i>
+            Back to portfolio
+          </a>
+        </p>
       </div>
+    </main>
 
-      <div class="mt-10 text-center">
-        <a href="/" class="text-primary hover:underline">
-          <i class="fa-solid fa-arrow-left mr-2"></i>Back to portfolio
-        </a>
-      </div>
-    </div>
-
-    <script>
-      // Toggle templates section
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggleButton = document.getElementById("templates-toggle");
-        const content = document.getElementById("templates-content");
-        const icon = document.getElementById("templates-icon");
-
-        toggleButton.addEventListener("click", () => {
-          content.classList.toggle("hidden");
-          icon.classList.toggle("rotate-180");
-        });
-      });
-    </script>
+    <Footer />
   </body>
 </html>
 
-<style>
-  .hover\:scale-102:hover {
-    transform: scale(1.02);
-  }
-
-  .text-primary {
-    color: #eaa0fd;
-  }
-
-  .border-primary {
-    border-color: #eaa0fd;
-  }
-
-  .bg-gray-800 {
-    background-color: #212121;
-  }
-
-  .hover\:bg-gray-700:hover {
-    background-color: #72507a;
-  }
-
-  .rotate-180 {
-    transform: rotate(180deg);
-  }
-
-  .transition-transform {
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .social-icon-btn {
-    color: #eaa0fd;
-    background-color: #212121;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .social-icon-btn:hover {
-    background-color: #72507a;
-    transform: scale(1.1);
-  }
-
-  .template-link {
-    display: flex;
-    align-items: center;
-  }
-
-  /* For very small devices */
-  @media (max-width: 360px) {
-    .template-link {
-      padding: 12px 10px;
-    }
-
-    .template-link .fa-arrow-right {
-      display: none;
-    }
+<style is:global>
+  html {
+    scroll-behavior: smooth;
   }
 </style>

@@ -6,6 +6,15 @@ import Experience from "@/components/Experience.astro";
 import Projects from "@/components/Projects.astro";
 import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
+import SlideNav from "@/components/SlideNav.astro";
+
+const homeSlides = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 ---
 
 <html lang="en">
@@ -32,126 +41,43 @@ import Footer from "@/components/Footer.astro";
 
   <body class="bg-dark text-white antialiased selection:bg-primary/30 selection:text-white">
     <Header />
+    <SlideNav slides={homeSlides} />
 
-    <section id="home">
-      <Home />
-    </section>
+    <div id="slide-scroll" class="slide-scroll">
+      <section id="home" class="slide-section is-active" data-slide-index="0">
+        <Home />
+      </section>
 
-    <section id="about" class="reveal">
-      <About />
-    </section>
+      <section id="about" class="slide-section" data-slide-index="1">
+        <About />
+      </section>
 
-    <section id="experience" class="reveal">
-      <Experience />
-    </section>
+      <section id="experience" class="slide-section slide-section--scrollable" data-slide-index="2">
+        <Experience />
+      </section>
 
-    <section id="projects" class="reveal">
-      <Projects />
-    </section>
+      <section id="projects" class="slide-section slide-section--scrollable" data-slide-index="3">
+        <Projects />
+      </section>
 
-    <section id="contact" class="reveal">
-      <Contact />
-    </section>
-
-    <Footer />
+      <section id="contact" class="slide-section slide-section--footer" data-slide-index="4">
+        <div class="slide-section__main">
+          <Contact />
+        </div>
+        <Footer />
+      </section>
+    </div>
   </body>
 </html>
 
+<script>
+  import "@/js/scrollMotion.js";
+</script>
+
 <style is:global>
+  @import "@/styles/slides.css";
+
   html {
     scroll-behavior: smooth;
   }
-
-  body {
-    overflow-x: hidden;
-  }
-
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgba(139, 92, 246, 0.2);
-    border-radius: 2px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(139, 92, 246, 0.4);
-  }
-
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Scroll reveal animations */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Staggered children inside reveal sections */
-  .reveal-child {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal.visible .reveal-child {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Hero entrance animation */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  .hero-text { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
-  .hero-photo { animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
-  .hero-subtitle { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
-  .hero-desc { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both; }
-  .hero-socials { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both; }
 </style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-
-            const children = entry.target.querySelectorAll(".reveal-child");
-            children.forEach((child, i) => {
-              child.style.transitionDelay = `${i * 0.1}s`;
-            });
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-  });
-</script>

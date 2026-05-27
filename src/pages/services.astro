@@ -1,0 +1,385 @@
+---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import SlideNav from "@/components/SlideNav.astro";
+import services, { servicesSlides } from "@/js/objects/servicesPage.js";
+
+const formatPrice = (amount) =>
+  new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(amount);
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jorgesarricolea.com/services" />
+    <meta property="og:title" content="Jorge Sarricolea — Servicios y paquetes" />
+    <meta
+      property="og:description"
+      content="Landing pages, tiendas en línea y software a la medida para PyMEs en México. Precios claros y cotización sin compromiso."
+    />
+    <meta property="og:image" content="/img/cartoon_jorge.png" />
+    <meta
+      name="description"
+      content="Servicios digitales: landing pages, e-commerce y software a medida. Testimonios, paquetes transparentes y cotización por WhatsApp."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Jorge Sarricolea — Servicios</title>
+  </head>
+
+  <body class="bg-dark text-white antialiased selection:bg-primary/30 selection:text-white">
+    <Header />
+    <SlideNav slides={servicesSlides} />
+
+    <div id="slide-scroll" class="slide-scroll">
+      <!-- Hero + stats -->
+      <section id="services-hero" class="slide-section is-active" data-slide-index="0">
+        <div class="relative w-full px-6 pt-20 pb-10">
+          <div class="relative max-w-4xl mx-auto text-center">
+            <div data-motion-header>
+              <p class="text-primary font-mono text-sm mb-4 tracking-wide">{services.hero.eyebrow}</p>
+              <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-2">
+                {services.hero.title}
+              </h1>
+              <p class="text-3xl md:text-5xl font-extrabold text-primary mb-6">{services.hero.highlight}</p>
+              <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                {services.hero.description}
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                data-motion-item
+                href={services.whatsappHref(services.finalCta.whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-primary hover:-translate-y-0.5"
+              >
+                {services.hero.primaryCta}
+              </a>
+              <a
+                data-motion-item
+                href={services.hero.secondaryHref}
+                class="inline-flex items-center gap-2 px-8 py-3.5 border border-white/10 text-gray-300 hover:text-white hover:border-primary/30 rounded-lg transition-all duration-300"
+              >
+                {services.hero.secondaryCta}
+              </a>
+            </div>
+          </div>
+
+          <div class="relative max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
+            {
+              services.stats.map((stat) => (
+                <div data-motion-item class="bg-surface rounded-xl border border-white/5 p-6 text-center">
+                  <p class="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</p>
+                  <p class="text-gray-500 text-sm">{stat.label}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Showcase -->
+      <section id="services-work" class="slide-section slide-section--scrollable" data-slide-index="1">
+        <div class="w-full px-6">
+          <div class="max-w-5xl mx-auto">
+            <div data-motion-header>
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.showcase.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">{services.showcase.title}</h2>
+              <p class="text-gray-400 mb-12 max-w-2xl">{services.showcase.subtitle}</p>
+            </div>
+
+            <div class="space-y-6">
+              {
+                services.showcase.items.map((item) => (
+                  <article data-motion-item class="bg-surface rounded-xl border border-white/5 p-6 md:p-8 hover:border-primary/20 transition-colors duration-300">
+                    <p class="text-primary text-xs font-mono uppercase tracking-wide mb-2">{item.category}</p>
+                    <h3 class="text-2xl font-bold text-white mb-3">{item.title}</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed">{item.description}</p>
+                    <ul class="space-y-2 mb-6">
+                      {item.highlights.map((highlight) => (
+                        <li class="flex items-start gap-2 text-gray-300 text-sm">
+                          <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors text-sm font-medium"
+                    >
+                      {item.cta}
+                      <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                  </article>
+                ))
+              }
+            </div>
+
+            <div data-motion-item class="mt-10 text-center">
+              <a
+                href={services.whatsappHref(services.finalCta.whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium"
+              >
+                {services.showcase.cta}
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials + transformations -->
+      <section id="services-proof" class="slide-section slide-section--scrollable" data-slide-index="2">
+        <div class="w-full px-6 space-y-16">
+          <div class="max-w-5xl mx-auto">
+            <div data-motion-header class="text-center">
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.testimonials.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">{services.testimonials.title}</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              {
+                services.testimonials.items.map((item) => (
+                  <blockquote data-motion-item class="bg-surface rounded-xl border border-white/5 p-6 flex flex-col">
+                    <p class="text-gray-300 leading-relaxed flex-1 mb-6">"{item.quote}"</p>
+                    <footer class="border-t border-white/5 pt-4">
+                      <p class="text-white text-sm font-semibold">{item.role}</p>
+                      <p class="text-gray-500 text-xs mt-1">{item.company}</p>
+                    </footer>
+                  </blockquote>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="max-w-5xl mx-auto">
+            <div data-motion-header>
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.transformations.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">{services.transformations.title}</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              {
+                services.transformations.items.map((item) => (
+                  <div data-motion-item class="bg-surface rounded-xl border border-white/5 p-6">
+                    <p class="text-gray-500 text-sm mb-2 line-through">{item.before}</p>
+                    <p class="text-primary text-xs font-mono mb-2">Ahora</p>
+                    <p class="text-white font-medium leading-relaxed">{item.after}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions -->
+      <section id="services-solutions" class="slide-section" data-slide-index="3">
+        <div class="w-full px-6">
+          <div class="max-w-5xl mx-auto">
+            <div data-motion-header>
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.solutions.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">{services.solutions.title}</h2>
+              <p class="text-gray-400 mb-12 max-w-2xl">{services.solutions.subtitle}</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              {
+                services.solutions.items.map((item) => (
+                  <div data-motion-item class="bg-surface rounded-xl border border-white/5 p-6 flex flex-col hover:border-primary/20 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">{item.title}</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">{item.description}</p>
+                    <p class="text-primary text-xs font-mono mb-6">{item.timeline}</p>
+                    <a
+                      href={services.whatsappHref(item.message)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-colors text-sm font-medium"
+                    >
+                      {item.cta}
+                    </a>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section id="services-packages" class="slide-section slide-section--scrollable slide-section--muted" data-slide-index="4">
+        <div class="w-full px-6 py-4">
+          <div id="paquetes" class="max-w-6xl mx-auto">
+            <div data-motion-header class="text-center">
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.packages.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">{services.packages.title}</h2>
+              <p class="text-gray-400 mb-2 max-w-2xl mx-auto">{services.packages.subtitle}</p>
+              <p class="text-gray-500 text-sm mb-12">{services.packages.note}</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+              {
+                services.packages.items.map((pkg) => (
+                  <article
+                    data-motion-item
+                    class:list={[
+                      "relative flex flex-col bg-surface rounded-xl border p-8 transition-all duration-300",
+                      pkg.popular
+                        ? "border-primary shadow-glow lg:-translate-y-2"
+                        : "border-white/5 hover:border-primary/20",
+                    ]}
+                  >
+                    {pkg.popular && (
+                      <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full">
+                        Más popular
+                      </span>
+                    )}
+                    <p class="text-primary font-mono text-sm mb-2">{pkg.label}</p>
+                    <div class="mb-1">
+                      <span class="text-4xl font-extrabold text-white">
+                        {pkg.priceLabel && <span class="text-lg font-normal text-gray-500 mr-1">{pkg.priceLabel}</span>}
+                        {formatPrice(pkg.price)}
+                      </span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">{pkg.timeline}</p>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">{pkg.description}</p>
+
+                    <ul class="space-y-3 mb-8 flex-1">
+                      {pkg.features.map((feature) => (
+                        <li class="flex items-start gap-2 text-gray-300 text-sm">
+                          <i class="fa-solid fa-check text-primary mt-0.5 text-xs shrink-0"></i>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={services.whatsappHref(pkg.message)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class:list={[
+                        "w-full py-3 rounded-lg text-center font-semibold transition-all duration-300",
+                        pkg.popular
+                          ? "bg-primary hover:bg-primary/90 text-white hover:-translate-y-0.5"
+                          : "border border-white/10 text-white hover:border-primary/30 hover:text-primary",
+                      ]}
+                    >
+                      {pkg.cta}
+                    </a>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="services-process" class="slide-section" data-slide-index="5">
+        <div class="w-full px-6">
+          <div class="max-w-5xl mx-auto">
+            <div data-motion-header class="text-center">
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.process.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">{services.process.title}</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {
+                services.process.steps.map((step, index) => (
+                  <div data-motion-item class="relative bg-surface rounded-xl border border-white/5 p-6">
+                    <span class="text-4xl font-extrabold text-primary/20 mb-4 block">{index + 1}</span>
+                    <h3 class="text-white font-semibold mb-2">{step.title}</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">{step.description}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="services-faq" class="slide-section slide-section--scrollable slide-section--muted" data-slide-index="6">
+        <div class="w-full px-6 py-4">
+          <div class="max-w-3xl mx-auto">
+            <div data-motion-header class="text-center">
+              <p class="text-primary font-mono text-sm mb-3 tracking-wide">{services.faq.eyebrow}</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-10">{services.faq.title}</h2>
+            </div>
+
+            <div class="space-y-4">
+              {
+                services.faq.items.map((item) => (
+                  <details data-motion-item class="group bg-surface rounded-xl border border-white/5 open:border-primary/20 transition-colors">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-white">
+                      {item.question}
+                      <i class="fa-solid fa-chevron-down text-primary text-sm transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="px-5 pb-5 text-gray-400 text-sm leading-relaxed">{item.answer}</p>
+                  </details>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section id="services-contact" class="slide-section slide-section--footer" data-slide-index="7">
+        <div class="slide-section__main">
+          <div data-motion-header class="max-w-3xl w-full text-center bg-surface rounded-2xl border border-white/5 p-10 md:p-14">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">{services.finalCta.title}</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed">{services.finalCta.description}</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                data-motion-item
+                href={services.whatsappHref(services.finalCta.whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-300"
+              >
+                <i class="fab fa-whatsapp"></i>
+                {services.finalCta.whatsappLabel}
+              </a>
+              <a
+                data-motion-item
+                href={`mailto:${services.finalCta.email}`}
+                class="inline-flex items-center gap-2 px-8 py-3.5 border border-white/10 text-gray-300 hover:text-white hover:border-primary/30 rounded-lg transition-all duration-300"
+              >
+                <i class="fa-solid fa-envelope"></i>
+                {services.finalCta.emailLabel}
+              </a>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </section>
+    </div>
+  </body>
+</html>
+
+<script>
+  import "@/js/scrollMotion.js";
+</script>
+
+<style is:global>
+  @import "@/styles/slides.css";
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

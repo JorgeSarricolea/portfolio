@@ -1,81 +1,236 @@
 ---
+const navLinks = [
+  { href: "/#home", label: "Home", section: "home" },
+  { href: "/#about", label: "About", section: "about" },
+  { href: "/#experience", label: "Experience", section: "experience" },
+  { href: "/#projects", label: "Projects", section: "projects" },
+  { href: "/#contact", label: "Contact", section: "contact" },
+];
+
+const mobileLinks = [
+  ...navLinks,
+  { href: "/services", label: "Services", section: "" },
+];
 ---
 
-<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-  <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-primary font-mono text-lg tracking-tight">
-      &lt;<span class="text-white font-semibold">JorgeSarricolea</span> /&gt;
+<header
+  id="header"
+  class="fixed top-0 left-0 w-full z-50 border-b border-transparent bg-transparent backdrop-blur-none transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300"
+>
+  <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <a
+      href="/"
+      class="group shrink-0 font-mono text-base sm:text-lg tracking-tight text-primary transition-opacity hover:opacity-90"
+      aria-label="Jorge Sarricolea — Home"
+    >
+      &lt;<span class="text-white font-semibold group-hover:text-primary transition-colors">JorgeSarricolea</span> /&gt;
     </a>
 
-    <ul class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-      <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
-      <li><a href="#experience" class="hover:text-primary transition-colors">Experience</a></li>
-      <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
-      <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
-    </ul>
+    <div
+      id="header-nav-pill"
+      class="hidden md:flex items-center gap-1 p-1 rounded-full bg-white/5 border border-white/5 backdrop-blur-sm"
+      role="navigation"
+      aria-label="Main"
+    >
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            data-nav-link={link.section}
+            class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
 
-    <button id="menu-btn" class="md:hidden text-gray-400 hover:text-primary transition-colors" aria-label="Menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+    <div class="flex items-center gap-2 shrink-0">
+      <a
+        href="/services"
+        class="hidden sm:inline-flex text-sm font-medium text-gray-400 hover:text-white transition-colors px-2"
+      >
+        Services
+      </a>
+      <a
+        href="/#contact"
+        class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-white text-sm font-semibold transition-all duration-200 hover:shadow-primary hover:-translate-y-px"
+      >
+        Say hello
+      </a>
+
+      <button
+        id="menu-btn"
+        type="button"
+        class="menu-toggle md:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-gray-300 hover:text-white hover:border-primary/30 transition-colors"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </nav>
+</header>
 
-  <div id="mobile-menu" class="fixed inset-0 bg-dark/95 backdrop-blur-lg z-50 hidden flex-col items-center justify-center">
-    <button id="close-menu-btn" class="absolute top-5 right-6 text-gray-400 hover:text-primary transition-colors" aria-label="Close">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<div
+  id="mobile-menu"
+  class="mobile-menu fixed inset-0 z-[100] hidden md:hidden flex-col bg-dark"
+  aria-hidden="true"
+>
+  <div class="flex h-16 shrink-0 items-center justify-between border-b border-white/5 px-4 sm:px-6">
+    <span class="font-mono text-base text-primary">
+      &lt;<span class="font-semibold text-white">JS</span> /&gt;
+    </span>
+    <button
+      id="close-menu-btn"
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-gray-300 hover:border-primary/30 hover:text-white transition-colors"
+      aria-label="Close menu"
+    >
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-
-    <ul class="flex flex-col items-center gap-8 text-2xl text-white">
-      <li><a href="#about" class="hover:text-primary transition-colors mobile-link">About</a></li>
-      <li><a href="#experience" class="hover:text-primary transition-colors mobile-link">Experience</a></li>
-      <li><a href="#projects" class="hover:text-primary transition-colors mobile-link">Projects</a></li>
-      <li><a href="#contact" class="hover:text-primary transition-colors mobile-link">Contact</a></li>
-    </ul>
   </div>
-</header>
+
+  <nav class="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-6 sm:px-6" aria-label="Mobile">
+    {
+      mobileLinks.map((link) => (
+        <a
+          href={link.href}
+          data-nav-link={link.section || undefined}
+          class="mobile-nav-link block rounded-xl border border-transparent px-4 py-3.5 text-lg font-medium text-gray-200 transition-colors hover:border-white/5 hover:bg-surface hover:text-white"
+        >
+          {link.label}
+        </a>
+      ))
+    }
+    <a
+      href="/#contact"
+      class="mobile-nav-link mt-4 flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-base font-semibold text-white transition-colors hover:bg-primary/90"
+    >
+      Say hello
+    </a>
+  </nav>
+</div>
+
+<style>
+  #header.is-scrolled {
+    @apply border-white/5 bg-dark/70 backdrop-blur-xl;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  #header.is-scrolled #header-nav-pill {
+    @apply bg-surface/80;
+  }
+
+  .nav-link.is-active {
+    @apply bg-primary/15 text-primary;
+  }
+
+  .mobile-nav-link.is-active {
+    @apply border-primary/20 bg-primary/10 text-primary;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  body.mobile-menu-open #slide-scroll {
+    overflow: hidden;
+  }
+
+  body.mobile-menu-open #slide-nav,
+  body.mobile-menu-open #slide-next {
+    display: none;
+  }
+
+  body.mobile-menu-open #header {
+    @apply z-[101] border-white/5 bg-dark;
+  }
+</style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const header = document.getElementById("header");
     const menu = document.getElementById("mobile-menu");
     const menuBtn = document.getElementById("menu-btn");
     const closeBtn = document.getElementById("close-menu-btn");
-    const mobileLinks = document.querySelectorAll(".mobile-link");
-    let lastScroll = 0;
+    const menuIconOpen = document.getElementById("menu-icon-open");
+    const menuIconClose = document.getElementById("menu-icon-close");
+    const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+    const navLinks = document.querySelectorAll("[data-nav-link]");
+    const scrollRoot = document.getElementById("slide-scroll");
 
-    window.addEventListener("scroll", () => {
-      const current = window.scrollY;
-      if (current > 60) {
-        header.style.background = "rgba(10, 10, 10, 0.85)";
-        header.style.backdropFilter = "blur(12px)";
-      } else {
-        header.style.background = "transparent";
-        header.style.backdropFilter = "none";
-      }
-      if (current > lastScroll && current > 200) {
-        header.style.transform = "translateY(-100%)";
-      } else {
-        header.style.transform = "translateY(0)";
-      }
-      lastScroll = current;
-    });
+    const setActiveSection = (sectionId) => {
+      if (!sectionId) return;
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("data-nav-link") === sectionId;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) link.setAttribute("aria-current", "true");
+        else link.removeAttribute("aria-current");
+      });
+    };
 
-    menuBtn?.addEventListener("click", () => {
-      menu.classList.remove("hidden");
-      menu.classList.add("flex");
-      document.body.style.overflow = "hidden";
-    });
+    if (scrollRoot) {
+      const sections = [...document.querySelectorAll(".slide-section")];
 
-    function closeMenu() {
-      menu.classList.add("hidden");
-      menu.classList.remove("flex");
-      document.body.style.overflow = "";
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+          if (visible.length === 0) return;
+          setActiveSection(visible[0].target.id);
+        },
+        { root: scrollRoot, threshold: [0.4, 0.55, 0.7] },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+      if (sections[0]) setActiveSection(sections[0].id);
     }
 
+    const setMenuOpen = (open) => {
+      menu?.classList.toggle("hidden", !open);
+      menu?.classList.toggle("flex", open);
+      menu?.setAttribute("aria-hidden", open ? "false" : "true");
+      menuBtn?.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      document.body.classList.toggle("mobile-menu-open", open);
+      menuIconOpen?.classList.toggle("hidden", open);
+      menuIconClose?.classList.toggle("hidden", !open);
+    };
+
+    const openMenu = () => setMenuOpen(true);
+    const closeMenu = () => setMenuOpen(false);
+
+    menuBtn?.addEventListener("click", () => {
+      const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
+      if (isOpen) closeMenu();
+      else openMenu();
+    });
     closeBtn?.addEventListener("click", closeMenu);
-    mobileLinks.forEach((l) => l.addEventListener("click", closeMenu));
+    mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menuBtn?.getAttribute("aria-expanded") === "true") closeMenu();
+    });
+
+    const updateHeaderSurface = () => {
+      if (document.body.classList.contains("mobile-menu-open")) return;
+      const offset = scrollRoot ? scrollRoot.scrollTop : window.scrollY;
+      header?.classList.toggle("is-scrolled", offset > 16);
+    };
+
+    updateHeaderSurface();
+    scrollRoot?.addEventListener("scroll", updateHeaderSurface, { passive: true });
+    window.addEventListener("scroll", updateHeaderSurface, { passive: true });
   });
 </script>

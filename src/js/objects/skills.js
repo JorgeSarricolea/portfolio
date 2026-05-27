@@ -1,6 +1,7 @@
 export const skillsByCategory = [
   {
-    title: "Languages \ud83c\udf1f",
+    title: "Languages",
+    categoryIcon: "code",
     items: [
       { name: "JavaScript", icon: "javascript-icon.png" },
       { name: "TypeScript", icon: "typescript-icon.png" },
@@ -10,7 +11,8 @@ export const skillsByCategory = [
     ],
   },
   {
-    title: "Front-End \ud83c\udfa8",
+    title: "Front-End",
+    categoryIcon: "palette",
     items: [
       { name: "React", icon: "reactjs-icon.png" },
       { name: "Next.js", icon: "nextjs-icon.png" },
@@ -27,7 +29,8 @@ export const skillsByCategory = [
     ],
   },
   {
-    title: "Back-End \u2699\ufe0f",
+    title: "Back-End",
+    categoryIcon: "settings",
     items: [
       { name: "Node.js", icon: "nodejs-icon.png" },
       { name: "NestJS", icon: "nestjs-icon.png" },
@@ -39,14 +42,16 @@ export const skillsByCategory = [
     ],
   },
   {
-    title: "Cloud \u2601\ufe0f",
+    title: "Cloud",
+    categoryIcon: "cloud",
     items: [
       { name: "AWS", icon: "aws-icon.png" },
       { name: "Vercel", icon: "vercel-icon.png" },
     ],
   },
   {
-    title: "Testing & Tools \ud83d\udd0d",
+    title: "Testing & Tools",
+    categoryIcon: "bug_report",
     items: [
       { name: "Jest", icon: "jest-icon.png" },
       { name: "Swagger", icon: "swagger-icon.png" },
@@ -57,7 +62,8 @@ export const skillsByCategory = [
     ],
   },
   {
-    title: "CI/CD \ud83d\ude80",
+    title: "CI/CD",
+    categoryIcon: "rocket_launch",
     items: [
       { name: "Docker", icon: "docker-icon.png" },
       { name: "Husky", icon: "husky-icon.png" },
@@ -65,7 +71,8 @@ export const skillsByCategory = [
     ],
   },
   {
-    title: "Databases \ud83d\uddc4\ufe0f",
+    title: "Databases",
+    categoryIcon: "database",
     items: [
       { name: "PostgreSQL", icon: "postgresql-icon.png" },
       { name: "MySQL", icon: "mysql-icon.png" },
@@ -74,7 +81,8 @@ export const skillsByCategory = [
     ],
   },
   {
-    title: "Blockchain \u26d3\ufe0f",
+    title: "Blockchain",
+    categoryIcon: "hub",
     items: [
       { name: "Scaffold", icon: "scaffold-icon.png" },
       { name: "Wagmi", icon: "wagmi-icon.png" },

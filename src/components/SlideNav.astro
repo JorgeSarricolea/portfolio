@@ -1,0 +1,47 @@
+---
+interface Slide {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+---
+
+<nav
+  id="slide-nav"
+  class="fixed right-3 sm:right-5 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2"
+  aria-label="Section navigation"
+>
+  {
+    slides.map((slide, index) => (
+      <button
+        type="button"
+        class:list={[
+          "slide-nav-dot group h-2.5 w-2.5 rounded-full border-0 bg-white/20 p-0 transition-all duration-300 hover:bg-white/40",
+          index === 0 && "is-active",
+        ]}
+        data-slide-index={index}
+        data-slide-target={slide.id}
+        aria-label={slide.label}
+        aria-current={index === 0 ? "step" : undefined}
+      >
+        <span class="sr-only">{slide.label}</span>
+      </button>
+    ))
+  }
+</nav>
+
+<button
+  type="button"
+  id="slide-next"
+  class="fixed bottom-4 left-1/2 z-40 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full text-gray-500 transition-colors hover:text-primary"
+  aria-label="Next section"
+>
+  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</button>
