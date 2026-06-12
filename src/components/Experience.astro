@@ -15,30 +15,45 @@ import { formatDate } from "@/js/DateFormat.js";
     <div class="relative ml-4 md:ml-8">
       <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent"></div>
 
-      <div class="space-y-8">
+      <div class="space-y-10">
         {experiencesMain.map((exp) => (
           <div data-motion-item class="relative pl-8 group">
             <div class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px] group-hover:shadow-primary transition-shadow duration-300"></div>
 
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-              <a
-                href={exp.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-white font-semibold hover:text-primary transition-colors"
-              >
-                {exp.position}
-              </a>
+              {exp.url ? (
+                <a
+                  href={exp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white font-semibold hover:text-primary transition-colors"
+                >
+                  {exp.position}
+                </a>
+              ) : (
+                <span class="text-white font-semibold">{exp.position}</span>
+              )}
               <span class="text-primary text-sm">@ {exp.company}</span>
             </div>
 
-            <div class="flex items-center gap-3 mt-1 text-xs text-gray-500">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs text-gray-500">
               <span>{formatDate(exp.startDate)} — {formatDate(exp.endDate)}</span>
               <span class="w-1 h-1 rounded-full bg-gray-600"></span>
               <span>{exp.type}</span>
               <span class="w-1 h-1 rounded-full bg-gray-600"></span>
               <span>{exp.location}</span>
             </div>
+
+            {exp.highlights?.length > 0 && (
+              <ul class="mt-4 space-y-2 text-sm text-gray-400 leading-relaxed max-w-3xl">
+                {exp.highlights.map((line) => (
+                  <li class="flex gap-2">
+                    <span class="text-primary mt-1.5 shrink-0 w-1 h-1 rounded-full bg-primary/80"></span>
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>

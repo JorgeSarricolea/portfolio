@@ -1,0 +1,32 @@
+---
+interface Props {
+  sizeClass?: string;
+  showPulse?: boolean;
+}
+
+const { sizeClass = "w-48 h-48 md:w-64 md:h-64", showPulse = true } = Astro.props;
+---
+
+<div class="relative flex-shrink-0">
+  <div class={`${sizeClass} rounded-full overflow-hidden border-2 border-primary/30 shadow-glow relative`}>
+    <img
+      src="/img/main_photo.png"
+      alt="Jorge Sarricolea"
+      class="w-full h-full object-cover"
+    />
+    <div class="profile-photo-hair-shadow" aria-hidden="true"></div>
+  </div>
+  <div class={`absolute -inset-3 rounded-full border border-primary/10 -z-10 ${showPulse ? "animate-pulse" : ""}`}></div>
+</div>
+
+<style>
+  .profile-photo-hair-shadow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 52% 18% at 50% 6%, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.05) 42%, transparent 72%),
+      radial-gradient(ellipse 22% 12% at 24% 10%, rgba(0, 0, 0, 0.1) 0%, transparent 68%),
+      radial-gradient(ellipse 22% 12% at 76% 10%, rgba(0, 0, 0, 0.1) 0%, transparent 68%);
+  }
+</style>

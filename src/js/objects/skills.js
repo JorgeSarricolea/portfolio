@@ -15,16 +15,13 @@ export const skillsByCategory = [
     categoryIcon: "palette",
     items: [
       { name: "React", icon: "reactjs-icon.png" },
+      { name: "React Native", icon: "reactjs-icon.png" },
       { name: "Next.js", icon: "nextjs-icon.png" },
       { name: "Angular", icon: "angular-icon.png" },
-      { name: "Vue", icon: "vuejs-icon.png" },
       { name: "Astro", icon: "astro-icon.png" },
-      { name: "Three.js", icon: "threejs-icon.png" },
       { name: "TailwindCSS", icon: "tailwindcss-icon.png" },
       { name: "HTML", icon: "html-icon.png" },
       { name: "CSS", icon: "css-icon.png" },
-      { name: "Bootstrap", icon: "bootstrap-icon.png" },
-      { name: "Bubble.io", icon: "bubbleio-icon.png" },
       { name: "Shopify", icon: "shopify-icon.png" },
     ],
   },
@@ -37,8 +34,6 @@ export const skillsByCategory = [
       { name: "Express", icon: "express-icon.png" },
       { name: "Prisma", icon: "prisma-icon.png" },
       { name: "Spring Boot", icon: "springboot-icon.png" },
-      { name: "Django", icon: "django-icon.png" },
-      { name: "Maven", icon: "maven-icon.png" },
     ],
   },
   {
@@ -46,6 +41,7 @@ export const skillsByCategory = [
     categoryIcon: "cloud",
     items: [
       { name: "AWS", icon: "aws-icon.png" },
+      { name: "Azure", icon: "azure-icon.png" },
       { name: "Vercel", icon: "vercel-icon.png" },
     ],
   },
@@ -54,9 +50,8 @@ export const skillsByCategory = [
     categoryIcon: "bug_report",
     items: [
       { name: "Jest", icon: "jest-icon.png" },
-      { name: "Swagger", icon: "swagger-icon.png" },
       { name: "Postman", icon: "postman-icon.png" },
-      { name: "VSCode", icon: "vscode-icon.png" },
+      { name: "Swagger", icon: "swagger-icon.png" },
       { name: "Git", icon: "git-icon.png" },
       { name: "SonarCloud", icon: "sonarcloud-icon.png" },
     ],
@@ -66,8 +61,8 @@ export const skillsByCategory = [
     categoryIcon: "rocket_launch",
     items: [
       { name: "Docker", icon: "docker-icon.png" },
-      { name: "Husky", icon: "husky-icon.png" },
       { name: "GitHub Actions", icon: "github-icon.png" },
+      { name: "Husky", icon: "husky-icon.png" },
     ],
   },
   {
@@ -77,15 +72,6 @@ export const skillsByCategory = [
       { name: "PostgreSQL", icon: "postgresql-icon.png" },
       { name: "MySQL", icon: "mysql-icon.png" },
       { name: "Redis", icon: "redis-icon.png" },
-      { name: "Oracle", icon: "oracle-icon.png" },
-    ],
-  },
-  {
-    title: "Blockchain",
-    categoryIcon: "hub",
-    items: [
-      { name: "Scaffold", icon: "scaffold-icon.png" },
-      { name: "Wagmi", icon: "wagmi-icon.png" },
     ],
   },
 ];

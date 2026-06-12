@@ -1,6 +1,7 @@
 ---
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import ProfilePhoto from "@/components/ProfilePhoto.astro";
 
 const links = [
   { href: "/services", label: "Services", icon: "fa-tag", external: false },
@@ -45,24 +46,15 @@ const socials = [
     <main class="flex-1 flex items-center justify-center px-6 pt-24 pb-8">
       <div class="w-full max-w-md">
         <div class="flex flex-col items-center text-center mb-10">
-          <div class="relative mb-6 flex-shrink-0">
-            <div
-              class="w-28 h-28 rounded-full overflow-hidden border-2 border-primary/30 shadow-glow"
-            >
-              <img
-                src="/img/main_photo.png"
-                alt="Jorge Sarricolea"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="absolute -inset-3 rounded-full border border-primary/10 -z-10"></div>
+          <div class="mb-6">
+            <ProfilePhoto sizeClass="w-28 h-28" showPulse={false} />
           </div>
 
           <p class="text-primary font-mono text-sm mb-2 tracking-wide">Hi, I'm</p>
           <h1 class="text-3xl font-extrabold text-white leading-tight">
             Jorge Sarricolea<span class="text-amber">.</span>
           </h1>
-          <p class="text-gray-400 mt-2">Software Engineer</p>
+          <p class="text-gray-400 mt-2">Full-Stack Engineer · Remote</p>
 
           <div class="flex items-center gap-5 mt-6">
             {

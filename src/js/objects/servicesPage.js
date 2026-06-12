@@ -70,13 +70,13 @@ const servicesPage = {
         quote:
           "Nos entregaron el sistema de inscripciones a tiempo. El congreso se gestionó sin fricciones gracias a la plataforma.",
         role: "Comité organizador",
-        company: "Congreso internacional — ICCBR",
+        company: "Congreso internacional académico",
       },
       {
         quote:
           "Profesional y rápido. La plataforma quedó lista para operar con los flujos que necesitábamos, sin sorpresas en producción.",
         role: "Equipo de producto",
-        company: "Plataforma fintech — Finamate",
+        company: "Startup fintech",
       },
       {
         quote:

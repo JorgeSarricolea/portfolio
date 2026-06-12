@@ -86,6 +86,11 @@ const tags = {
       image: "../icons/reactjs-icon.png",
       priority: "main",
     },
+    threejs: {
+      name: "Three.js",
+      image: "../icons/threejs-icon.png",
+      priority: "main",
+    },
     nextjs: {
       name: "Next.js",
       image: "../icons/nextjs-icon.png",

@@ -1,33 +1,29 @@
 const projects = [
   {
-    id: "gitbuddy",
-    title: "GitBuddy",
+    id: "finamate",
+    title: "Finamate",
+    subtitle: "Personal finance · Production",
     description:
-      "Converts your natural language descriptions into perfectly structured and professional conventional commits. ",
-    image: "../img/gitbuddy.png",
-    url: "https://gitbuddy-ai-qywr.vercel.app/",
+      "Personal finance platform built end-to-end — dashboards, budgeting flows, and actionable insights. Architecture, development, CI/CD, and production deployment.",
+    image: "../img/finamate_logo.png",
+    url: "https://finamate.com",
     githubUrl: "",
     tagIds: ["typescript", "reactjs", "nextjs"],
-  },
-  {
-    id: "authcore",
-    title: "AuthCore",
-    description:
-      "Authentication microservice with JWT, Google OAuth, and email/password, built with Clean Architecture and Docker.",
-    image: "../img/authcore.png",
-    url: "",
-    githubUrl: "https://github.com/JorgeSarricolea/authcore",
-    tagIds: ["typescript", "docker", "nodejs", "expressjs"],
+    featured: true,
+    imageFit: "contain",
   },
   {
     id: "minecraft-clone",
     title: "Minecraft Clone",
+    subtitle: "3D voxel · Web experiment",
     description:
       "3D voxel-based game with block manipulation, movement controls, and world persistence. Built with Three.js to recreate Minecraft.",
     image: "../img/minecraft-clone.png",
     url: "https://craftclone.netlify.app/",
     githubUrl: "https://github.com/JorgeSarricolea/Minecraft-Clone",
     tagIds: ["javascript", "reactjs", "threejs"],
+    featured: false,
+    imageFit: "cover",
   },
 ];
 

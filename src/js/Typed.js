@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const Typed = module.default;
       new Typed("#multiText", {
         strings: [
-          "Software Engineer",
-          "Back-End Developer",
-          "Front-End Developer",
-          "Full-Stack Developer",
+          "Full-Stack Engineer",
+          "React & TypeScript",
+          "Node.js / NestJS",
+          "Remote Software Engineer",
         ],
         loop: true,
         typeSpeed: 30,

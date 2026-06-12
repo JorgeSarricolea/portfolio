@@ -8,62 +8,235 @@ function findTag(id) {
   }
   return null;
 }
+
+const featured = projects.find((p) => p.featured);
+const secondary = projects.filter((p) => !p.featured);
 ---
 
-<section class="py-24 px-6">
+<section class="py-24 px-6 projects-section">
   <div class="max-w-5xl mx-auto">
     <div data-motion-header>
       <h2 class="text-sm font-mono text-primary mb-3 tracking-wide">Projects</h2>
-      <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">
+      <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
         Things I've built<span class="text-amber">.</span>
       </h3>
+      <p class="text-gray-500 text-sm md:text-base max-w-xl mb-12">
+        From production products to playful experiments — shipped end-to-end.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => (
-        <div data-motion-item class="group bg-surface rounded-xl border border-white/5 overflow-hidden hover:border-primary/20 transition-all duration-300 hover:-translate-y-1">
-          <div class="relative h-44 overflow-hidden">
-            <img
-              src={project.image.replace("../img/", "/img/")}
-              alt={project.title}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
-          </div>
+    <div class="flex flex-col gap-8">
+      {featured && (
+        <article
+          data-motion-item
+          class="project-card project-card--featured group relative overflow-hidden rounded-2xl border border-primary/25 bg-surface"
+        >
+          <div class="project-card__glow" aria-hidden="true"></div>
 
-          <div class="p-5">
-            <h4 class="text-white font-bold text-lg mb-2">{project.title}</h4>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{project.description}</p>
-
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              {project.tagIds.map((tagId) => {
-                const tag = findTag(tagId);
-                return tag ? (
-                  <span class="px-2 py-0.5 rounded text-[11px] bg-primary/10 text-primary/80">{tag.name}</span>
-                ) : null;
-              })}
+          <div class="relative grid md:grid-cols-[1.15fr_1fr] min-h-[320px] md:min-h-[360px]">
+            <div class="relative overflow-hidden bg-[#0d3d45] min-h-[220px] md:min-h-full">
+              <img
+                src={featured.image.replace("../img/", "/img/")}
+                alt={featured.title}
+                class="absolute inset-0 w-full h-full object-contain p-10 md:p-14 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface/90 hidden md:block"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent md:hidden"></div>
             </div>
 
-            <div class="flex items-center gap-3">
-              {project.url && (
-                <a href={project.url} target="_blank" rel="noopener noreferrer"
-                  class="text-xs text-gray-400 hover:text-primary transition-colors flex items-center gap-1">
-                  <i class="fas fa-external-link-alt text-[10px]"></i>
-                  Live
-                </a>
-              )}
-              {project.githubUrl && (
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                  class="text-xs text-gray-400 hover:text-primary transition-colors flex items-center gap-1">
-                  <i class="fab fa-github text-sm"></i>
-                  Code
-                </a>
-              )}
+            <div class="relative flex flex-col justify-center p-6 md:p-10 md:pl-4">
+              <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-mono uppercase tracking-widest text-primary mb-4">
+                <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+                Flagship
+              </span>
+
+              <p class="text-xs font-mono text-gray-500 mb-1">{featured.subtitle}</p>
+              <h4 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
+                {featured.title}
+              </h4>
+              <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                {featured.description}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-8">
+                {featured.tagIds.map((tagId) => {
+                  const tag = findTag(tagId);
+                  return tag ? (
+                    <span class="px-2.5 py-1 rounded-md text-[11px] bg-white/5 text-primary/90 border border-primary/15">
+                      {tag.name}
+                    </span>
+                  ) : null;
+                })}
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 mt-auto">
+                {featured.url && (
+                  <a
+                    href={featured.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-cta project-cta--primary"
+                  >
+                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                    Visit live
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </article>
+      )}
+
+      {secondary.map((project) => (
+        <article
+          data-motion-item
+          class="project-card project-card--secondary group relative overflow-hidden rounded-2xl border border-emerald-500/15 bg-surface max-w-2xl"
+        >
+          <div class="project-card__glow project-card__glow--emerald" aria-hidden="true"></div>
+
+          <div class="relative grid sm:grid-cols-[200px_1fr] md:grid-cols-[240px_1fr]">
+            <div class="relative h-44 sm:h-auto overflow-hidden">
+              <img
+                src={project.image.replace("../img/", "/img/")}
+                alt={project.title}
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface hidden sm:block"></div>
+            </div>
+
+            <div class="relative p-6 flex flex-col justify-center">
+              <span class="text-[11px] font-mono uppercase tracking-widest text-emerald-400/80 mb-2">
+                Side project
+              </span>
+              <p class="text-xs font-mono text-gray-500 mb-0.5">{project.subtitle}</p>
+              <h4 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors duration-300">
+                {project.title}
+              </h4>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+                {project.description}
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {project.tagIds.map((tagId) => {
+                  const tag = findTag(tagId);
+                  return tag ? (
+                    <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-500/10 text-emerald-300/90 border border-emerald-500/15">
+                      {tag.name}
+                    </span>
+                  ) : null;
+                })}
+              </div>
+
+              <div class="flex items-center gap-4">
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-cta project-cta--ghost"
+                  >
+                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                    Live
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-cta project-cta--ghost"
+                  >
+                    <i class="fab fa-github text-sm"></i>
+                    Code
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </article>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  .project-card {
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -24px rgba(139, 92, 246, 0.35);
+  }
+
+  .project-card--secondary:hover {
+    box-shadow: 0 20px 40px -24px rgba(16, 185, 129, 0.25);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+
+  .project-card__glow {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(
+      ellipse 80% 60% at 20% 0%,
+      rgba(139, 92, 246, 0.22),
+      transparent 65%
+    );
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card__glow--emerald {
+    background: radial-gradient(
+      ellipse 70% 50% at 0% 50%,
+      rgba(16, 185, 129, 0.15),
+      transparent 65%
+    );
+  }
+
+  .project-card:hover .project-card__glow {
+    opacity: 1;
+  }
+
+  .project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.25s ease;
+  }
+
+  .project-cta--primary {
+    color: #0a0a0a;
+    background: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 100%);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+  }
+
+  .project-cta--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(139, 92, 246, 0.45);
+  }
+
+  .project-cta--ghost {
+    color: #9ca3af;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .project-cta--ghost:hover {
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.08);
+  }
+</style>

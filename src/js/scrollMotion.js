@@ -29,14 +29,6 @@ function scaleIn(target, { delay = 0, duration = DURATION + 0.08, ease = easeSmo
   );
 }
 
-function resetMotionTargets(section) {
-  const targets = section.querySelectorAll("[data-motion-header], [data-motion-item], [data-hero]");
-  targets.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "";
-  });
-}
-
 function playSlideAnimations(section) {
   const isHome = section.id === "home";
 
@@ -127,9 +119,8 @@ function initSlideAnimations(scrollRoot, sections) {
       section,
       () => {
         playSlideAnimations(section);
-        return () => resetMotionTargets(section);
       },
-      { root: scrollRoot, amount: 0.45, once: false },
+      { root: scrollRoot, amount: 0.2, once: true },
     );
   });
 }
